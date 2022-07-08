@@ -1,0 +1,28 @@
+set number
+set relativenumber
+
+set noerrorbells
+set visualbell
+set encoding=utf-8
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+" set cursorline
+set colorcolumn=80
+
+set splitright
+set splitbelow
+
+set scrolloff=5
+set showcmd
+
+inoremap jj <Esc>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
