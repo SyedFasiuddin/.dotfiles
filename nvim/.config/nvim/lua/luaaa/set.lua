@@ -14,11 +14,13 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.scrolloff = 8
 
-vim.opt.guicursor = ""
+-- this makes the cursur to remain as block in insert mode
+-- vim.opt.guicursor = ""
 vim.opt.termguicolors = true
-
 
 -- vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
+vim.opt.splitbelow = true 
+vim.opt.splitright = true 
 
