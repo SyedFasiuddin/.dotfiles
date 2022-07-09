@@ -24,3 +24,6 @@ vim.opt.wrap = false
 vim.opt.splitbelow = true 
 vim.opt.splitright = true 
 
+
+vim.opt.updatetime = 2000
+vim.opt.mouse = "a"

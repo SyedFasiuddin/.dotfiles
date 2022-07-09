@@ -5,7 +5,6 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -15,7 +14,7 @@ local keymap = vim.api.nvim_set_keymap
 --   command_mode = "c",
 
 -- Normal Mode --
--- Better window navigation
+-- Window Navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)

@@ -1,3 +1,5 @@
+set fish_greeting ""
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
@@ -8,11 +10,11 @@ function ls
 end
 
 function ll
-    exa -l $argv
+    exa -l --icons $argv
 end
 
 function la
-    exa -la $argv
+    exa -la --icons $argv
 end
 
 # bass is something that allows to run bash scripts inside fish
@@ -25,5 +27,6 @@ end
 # for nvm stuff
 bass export NVM_DIR="$HOME/.nvm"
 bass \. "$NVM_DIR/nvm.sh"
+bass \. "$NVM_DIR/bash_completion"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
