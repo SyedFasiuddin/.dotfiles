@@ -7,7 +7,9 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "80"
@@ -17,6 +19,7 @@ vim.opt.scrolloff = 8
 -- this makes the cursur to remain as block in insert mode
 -- vim.opt.guicursor = ""
 vim.opt.termguicolors = true
+vim.opt.background = "dark"
 
 -- vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
@@ -27,3 +30,12 @@ vim.opt.splitright = true
 
 vim.opt.updatetime = 2000
 vim.opt.mouse = "a"
+
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.fileencoding = "utf-8"
+
+vim.opt.ignorecase = true
+
+vim.opt.timeoutlen = 200
+

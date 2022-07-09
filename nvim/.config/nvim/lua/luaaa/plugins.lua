@@ -4,7 +4,8 @@ if not status_ok then
     return
 end
 
--- to make packer use a popup window
+-- to make packer use a popup window, default is vertical split
+-- and the border option is set to empty string so as to not have border
 packer.init {
     display = {
         open_fn = function()
@@ -17,9 +18,10 @@ return packer.startup(function()
     -- packer manages itself
     use "wbthomason/packer.nvim"
 
-
-    -- pop API
+    -- I don't know, these two are required by other plugins
+    use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
+
 
     -- colorschemes
     use "luisiacc/gruvbox-baby"
