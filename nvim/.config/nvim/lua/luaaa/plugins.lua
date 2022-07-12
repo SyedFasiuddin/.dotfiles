@@ -27,6 +27,8 @@ return packer.startup(function()
     use "hrsh7th/cmp-buffer"    -- source which gives completion from buffer
     use "L3MON4D3/LuaSnip"      -- the thing which enable the snippets from lsp to work properly
 
+    -- lsp
+    use "neovim/nvim-lspconfig" -- lsp core
 
     -- colorschemes
     use "luisiacc/gruvbox-baby"
