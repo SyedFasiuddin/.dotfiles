@@ -21,6 +21,7 @@ cmp.setup {
     	end,
   	},
 	sources = {
+        {name = "nvim_lsp"},
 		{name = "luasnip"},
         {name = "buffer"},
     },
@@ -43,3 +44,4 @@ cmp.setup {
     	ghost_text = false,
   	},
 }
+

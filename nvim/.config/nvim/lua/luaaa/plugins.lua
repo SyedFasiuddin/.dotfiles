@@ -23,12 +23,15 @@ return packer.startup(function()
     use "nvim-lua/popup.nvim"
 
     -- completion menu
-    use "hrsh7th/nvim-cmp"      -- the actual core of completion
+    use "hrsh7th/nvim-cmp"      -- completion core -> popup, snippets etc
     use "hrsh7th/cmp-buffer"    -- source which gives completion from buffer
-    use "L3MON4D3/LuaSnip"      -- the thing which enable the snippets from lsp to work properly
+    use "L3MON4D3/LuaSnip"      -- the thing which enable the snippets from lsp to work/expand properly
 
     -- lsp
-    use "neovim/nvim-lspconfig" -- lsp core
+    use "neovim/nvim-lspconfig" -- lsp core -> has configs to make built in lsp client to work
+
+    -- combine lsp and cmp
+    use "hrsh7th/cmp-nvim-lsp"  -- thing that enables cmp to tell the language server that it can show completions and requests it to send em 
 
     -- colorschemes
     use "luisiacc/gruvbox-baby"
