@@ -22,6 +22,11 @@ return packer.startup(function()
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
 
+    -- completion menu
+    use "hrsh7th/nvim-cmp"      -- the actual core of completion
+    use "hrsh7th/cmp-buffer"    -- source which gives completion from buffer
+    use "L3MON4D3/LuaSnip"      -- the thing which enable the snippets from lsp to work properly
+
 
     -- colorschemes
     use "luisiacc/gruvbox-baby"
