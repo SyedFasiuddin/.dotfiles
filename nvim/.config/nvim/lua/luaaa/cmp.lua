@@ -26,6 +26,11 @@ cmp.setup {
         {name = "buffer"},
     },
     mapping = {
+        ["<"] = cmp.mapping.select_prev_item(),
+        [">"] = cmp.mapping.select_next_item(),
+--        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm {select = true},
+        ["<C-c>"] = cmp.mapping.close(),
     },
 	confirm_opts = {
     	behavior = cmp.ConfirmBehavior.Replace,
