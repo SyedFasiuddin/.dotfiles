@@ -1,5 +1,5 @@
 local colorscheme = "gruvbox-baby"
-local status_ok
+local status_ok = true
 
 
 -- To make background transparent with any color
@@ -10,7 +10,6 @@ if not status_ok then
     print("Transparent background setup failed")
     return
 end
-
 
 -- gruvbox related
 vim.g.gruvbox_contrast_dark = 'hard'
@@ -29,3 +28,4 @@ if not status_ok then
     return
 end
 
+vim.cmd("hi NormalFloat guibg=None")

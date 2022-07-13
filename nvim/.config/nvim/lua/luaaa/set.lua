@@ -24,8 +24,8 @@ vim.opt.background = "dark"
 -- vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 
-vim.opt.splitbelow = true 
-vim.opt.splitright = true 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 
 vim.opt.updatetime = 2000
