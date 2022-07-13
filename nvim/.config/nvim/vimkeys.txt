@@ -36,7 +36,7 @@
 " H - home cursor - goto first line on screen
 " I - enter insertion mode before first non-whitespace character
 " J - join current line with next line
-" K - UNBOUND
+" K - UNBOUND / show man pages
 " L - goto last line on screen 
 " M - goto middle line on screen
 " N - repeat last search but in opposite direction of original search
@@ -112,7 +112,7 @@
 " ^S - XOFF
 " ^T - go to file/code you were editing before the last tag jump
 " ^U - up half screen
-" ^V - UNBOUND
+" ^V - UNBOUND / Visual block mode
 " ^W - UNBOUND
 " ^X - UNBOUND
 " ^Y - scroll text down
