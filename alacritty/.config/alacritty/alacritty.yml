@@ -4,7 +4,7 @@ window:
   dimensions:
     columns: 120
     lines: 35
-  opacity: 0.95
+  opacity: 0.9
   padding:
     x: 12
     y: 12
@@ -46,8 +46,6 @@ key_bindings:
   - { key: Equals,   mods: Control,       action: IncreaseFontSize             }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize             }
   - { key: Q,        mods: Alt,           action: Quit                         }
-  - { key: V,        mods: Control,       action: Paste                        }
-  - { key: C,        mods: Control,       action: Copy                         }
 
 
 #######################################
@@ -587,7 +585,8 @@ schemes:
 # Available themes are:
 # *doom-one
 # *dracula
-# *gruvbox-dark
+# *gruvbox_powerline
+# *gruvbox
 # *monokai-pro
 # *nord
 # *oceanic-next
@@ -596,7 +595,7 @@ schemes:
 # *tomorrow-night
 # *ayu-dark
 
-colors: *sonokai
+colors: *gruvbox
 
 #######################################
 ##       END OF COLOR SCHEMES        ##

@@ -50,4 +50,5 @@ return packer.startup(function()
     use "luisiacc/gruvbox-baby"
     use "gruvbox-community/gruvbox"
     use "folke/tokyonight.nvim"
+    use "Shatur/neovim-ayu"
 end)
