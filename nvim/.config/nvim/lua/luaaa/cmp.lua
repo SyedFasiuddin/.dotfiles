@@ -29,8 +29,8 @@ cmp.setup {
         ["<"] = cmp.mapping.select_prev_item(),
         [">"] = cmp.mapping.select_next_item(),
 --        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm {select = true},
-        ["<C-c>"] = cmp.mapping.close(),
+        ["<CR>"] = cmp.mapping.confirm({select = true}),
+        ["<C-e>"] = cmp.mapping.abort(),
     },
 	confirm_opts = {
     	behavior = cmp.ConfirmBehavior.Replace,

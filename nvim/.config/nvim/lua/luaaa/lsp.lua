@@ -4,6 +4,14 @@ if not status_ok then
     return
 end
 
+local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not status_ok then
+    print("Failed to load nvim-lsp-installer!!!")
+    return
+end
+
+lsp_installer.setup()
+
 local keymaps = function()
     -- 3rd parameter is passing reference to the function, we are not calling it
     -- the function is called when the given key is pressed in given mode
@@ -15,10 +23,10 @@ local keymaps = function()
     vim.keymap.set("n", "<C-p>", vim.diagnostic.goto_prev, {buffer = 0})
 end
 
--- local status_ok, capabilities = pcall(require, "cmp_nvim_lsp")
+-- local status_ok, cmp_nvim = pcall(require, "cmp_nvim_lsp")
 -- if not status_ok then
---    print("Failed to load cmp_nvim_lsp!!!")
---    return
+--     print("Failed to load cmp_nvim_lsp!!!")
+--     return
 -- end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(
@@ -27,5 +35,30 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(
 
 lspconfig.tsserver.setup {
     capabilities = capabilities,
-    on_attach = keymaps
+    on_attach = keymaps,
 }
+
+lspconfig.sumneko_lua.setup({
+    on_attach = keymaps,
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = "LuaJIT",
+                -- Setup your lua path
+                path = vim.split(package.path, ";"),
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { "vim" },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files 
+                library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                },
+            },
+        },
+    },
+})
