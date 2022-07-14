@@ -21,7 +21,7 @@ end
 # this function is essential inorder for nvm, node, npm to be recognised
 # by the fish shell otherwise they are unkown
 function nvm
-    bass source ~/.nvm/nvm.sh ';' nvm $argv
+   bass source ~/.nvm/nvm.sh ';' nvm $argv
 end
 
 # for nvm stuff
