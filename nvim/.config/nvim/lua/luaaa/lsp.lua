@@ -62,3 +62,28 @@ lspconfig.sumneko_lua.setup({
         },
     },
 })
+
+lspconfig.pyright.setup({
+    on_attach = keymaps,
+    capabilities = capabilities,
+})
+
+local ok, null_ls = pcall(require, "null-ls")
+if not ok then
+    print("Failed to load null-ls")
+    return
+end
+
+null_ls.setup({
+    sources = {
+       null_ls.builtins.formatting.stylua,
+       null_ls.builtins.diagnostics.eslint,
+       null_ls.builtins.completion.spell,
+    },
+    on_attach = keymaps,
+})
+
+lspconfig.texlab.setup({
+    on_attach = keymaps,
+    capabilities = capabilities,
+})

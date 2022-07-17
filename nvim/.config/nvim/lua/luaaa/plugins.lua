@@ -14,7 +14,7 @@ packer.init {
     }
 }
 
-return packer.startup(function()
+return packer.startup(function(use)
     -- packer manages itself
     use "wbthomason/packer.nvim"
 
@@ -34,6 +34,9 @@ return packer.startup(function()
 
     -- combine lsp and cmp
     use "hrsh7th/cmp-nvim-lsp"  -- thing that enables cmp to tell the language server that it can show completions and requests it to send em 
+
+    -- null ls
+   use "jose-elias-alvarez/null-ls.nvim"
 
     -- treesitter
     use("nvim-treesitter/nvim-treesitter", {
