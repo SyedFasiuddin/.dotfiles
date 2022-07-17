@@ -1,0 +1,146 @@
+set number
+set relativenumber
+
+set noerrorbells
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set smartindent
+set autoindent
+
+set cursorline
+set colorcolumn=80
+set scrolloff=8
+
+set nocompatible
+set wildmode=longest,list,full
+set completeopt=menuone,longest
+set spell
+set spelllang=en_us
+
+" to change the cursor from block to bar in insert mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+set splitbelow
+set splitright
+
+set noshowmode
+set showcmd
+
+set laststatus=2
+set statusline=
+set statusline+=%#NonText#
+
+" when I say colorscheme gruvbox8_hard it says cannot find colorscheme so I
+" sourced it directly and this works
+source ~/.vim/plugged/vim-gruvbox8/colors/gruvbox8_hard.vim
+set background=dark
+set termguicolors
+
+call plug#begin()
+
+Plug 'SirVer/ultisnips'
+" Plug 'lervag/vimtex'
+
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'lifepillar/vim-gruvbox8'
+
+call plug#end()
+
+" ultisnips configuration
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" limelight configurations
+" let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+" let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+let g:limelight_default_coefficient = 0.7
+
+" goyo configurations
+let g:goyo_width=100
+
+function! s:goyo_enter()
+    set noshowcmd
+    set nocursorline
+    set scrolloff=999
+    Limelight
+    hi! Normal ctermbg=NONE guibg=NONE
+    hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+endfunction
+                              
+function! s:goyo_leave()
+    set showcmd
+    set cursorline
+    set scrolloff=8
+    Limelight!
+    hi! Normal ctermbg=NONE guibg=NONE
+    hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" coc configurations
+" inoremap <expr> > pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> < pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" lightline configurations
+let g:lightline = {
+    \ 'colorscheme': 'one'
+    \ }
+
+filetype plugin on
+filetype indent on
+filetype on
+
+set encoding=utf-8
+
+syntax enable
+
+"""""""""""""""
+""  Keymaps  ""
+"""""""""""""""
+
+noremap <space> <nop>
+let mapleader=" "
+
+" Pane navigation
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" Pane resize
+noremap <A-h> :vertical resize +2<CR>
+noremap <A-j> :resize +2<CR>
+noremap <A-k> :resize -2<CR>  
+noremap <A-l> :vertical resize -2<CR>
+
+nnoremap <leader>s :source ~/.vim/vimrc<CR>
+nnoremap <leader><ENTER> :Goyo<CR>
+
+" trying to not use these keys so removed their bindings
+nnoremap Q          <nop>
+nnoremap <Up>       <nop>
+nnoremap <Down>     <nop>
+nnoremap <Left>     <nop>
+nnoremap <Right>    <nop>
+
+" ESC
+inoremap jj <Esc>
+
+" for some reason when I place these lines right below colorscheme it doesn't
+" work so places here
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
