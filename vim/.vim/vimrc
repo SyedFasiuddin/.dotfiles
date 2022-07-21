@@ -37,7 +37,10 @@ set statusline+=%#NonText#
 
 " when I say colorscheme gruvbox8_hard it says cannot find colorscheme so I
 " sourced it directly and this works
-source ~/.vim/plugged/vim-gruvbox8/colors/gruvbox8_hard.vim
+" source ~/.vim/plugged/vim-gruvbox8/colors/gruvbox8_hard.vim
+colorscheme slate
+let g:gruvbox_italics = 0
+let g:gruvbox_italicize_strings  = 0
 set background=dark
 set termguicolors
 
@@ -54,6 +57,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-gruvbox8'
 
 call plug#end()
+
+let g:tex_flavor = "latex"
 
 " ultisnips configuration
 let g:UltiSnipsExpandTrigger="<Tab>"
