@@ -36,11 +36,19 @@ set splitbelow
 set splitright
 
 set noshowmode
+set noswapfile
 set showcmd
 
-set laststatus=2
+set laststatus=2        " to display statusline 
 set statusline=
-set statusline+=%#NonText#
+set statusline+=\ %f    " relative file name
+set statusline+=\ %M    " file modified or not
+set statusline+=\%=     " right side separator
+set statusline+=\ %L    " total number of line in file
+set statusline+=\ [%n]  " buffer number enclosed in brackets 
+" set laststatus=2
+" set statusline=
+" set statusline+=%#NonText#
 
 " when I say colorscheme gruvbox8_hard it says cannot find colorscheme so I
 " sourced it directly and this works
@@ -50,7 +58,7 @@ let g:gruvbox_italics = 0
 let g:gruvbox_italicize_strings  = 0
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_termcolors =  256
-set bg=dark
+set background=dark
 set termguicolors
 
 call plug#begin()
@@ -60,7 +68,7 @@ Plug 'SirVer/ultisnips'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'lifepillar/vim-gruvbox8'
@@ -111,9 +119,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " inoremap <expr> < pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " lightline configurations
-let g:lightline = {
-    \ 'colorscheme': 'one'
-    \ }
+" let g:lightline = {
+"     \ 'colorscheme': 'one'
+"     \ }
 
 filetype plugin on
 filetype indent on
