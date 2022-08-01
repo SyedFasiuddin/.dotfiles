@@ -17,7 +17,11 @@ vim.g.gruvbox_contrast_dark = 'hard'
 -- vim.opt.background = "dark"
 
 -- gruvbox-baby related
--- vim.g.gruvbox_baby_transparent_mode = 1
+vim.g.gruvbox_baby_background_color = "dark"
+vim.g.gruvbox_baby_transparent_mode = true
+vim.g.gruvbox_baby_keyword_style = "NONE"
+vim.g.gruvbox_baby_function_style = "NONE"
+vim.g.gruvbox_baby_comment_style = "NONE"
 
 
 -- setting colorscheme here

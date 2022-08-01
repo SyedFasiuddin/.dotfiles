@@ -21,7 +21,10 @@ vim.g.mapleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal Mode --
+-----------------------------
+---- Normal Mode Keymaps ----
+-----------------------------
+
 -- Window Navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -34,15 +37,43 @@ keymap("n", "<A-j>", ":resize +2<CR>", opts)
 keymap("n", "<A-k>", ":resize -2<CR>", opts)
 keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
 
+-- Don't use arrow keys
+keymap("n", "<Up>", "<Nop>", opts)
+keymap("n", "<Down>", "<Nop>", opts)
+keymap("n", "<Right>", "<Nop>", opts)
+keymap("n", "<Left>", "<Nop>", opts)
+
+keymap("n", "<Enter>", "<Nop>", opts)
+
 -- File explorer
 -- 30 means take 30% of space
 keymap("n", "<Leader>e", ":Lex 30<CR>", opts)
 
--- Insert Mode --
+-----------------------------
+---- Insert Mode Keymaps ----
+-----------------------------
+
 -- escaping to normal mode
 keymap("i", "jj", "<ESC>", opts)
 
--- Visual --
+-- Don't use arrow keys
+keymap("i", "<Up>", "<Nop>", opts)
+keymap("i", "<Down>", "<Nop>", opts)
+keymap("i", "<Right>", "<Nop>", opts)
+keymap("i", "<Left>", "<Nop>", opts)
+
+-----------------------------
+---- Visual Mode Keymaps ----
+-----------------------------
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Don't use arrow keys
+keymap("v", "<Up>", "<Nop>", opts)
+keymap("v", "<Down>", "<Nop>", opts)
+keymap("v", "<Right>", "<Nop>", opts)
+keymap("v", "<Left>", "<Nop>", opts)
+
+keymap("v", "<Enter>", "<Nop>", opts)
