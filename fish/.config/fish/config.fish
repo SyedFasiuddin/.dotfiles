@@ -30,3 +30,12 @@ bass \. "$NVM_DIR/nvm.sh"
 bass \. "$NVM_DIR/bash_completion"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+function update
+    tmux -f /dev/null new -d -s update /bin/bash
+    tmux send-keys -t "update":0 "sudo dnf update && sudo dnf upgrade -y" C-m
+    # attaching to that session right after so that I can enter sudo password
+    tmux a -t update
+    # after entering password I'll have to manually detach 
+    # I don't know if there is a better way to do this. I'll research
+end
