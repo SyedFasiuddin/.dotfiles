@@ -21,5 +21,9 @@ lualine.setup {
         lualine_x = {"encoding", "fileformat"},
         lualine_y = {},
     },
+    tabline = {
+        lualine_a = {"filename"},
+        lualine_z = {"tabs"},
+    },
 }
 

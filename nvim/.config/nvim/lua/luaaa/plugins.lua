@@ -48,10 +48,15 @@ return packer.startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     }
+--     use {
+--         'alvarosevilla95/luatab.nvim',
+--         requires='kyazdani42/nvim-web-devicons'
+--     }
 
     -- colorschemes
     use "luisiacc/gruvbox-baby"
     use "gruvbox-community/gruvbox"
     use "folke/tokyonight.nvim"
     use "Shatur/neovim-ayu"
+
 end)
