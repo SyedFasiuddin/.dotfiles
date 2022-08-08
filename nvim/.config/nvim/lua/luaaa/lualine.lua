@@ -17,9 +17,11 @@ lualine.setup {
             "mode"
     --        { 'mode', fmt = function(str) return str:sub(1,2) end },
         },
-        lualine_b = {},
+        lualine_b = {'diff', 'diagnostics'},
+        lualine_c = {},
         lualine_x = {"encoding", "fileformat"},
         lualine_y = {},
+        lualine_z = {"filesize"},
     },
     tabline = {
         lualine_a = {"filename"},
