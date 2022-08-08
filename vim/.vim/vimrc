@@ -45,7 +45,8 @@ set statusline=
 set statusline+=\ %f    " relative file name
 set statusline+=\ %M    " file modified or not
 set statusline+=\%=     " right side separator
-set statusline+=\ %L    " total number of line in file
+set statusline+=%{wordcount().words} " display no of words in curr buf
+" set statusline+=\ %L    " total number of line in file
 set statusline+=\ [%n]  " buffer number enclosed in brackets 
 " set laststatus=2
 " set statusline=
@@ -169,3 +170,9 @@ nnoremap <Right>    <nop>
 " work so places here
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
+
+
+" the braces that are highlighted are due to this default vim plugin which is
+" disabled using this line
+let loaded_matchparen = 1
+
