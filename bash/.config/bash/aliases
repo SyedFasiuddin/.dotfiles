@@ -1,3 +1,5 @@
+#! /usr/bin/bash
+
 alias ls='exa'
 alias la='exa -aFx'
 alias ll='exa -laF --icons'
