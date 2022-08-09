@@ -1,6 +1,6 @@
-alias ll='exa -la --icons'
-alias la='exa -a'
 alias ls='exa'
+alias la='exa -aFx'
+alias ll='exa -laF --icons'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

@@ -117,6 +117,8 @@ export PS1="\e[0;32m\W \e[0;00m"
 
 . "$HOME/.cargo/env"
 
+. "$XDG_STATE_HOME/z/z.sh"
+
 set -o vi # to use vi keys to move in the read line
 
 # some cd stuff
