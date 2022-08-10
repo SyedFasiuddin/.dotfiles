@@ -17,15 +17,22 @@ lualine.setup {
             "mode"
     --        { 'mode', fmt = function(str) return str:sub(1,2) end },
         },
-        lualine_b = {'diff', 'diagnostics'},
-        lualine_c = {},
+        lualine_b = {"filename"},
+        lualine_c = {'diff', 'diagnostics'},
         lualine_x = {"encoding", "fileformat"},
         lualine_y = {},
         lualine_z = {"filesize"},
     },
     tabline = {
-        lualine_a = {"filename"},
+        lualine_a = {"location", "progress"},
         lualine_z = {"tabs"},
     },
+    refresh = {
+        statusline = 500,
+        tabline = 500,
+        winbar = 500
+    }
 }
+
+vim.opt.showtabline = 1     -- this is exactly what I wanted. showing the tabline when I have more then one tab open otherwise not showing it!!!
 
