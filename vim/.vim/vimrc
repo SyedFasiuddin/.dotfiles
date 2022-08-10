@@ -22,10 +22,7 @@ set scrolloff=8
 
 set nocompatible
 set wildmode=longest,list,full
-set pumheight=5         " this limits the popup to show 5 items
-set complete+=k         " this tells vim to look up the dictionary words
 set completeopt=menuone,longest
-set shortmess+=c        " this tells not to show msg in bottom while selecting items from popup menu
 set spell
 set spelllang=en_us
 
