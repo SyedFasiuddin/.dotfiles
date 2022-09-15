@@ -96,7 +96,8 @@ let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient = 0.7
 
 " goyo configurations
-let g:goyo_width=100
+let g:goyo_width=80
+let g:goyo_height="60%"
 
 function! s:goyo_enter()
     set noshowcmd
@@ -158,16 +159,18 @@ noremap <A-k> :resize -2<CR>
 noremap <A-l> :vertical resize -2<CR>
 
 nnoremap <leader>s :source ~/.vim/vimrc<CR>
-nnoremap <leader><ENTER> :Goyo<CR>
+nnoremap <F2> :Goyo<CR>
+inoremap <F2> <ESC>:Goyo<CR>a
 
 " trying to not use these keys so removed their bindings
-nnoremap Q          <nop>
+nnoremap Q          <nop> " enter ex mode
 nnoremap <Up>       <nop>
 nnoremap <Down>     <nop>
 nnoremap <Left>     <nop>
 nnoremap <Right>    <nop>
 
 " ESC
+inoremap jj <Esc>
 
 " for some reason when I place these lines right below colorscheme it doesn't
 " work so places here

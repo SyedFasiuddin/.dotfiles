@@ -97,6 +97,10 @@ if [ -f ~/.config/bash/exports ]; then
     . ~/.config/bash/exports
 fi
 
+if [ -f ~/.config/bash/tmuxFunctions ]; then
+    . ~/.config/bash/tmuxFunctions
+fi
+
 # # enable programmable completion features (you don't need to enable
 # # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # # sources /etc/bash.bashrc).
