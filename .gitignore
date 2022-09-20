@@ -10,3 +10,8 @@
 # vim
 **/plugged/
 **/autoload/
+
+# zsh
+**/.DS_*
+**/.zcompdump
+**/.zsh_sessions/
