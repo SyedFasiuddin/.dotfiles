@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
+
+# This is for the Z directory jumper database file
+# It defaults to home directory which I donot want to be cluttered
+export _Z_DATA="$XDG_CACHE_HOME/z/.z"
