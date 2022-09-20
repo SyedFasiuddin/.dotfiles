@@ -1,0 +1,25 @@
+#! /bin/sh
+
+function note(){
+    if [[ -d "$HOME/Journal" ]] ; then
+        year=`date "+%Y"`
+        month=`date "+%m"`
+        day=`date "+%d"`
+        yr="$HOME/Journal/$year"
+         
+        if [[ -d "$yr" ]] ; then
+            if [[ -d "$yr/$month" ]] ; then
+                vi "$yr/$month/$day.txt"
+            else
+                mkdir "$yr/$month"
+                vi "$yr/$month/$day.txt"
+            fi
+        else
+            mkdir "$yr" "$yr/$month"
+            vi "$yr/$month/$day.txt"
+        fi
+    else
+        echo "Journal not found"
+    fi
+}
+

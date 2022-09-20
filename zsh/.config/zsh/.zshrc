@@ -89,6 +89,6 @@ if [ -f ~/.config/zsh/aliases ]; then
     . ~/.config/zsh/aliases
 fi
 
-if [ -f ~/.config/zsh/functions ]; then
-    . ~/.config/zsh/functions
+if [ -f ~/.config/zsh/func ]; then
+    . ~/.config/zsh/func
 fi
