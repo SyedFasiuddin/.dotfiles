@@ -3,21 +3,24 @@
 # --------------------------------------------- #
 
 snippet date "Enter todays date" i
-`date "+%a, %d %b %4Y"`
+`date "+%a, %d %b %Y"`
 endsnippet
+# `date "+%a, %d %b %4Y"`
 
 snippet time "Enter current time" i
 `date "+%H:%M"`
 endsnippet
 
 snippet TODO "Todo: With time and date" w
-TODO: $1 |`date "+%a, %d %b %4Y %H:%M"`|
+TODO: $1 |`date "+%a, %d %b %Y %H:%M"`|
 $0
 endsnippet
+# TODO: $1 |`date "+%a, %d %b %4Y %H:%M"`|
 
 snippet timestamp "adds a timestamp" w
-|`date "+%a, %d %b %4Y %H:%M"`|
+|`date "+%a, %d %b %Y %H:%M"`|
 endsnippet
+# |`date "+%a, %d %b %4Y %H:%M"`|
 
 
 # --------------------------------------------- #
