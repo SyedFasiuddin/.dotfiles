@@ -1,4 +1,14 @@
-PROMPT="%{$fg[green]%}%c  ❯ "
+if [ -f ~/.config/zsh/exports ]; then
+    . ~/.config/zsh/exports
+fi
+
+if [ -f ~/.config/zsh/aliases ]; then
+    . ~/.config/zsh/aliases
+fi
+
+if [ -f ~/.config/zsh/func ]; then
+    . ~/.config/zsh/func
+fi
 
 # nvm stuff
 export NVM_DIR="$HOME/.nvm"
@@ -9,9 +19,7 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 # z directory jumper
-. "$HOME/.local/state/z/z.sh"
-export _Z_DATA="$HOME/.cache/z/.z"
-
+. "$XDG_STATE_HOME/z/z.sh"
 
 
 ################################
@@ -81,14 +89,3 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-if [ -f ~/.config/zsh/exports ]; then
-    . ~/.config/zsh/exports
-fi
-
-if [ -f ~/.config/zsh/aliases ]; then
-    . ~/.config/zsh/aliases
-fi
-
-if [ -f ~/.config/zsh/func ]; then
-    . ~/.config/zsh/func
-fi
