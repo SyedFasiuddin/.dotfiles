@@ -20,8 +20,14 @@ scrolling:
 env:
   TERM: xterm-256color
 
-#shell:
+shell:
 #  program: cmd 
+  program: /opt/homebrew/bin/tmux
+  args:
+    - new
+    - -A
+    - -s
+    - MASTER
 
 font:
   normal:
@@ -43,8 +49,8 @@ cursor:
 mouse:
   hide_when_typing: true
 
-#key_bindings:
-  #  - { key: Return,   mods: Alt,           action: ToggleFullscreen             }
+key_bindings:
+    - { key: Return,   mods: Command,       action: ToggleFullscreen             }
   #  - { key: Equals,   mods: Control,       action: IncreaseFontSize             }
   #  - { key: Minus,    mods: Control,       action: DecreaseFontSize             }
   #  - { key: Q,        mods: Alt,           action: Quit                         }
@@ -71,6 +77,7 @@ import:
 # - ~/.config/alacritty/colorschemes/catppuccin-mocha.yml
 # - ~/.config/alacritty/colorschemes/doom-one.yml
 # - ~/.config/alacritty/colorschemes/dracula.yml
+# - ~/.config/alacritty/colorschemes/github-dark.yml
 # - ~/.config/alacritty/colorschemes/gruvbox-powerline.yml
 # - ~/.config/alacritty/colorschemes/gruvbox.yml
 # - ~/.config/alacritty/colorschemes/monokai.yml
