@@ -1,12 +1,12 @@
-set number
-set relativenumber
+" set number
+" set relativenumber
 
 set visualbell
 set noerrorbells
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 
@@ -100,21 +100,29 @@ let g:goyo_width=80
 let g:goyo_height="60%"
 
 function! s:goyo_enter()
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status off
+    endif
+
     set noshowcmd
     set nocursorline
     set scrolloff=999
     Limelight
-    silent !tmux set status off
+    hi! StatusLine guifg=#ffffff guibg=NONE
     hi! Normal ctermbg=NONE guibg=NONE
     hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 endfunction
                               
 function! s:goyo_leave()
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status on
+    endif
+
     set showcmd
     set cursorline
     set scrolloff=8
     Limelight!
-    silent !tmux set status on
+    hi! StatusLine guifg=#ffffff guibg=NONE
     hi! Normal ctermbg=NONE guibg=NONE
     hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 endfunction
@@ -171,12 +179,17 @@ nnoremap <Right>    <nop>
 
 " ESC
 inoremap jj <Esc>
+inoremap <C-b> <C-v>u2022
+" characters
+" •  U+2022
+" ‣  U+2023
 
 " for some reason when I place these lines right below colorscheme it doesn't
 " work so places here
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 
+hi! StatusLine guifg=#ffffff guibg=NONE
 
 " the braces that are highlighted are due to this default vim plugin which is
 " disabled using this line
