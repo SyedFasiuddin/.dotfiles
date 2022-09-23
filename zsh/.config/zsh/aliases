@@ -5,7 +5,14 @@ alias la='exa -aFx'
 alias ll='exa -laF --icons'
 
 # tmux
+alias t='tmux'
 alias ta='tmux a'
+alias tls='tmux ls'
 
 # git
 alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gp='git push'
+

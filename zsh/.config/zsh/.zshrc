@@ -1,3 +1,6 @@
+# zmodload zsh/zprof
+# timer=$(gdate "+%N")
+
 if [ -f ~/.config/zsh/exports ]; then
     . ~/.config/zsh/exports
 fi
@@ -11,9 +14,14 @@ if [ -f ~/.config/zsh/func ]; then
 fi
 
 # nvm stuff
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm_node(){
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+#    alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+#    alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+}
 
 # rust stuff
 . "$HOME/.cargo/env"
@@ -99,4 +107,11 @@ fi
 # Key bindings
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+
+# now=$(gdate "+%N")
+# elapsed=$(($now-$timer))
+# echo $elapsed
+# zprof
+
+PATH="${PATH:+${PATH}:}$HOME/.local/bin"
 
