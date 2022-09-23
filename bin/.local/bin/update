@@ -1,0 +1,5 @@
+#! /bin/sh
+
+tmux ls | grep "update" 1> /dev/null || tmux new -d -s update
+tmux send-keys -t "update":1 "brew update && brew upgrade" C-m
+
