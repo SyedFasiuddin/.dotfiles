@@ -13,6 +13,7 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.cmd[[set completeopt=menu,menuone,noselect]]
+vim.cmd[[set pumheight=8]]
 
 cmp.setup {
     snippet = {
@@ -26,11 +27,15 @@ cmp.setup {
         {name = "buffer"},
     },
     mapping = {
-        ["<"] = cmp.mapping.select_prev_item(),
-        [">"] = cmp.mapping.select_next_item(),
---        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm({select = true}),
-        ["<C-e>"] = cmp.mapping.abort(),
+    -- Default are C-n and C-p of vim and nvim, which are enabled in telescope as well,
+    -- so to keep it consistent, removing these and using them.
+--         ["<"] = cmp.mapping.select_prev_item(),
+--         [">"] = cmp.mapping.select_next_item(),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({select = false}),
+        ["<C-Space>"] = cmp.mapping.complete(),     -- bring up completion menu
+        ["<C-e>"] = cmp.mapping.abort(),            -- close completion menu
     },
 	confirm_opts = {
     	behavior = cmp.ConfirmBehavior.Replace,
@@ -48,5 +53,10 @@ cmp.setup {
         native_menu = false,
     	ghost_text = false,
   	},
+    view = {
+        entries = {
+            name = "custom",
+        }
+    }
 }
 

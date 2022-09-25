@@ -32,10 +32,11 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Window Resize
-keymap("n", "<A-h>", ":vertical resize +2<CR>", opts)
-keymap("n", "<A-j>", ":resize +2<CR>", opts)
-keymap("n", "<A-k>", ":resize -2<CR>", opts)
-keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<A-h>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<A-j>", ":resize +2<CR>", opts)
+-- keymap("n", "<A-k>", ":resize -2<CR>", opts)
+-- keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
+-- on MacOS there is no Alt key, and I don't want to find a work around
 
 -- Don't use arrow keys
 keymap("n", "<Up>", "<Nop>", opts)
@@ -44,6 +45,7 @@ keymap("n", "<Right>", "<Nop>", opts)
 keymap("n", "<Left>", "<Nop>", opts)
 
 keymap("n", "<Enter>", "<Nop>", opts)
+keymap("n", "<BS>", "<Nop>", opts)
 
 -- File explorer
 -- 30 means take 30% of space
@@ -93,3 +95,4 @@ keymap("v", "<Right>", "<Nop>", opts)
 keymap("v", "<Left>", "<Nop>", opts)
 
 keymap("v", "<Enter>", "<Nop>", opts)
+keymap("v", "<BS>", "<Nop>", opts)
