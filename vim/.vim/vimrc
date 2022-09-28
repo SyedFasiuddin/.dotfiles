@@ -130,12 +130,25 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " coc configurations
-inoremap <expr> > pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> < pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> > pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> < pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
+" :h [d and :h ]d
+
+" GoTo code navigation.
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+
+filetype on
 filetype plugin on
 filetype indent on
-filetype on
 
 set encoding=utf-8
 
@@ -183,3 +196,4 @@ hi! StatusLine guifg=#ffffff guibg=NONE
 " disabled using this line
 let loaded_matchparen = 1
 
+set path+=**
