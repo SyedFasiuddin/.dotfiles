@@ -1,37 +1,37 @@
 #! /bin/sh
 
-if [[ -d "$HOME/Journal" ]] ; then
-    year=`date "+%Y"`
-    month=`date "+%m"`
-    day=`date "+%d"`
-    yr="$HOME/Journal/$year"
+if [[ ! -d "$HOME/Journal" ]] ; then
+    echo "Journal not found"
+    exit 1
+fi
 
-    if [[ -d "$yr" ]] ; then
-        if [[ ! -d "$yr/$month" ]] ; then
-            mkdir "$yr/$month"
-        fi
-    else
-        mkdir "$yr" "$yr/$month"
-    fi
+cd "$HOME/Journal"
 
-    if [[ "$TERM_PROGRAM" = tmux ]] ; then
-#         tmux list-windows | grep note 1> /dev/null ||
-#             ( tmux neww -n note &&
-#             tmux send-keys -t :note "vi \"$yr/$month/$day.txt\"" C-m )
-        if tmux has-session -t MASTER ; then
-            tmux list-windows -t MASTER | grep note 1> /dev/null &&
-            tmux switch-client -t MASTER:note ||
-            ( tmux neww -n note -t MASTER &&
-            tmux send-keys -t MASTER:note "vi \"$yr/$month/$day.txt\"" Enter )
-            tmux switch-client -t MASTER:note
-        else
-            echo "MASTER session does not exist"
-        fi
+year=`date "+%Y"`
+month=`date "+%m"`
+day=`date "+%d"`
 
-    else
-        vi "$yr/$month/$day.txt"
+if [[ -d "$year" ]] ; then
+    if [[ ! -d "$year/$month" ]] ; then
+        mkdir "$year/$month"
     fi
 else
-    echo "Journal not found"
+    mkdir "$year" "$year/$month"
+fi
+
+if [[ "$TERM_PROGRAM" = tmux ]] ; then
+    if ! tmux has-session -t MASTER 2> /dev/null ; then
+        echo "MASTER session does not exist"
+        exit 1
+    fi
+
+    tmux list-windows -t MASTER | grep note 1> /dev/null ||
+    ( tmux neww -n note -t MASTER &&
+    tmux send-keys -t MASTER:note "vi \"$year/$month/$day.txt\"" Enter )
+
+    tmux switch-client -t MASTER:note
+
+else
+    vi "$year/$month/$day.txt"
 fi
 

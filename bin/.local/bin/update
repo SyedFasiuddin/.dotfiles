@@ -1,5 +1,12 @@
 #! /bin/sh
 
-tmux ls | grep "update" 1> /dev/null || tmux new -d -s update
-tmux send-keys -t "update":1 "brew update && brew upgrade" C-m
+if ! tmux has-session -t MASTER 2> /dev/null ; then
+    echo "MASTER session does not exist"
+    exit 1
+fi
+
+tmux list-windows -t MASTER | grep update 1> /dev/null ||
+tmux neww -n update -t MASTER
+
+tmux send-keys -t MASTER:update "brew update && brew upgrade" Enter
 
