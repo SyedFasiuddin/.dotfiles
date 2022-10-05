@@ -26,7 +26,7 @@ if [[ "$TERM_PROGRAM" = tmux ]] ; then
     fi
 
     tmux list-windows -t MASTER | grep note 1> /dev/null ||
-    ( tmux neww -n note -t MASTER &&
+    ( tmux neww -d -n note -t MASTER &&
     tmux send-keys -t MASTER:note "vi \"$year/$month/$day.txt\"" Enter )
 
     tmux switch-client -t MASTER:note

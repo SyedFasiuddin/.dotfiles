@@ -6,7 +6,7 @@ if ! tmux has-session -t MASTER 2> /dev/null ; then
 fi
 
 tmux list-windows -t MASTER | grep update 1> /dev/null ||
-tmux neww -n update -t MASTER
+tmux neww -d -n update -t MASTER
 
 tmux send-keys -t MASTER:update "brew update && brew upgrade" Enter
 
