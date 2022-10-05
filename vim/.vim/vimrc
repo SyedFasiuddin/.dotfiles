@@ -177,6 +177,20 @@ nnoremap <Right>    <nop>
 " ESC
 inoremap jj <Esc>
 
+inoremap <BS> <Nop>
+
+inoremap <C-k> <Nop>
+inoremap <C-l> <Nop>
+
+inoremap <C-k> <S-Left>
+inoremap <C-l> <S-Right>
+
+inoremap <S-Left> <Nop>
+inoremap <S-Right> <Nop>
+" in MacOS CTRL left and right switches between woekspaces
+inoremap <C-Left> <Nop>
+inoremap <C-Right> <Nop>
+
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 
@@ -187,3 +201,8 @@ hi! StatusLine guifg=#ffffff guibg=NONE
 let loaded_matchparen = 1
 
 set path+=**
+set wildignore+=**/node_modules/**
+set wildignore+=**/.git/**
+set wildignorecase
+set wildmenu
+set wildmode=list:full
