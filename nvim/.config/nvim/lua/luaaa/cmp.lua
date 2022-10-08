@@ -12,9 +12,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-vim.cmd[[set completeopt=menu,menuone,noselect]]
-vim.cmd[[set pumheight=8]]
-
 cmp.setup {
     snippet = {
     	expand = function(args)

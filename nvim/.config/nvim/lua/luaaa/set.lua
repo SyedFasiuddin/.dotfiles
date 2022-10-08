@@ -1,41 +1,52 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+local sets = {
+    number = true,
+    relativenumber = true,
 
-vim.opt.errorbells = false
+    errorbells = false,
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,           -- convert tabs to space
 
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+    smartindent = true,
+    autoindent = true,
 
-vim.opt.cursorline = true
-vim.opt.colorcolumn = "80"
+    cursorline = true,
+    colorcolumn = "80",
 
-vim.opt.scrolloff = 8
+    scrolloff = 8,              -- vertical
+    sidescrolloff = 8,          -- horizontal
 
--- this makes the cursur to remain as block in insert mode
--- vim.opt.guicursor = ""
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
+    -- guicursor = "",          -- block shaped cursor in insert modw
+    termguicolors = true,
+    background = "dark",
 
--- vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
+    numberwidth = 3,            -- number column width
+    signcolumn = "no",          -- glyph column in margin
+    wrap = true,
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+    splitbelow = true,
+    splitright = true,
 
+    mouse = "a",                -- enable mouse
 
-vim.opt.updatetime = 2000
-vim.opt.mouse = "a"
+    backup = false,
+    swapfile = false,
+    fileencoding = "utf-8",
 
-vim.opt.backup = false
-vim.opt.swapfile = false
-vim.opt.fileencoding = "utf-8"
+    ignorecase = true,
 
-vim.opt.ignorecase = true
+    timeoutlen = 200,           -- wait only for these many milisec for mapped sequence to complete
 
-vim.opt.timeoutlen = 200
+    -- completion menu, brought here from cmp.lua
+    completeopt = { "menu", "menuone", "noselect" },
+    pumheight = 8,
+
+    showmode = false,           -- ex line showing mode
+}
+
+for key, value in pairs(sets) do
+    vim.opt[key] = value
+end
 
