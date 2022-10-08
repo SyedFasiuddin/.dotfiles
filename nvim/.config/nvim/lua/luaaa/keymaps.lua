@@ -49,7 +49,7 @@ keymap("n", "<BS>", "<Nop>", opts)
 
 -- File explorer
 -- 30 means take 30% of space
-keymap("n", "<Leader>e", ":Lex 30<CR>", opts)
+-- keymap("n", "<Leader>e", ":Lex 30<CR>", opts)
 
 -----------------------------
 ---- Insert Mode Keymaps ----
@@ -59,26 +59,26 @@ keymap("n", "<Leader>e", ":Lex 30<CR>", opts)
 keymap("i", "jj", "<ESC>", opts)
 -- NOTE: <C-c> can also be used
 
--- Don't use arrow keys
--- default: backspace
-keymap("i", "<C-h>", "<Nop>", opts)
-keymap("i", "<C-h>", "<Left>", opts)
-keymap("i", "<Left>", "<Nop>", opts)
-
--- default: insert newline character <NL>
-keymap("i", "<C-j>", "<Nop>", opts)
-keymap("i", "<C-j>", "<Down>", opts)
-keymap("i", "<Down>", "<Nop>", opts)
-
--- default: I did't understand, :h i_CTRL-K
-keymap("i", "<C-k>", "<Nop>", opts)
-keymap("i", "<C-k>", "<Up>", opts)
-keymap("i", "<Up>", "<Nop>", opts)
-
--- default: I didn't understand, :h i_CTRL-L
-keymap("i", "<C-l>", "<Nop>", opts)
-keymap("i", "<C-l>", "<Right>", opts)
-keymap("i", "<Right>", "<Nop>", opts)
+-- -- Don't use arrow keys
+-- -- default: backspace
+-- keymap("i", "<C-h>", "<Nop>", opts)
+-- keymap("i", "<C-h>", "<Left>", opts)
+-- keymap("i", "<Left>", "<Nop>", opts)
+--
+-- -- default: insert newline character <NL>
+-- keymap("i", "<C-j>", "<Nop>", opts)
+-- keymap("i", "<C-j>", "<Down>", opts)
+-- keymap("i", "<Down>", "<Nop>", opts)
+--
+-- -- default: I did't understand, :h i_CTRL-K
+-- keymap("i", "<C-k>", "<Nop>", opts)
+-- keymap("i", "<C-k>", "<Up>", opts)
+-- keymap("i", "<Up>", "<Nop>", opts)
+--
+-- -- default: I didn't understand, :h i_CTRL-L
+-- keymap("i", "<C-l>", "<Nop>", opts)
+-- keymap("i", "<C-l>", "<Right>", opts)
+-- keymap("i", "<Right>", "<Nop>", opts)
 
 -----------------------------
 ---- Visual Mode Keymaps ----
