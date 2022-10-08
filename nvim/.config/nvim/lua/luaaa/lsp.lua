@@ -1,45 +1,49 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
+local lsp_ok, lspconfig = pcall(require, "lspconfig")
+if not lsp_ok then
     print("Failed to load lspconfig!!!")
     return
 end
 
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
+local installer_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not installer_ok then
     print("Failed to load nvim-lsp-installer!!!")
+else
+    lsp_installer.setup()
+end
+
+local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_ok then
+    print("Failed to load cmp_nvim_lsp")
     return
 end
 
-lsp_installer.setup()
-
-local keymaps = function()
-    -- 3rd parameter is passing reference to the function, we are not calling it
-    -- the function is called when the given key is pressed in given mode
-    -- buffer = 0 means what ever current buffer is
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = 0})
-    vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, {buffer = 0})
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, {buffer = 0})
-    vim.keymap.set("n", "<C-n>", vim.diagnostic.goto_next, {buffer = 0})
-    vim.keymap.set("n", "<C-p>", vim.diagnostic.goto_prev, {buffer = 0})
-end
-
--- local status_ok, cmp_nvim = pcall(require, "cmp_nvim_lsp")
--- if not status_ok then
---     print("Failed to load cmp_nvim_lsp!!!")
---     return
--- end
-
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
+local capabilities = cmp_nvim_lsp.update_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 
-lspconfig.tsserver.setup {
-    capabilities = capabilities,
-    on_attach = keymaps,
-}
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+
+local on_attach = function(_, bufnr)
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+
+    vim.keymap.set("n", "<space>f", function ()
+        vim.lsp.buf.format { async = true }
+    end, bufopts)
+
+end
 
 lspconfig.sumneko_lua.setup({
-    on_attach = keymaps,
+    on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         Lua = {
             runtime = {
@@ -53,7 +57,7 @@ lspconfig.sumneko_lua.setup({
                 globals = { "vim" },
             },
             workspace = {
-                -- Make the server aware of Neovim runtime files 
+                -- Make the server aware of Neovim runtime files
                 library = {
                     [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                     [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
@@ -63,16 +67,12 @@ lspconfig.sumneko_lua.setup({
     },
 })
 
-lspconfig.pyright.setup({
-    on_attach = keymaps,
-    capabilities = capabilities,
-})
 
-local ok, null_ls = pcall(require, "null-ls")
-if not ok then
-    print("Failed to load null-ls")
-    return
-end
+-- local ok, null_ls = pcall(require, "null-ls")
+-- if not ok then
+--     print("Failed to load null-ls")
+--     return
+-- end
 
 -- null_ls.setup({
 --     sources = {
@@ -83,18 +83,21 @@ end
 --     on_attach = keymaps,
 -- })
 
-lspconfig.texlab.setup({
-    on_attach = keymaps,
-    capabilities = capabilities,
-})
+local servers = {
+    "tsserver",
+    "pyright",
+    "texlab",
+    "clangd",
+    "bashls",
+    "intelephense",
+    "html",
+    "sqlls",
+}
 
-lspconfig.clangd.setup({
-    on_attach = keymaps,
-    capabilities = capabilities,
-})
-
-lspconfig.bashls.setup({
-    on_attach = keymaps,
-    capabilities = capabilities,
-})
+for _, value in pairs(servers) do
+    lspconfig[value].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
+end
 
