@@ -1,0 +1,22 @@
+#! /bin/sh
+
+# DIR=$(pwd | sed -E 's/^.*\///' 2> /dev/null)
+DIR=$(basename $(pwd) | sed -E 's/\./_/g')
+# tmux replaced dot in session names with underscores (default)
+
+if [[ -z $DIR ]]; then
+    exit 1
+fi
+
+tmux has-session -t "$DIR" 2> /dev/null ||
+tmux new -d -s $DIR
+
+if [[ -z $TMUX ]]; then
+    tmux -a -t $DIR
+else
+    tmux switch-client -t $DIR
+fi
+
+# as new session is being created in a folder that session's working directory
+# will be that folder
+
