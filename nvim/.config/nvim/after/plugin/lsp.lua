@@ -34,8 +34,9 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "<Leader>c", vim.lsp.buf.code_action, bufopts)
 
-    vim.keymap.set("n", "<space>f", function ()
+    vim.keymap.set("n", "<Leader>f", function()
         vim.lsp.buf.format { async = true }
     end, bufopts)
 
@@ -100,4 +101,3 @@ for _, value in pairs(servers) do
         capabilities = capabilities,
     }
 end
-
