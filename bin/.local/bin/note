@@ -1,11 +1,11 @@
 #! /bin/sh
 
-if [[ ! -d "$HOME/Journal" ]] ; then
+if [[ ! -d "$HOME/Documents/Journal" ]] ; then
     echo "Journal not found"
     exit 1
 fi
 
-cd "$HOME/Journal"
+cd "$HOME/Documents/Journal"
 
 year=`date "+%Y"`
 month=`date "+%m"`
