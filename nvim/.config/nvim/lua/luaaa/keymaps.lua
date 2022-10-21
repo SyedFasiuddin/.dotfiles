@@ -26,10 +26,10 @@ vim.g.mapleader = " "
 -----------------------------
 
 -- Window Navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Window Resize
 -- keymap("n", "<A-h>", ":vertical resize +2<CR>", opts)
@@ -37,6 +37,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- keymap("n", "<A-k>", ":resize -2<CR>", opts)
 -- keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
 -- on MacOS there is no Alt key, and I don't want to find a work around
+keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-j>", ":resize -2<CR>", opts)
+keymap("n", "<C-k>", ":resize +2<CR>", opts)
+keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
 
 -- Don't use arrow keys
 keymap("n", "<Up>", "<Nop>", opts)
