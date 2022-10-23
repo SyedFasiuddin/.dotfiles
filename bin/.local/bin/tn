@@ -9,7 +9,21 @@ if [[ -z $DIR ]]; then
 fi
 
 tmux has-session -t "$DIR" 2> /dev/null ||
-tmux new -d -s $DIR
+(   tmux new -d -s $DIR
+
+    tmux rename-window -t $DIR:1 server
+    tmux split-window -h -t $DIR:server
+
+    tmux neww -d -n vi -t $DIR
+    tmux send-keys -t $DIR:vi 'nvim' Enter
+
+    tmux neww -d -n misc -t $DIR
+
+    if [[ -d ".git" ]] ; then
+        tmux neww -d -n git -t $DIR
+        tmux send-keys -t $DIR:git 'lazygit' Enter
+    fi
+)
 
 if [[ -z $TMUX ]]; then
     tmux -a -t $DIR
