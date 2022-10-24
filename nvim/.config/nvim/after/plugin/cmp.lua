@@ -12,34 +12,34 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
-cmp.setup {
+cmp.setup({
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
         end,
     },
     sources = {
-        {name = "nvim_lsp"},
-        {name = "luasnip"},
-        {name = "buffer"},
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
     },
     mapping = {
-    -- Default are C-n and C-p of vim and nvim, which are enabled in telescope as well,
-    -- so to keep it consistent, removing these and using them.
-    -- ["<"] = cmp.mapping.select_prev_item(),
-    -- [">"] = cmp.mapping.select_next_item(),
+        -- Default are C-n and C-p of vim and nvim, which are enabled in telescope as well,
+        -- so to keep it consistent, removing these and using them.
+        -- ["<"] = cmp.mapping.select_prev_item(),
+        -- [">"] = cmp.mapping.select_next_item(),
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ["<CR>"] = cmp.mapping.confirm({select = false}),
-        ["<C-Space>"] = cmp.mapping.complete(),     -- bring up completion menu
-        ["<C-e>"] = cmp.mapping.abort(),            -- close completion menu
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<C-Space>"] = cmp.mapping.complete(), -- bring up completion menu
+        ["<C-e>"] = cmp.mapping.abort(), -- close completion menu
     },
     confirm_opts = {
-    	behavior = cmp.ConfirmBehavior.Replace,
-    	select = false,
-  	},
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false,
+    },
 
     -- window = {
     --     documentation = {
@@ -60,14 +60,13 @@ cmp.setup {
     -- },
 
     formatting = {
-        format = function (entry, vim_item)
+        format = function(entry, vim_item)
             vim_item.menu = ({
                 buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snip]",
             })[entry.source.name]
             return vim_item
-        end
+        end,
     },
-}
-
+})

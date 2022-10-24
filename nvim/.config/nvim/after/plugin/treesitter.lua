@@ -4,7 +4,7 @@ if not status_ok then
     return
 end
 
-treesitter.setup {
+treesitter.setup({
     ensure_installed = { "c", "lua", "javascript", "python" },
     auto_install = true,
     indent = { enable = false },
@@ -16,5 +16,4 @@ treesitter.setup {
         enable = true,
         extended_mode = true,
     },
-}
-
+})
