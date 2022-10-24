@@ -1,126 +1,126 @@
-" a - enter insertion mode after current character
-" b - back word
-" c - change command
-" d - delete command
-" e - end of word
-" f - find command - find character after cursor in current line
-" g - UNBOUND i.e. free
-" h - move left one character
-" i - enter insertion mode before current character
-" j - move down one line
-" k - move up one line
-" l - move right one character
-" m - mark current line and position
-" n - repeat last search
-" o - open line below and enter insertion mode
-" p - put buffer after cursor 
-" q - UNBOUND
-" r - replace single character at cursor
-" s - substitute single character with 
-" t - same as "f" but cursor moves to just before found character
-" u - undo
-" v - UNBOUND
-" w - move forward one word
-" x - delete single character
-" y - yank command
-" z - position current line command
+a - enter insertion mode after current character
+b - back word
+c - change command
+d - delete command
+e - end of word
+f - find command - find character after cursor in current line
+g - UNBOUND i.e. free
+h - move left one character
+i - enter insertion mode before current character
+j - move down one line
+k - move up one line
+l - move right one character
+m - mark current line and position
+n - repeat last search
+o - open line below and enter insertion mode
+p - put buffer after cursor
+q - UNBOUND
+r - replace single character at cursor
+s - substitute single character with
+t - same as "f" but cursor moves to just before found character
+u - undo
+v - UNBOUND
+w - move forward one word
+x - delete single character
+y - yank command
+z - position current line command
 
 
-" A - enter insertion mode after end of line
-" B - move back one word
-" C - change to end of line
-" D - delete to end of line
-" E - move to end of word
-" F - backwards version of "f"
-" G - goto line number that is prefixed, if none go to end of file
-" H - home cursor - goto first line on screen
-" I - enter insertion mode before first non-whitespace character
-" J - join current line with next line
-" K - UNBOUND / show man pages
-" L - goto last line on screen 
-" M - goto middle line on screen
-" N - repeat last search but in opposite direction of original search
-" O - open line above and enter insertion mode
-" P - put buffer before cursor
-" Q - Leave visual mode
-" R - replace mode - replace upto end of line
-" S - substitute entire line - deletes entire line and enter insert mode
-" T - backwards version of "t"
-" U - restore line to state when cursor moved into it
-" V - UNBOUND
-" W - foreword word
-" X - delete backwards single character
-" Y - yank entire line
-" Z - first half of quick save and quit
+A - enter insertion mode after end of line
+B - move back one word
+C - change to end of line
+D - delete to end of line
+E - move to end of word
+F - backwards version of "f"
+G - goto line number that is prefixed, if none go to end of file
+H - home cursor - goto first line on screen
+I - enter insertion mode before first non-whitespace character
+J - join current line with next line
+K - UNBOUND / show man pages
+L - goto last line on screen
+M - goto middle line on screen
+N - repeat last search but in opposite direction of original search
+O - open line above and enter insertion mode
+P - put buffer before cursor
+Q - Leave visual mode
+R - replace mode - replace upto end of line
+S - substitute entire line - deletes entire line and enter insert mode
+T - backwards version of "t"
+U - restore line to state when cursor moved into it
+V - UNBOUND
+W - foreword word
+X - delete backwards single character
+Y - yank entire line
+Z - first half of quick save and quit
 
 
-" 0 - move to column zero
-" 1-9 - registers and stuff ?????
-"   - (SPACE) move one character right
-" ! - shell command filter
-" @ - vi eval buffer name (a-z)
-" # - UNBOUND
-" $ - move to end of line
-" % - matches with the neareset [],{},() on line to its match
-" ^ - moves to first non white space character of line
-" & - repeat last ex substitution not including modifiers
-" * - UNBOUND
-" ( - move to previuos sentence
-" ) - move to next sentence
-" \ - UNBOUND
-" | - move to column zero or to the col no that is given as prefix
-" - - move to first non-whitesapce of previous line
-" _ - similar to ^ but uses numeric prefix oddly
-" = - UNBOUND
-" + - move to first non-whitespace of next line
-" [ - move to previoud "{}" section
-" ] - move to next "{}" section
-" { - move to previous blank line separated section
-" } - move to next blank line separated section
-" ; - repeat last f, F, t, T command
-" ' - move to marked line, first non-whitespace 
-" ` - move to marked line, memorised column
-" : - enter a command
-" " - access numbered buffer, load or access letterd buffers 
-" ~ - toggle case of current character and move cursor forward
-" , - reverse direction of last f, F, t, T command
-" . - repeat last text changing command
-" / - search forwards
-" ? - search backwards
-" < - unindent command
-" > - indent command
+0 - move to column zero
+1-9 - registers and stuff ?????
+  - (SPACE) move one character right
+! - shell command filter
+@ - vi eval buffer name (a-z)
+# - UNBOUND
+$ - move to end of line
+% - matches with the neareset [],{},() on line to its match
+^ - moves to first non white space character of line
+& - repeat last ex substitution not including modifiers
+* - UNBOUND
+( - move to previuos sentence
+) - move to next sentence
+\ - UNBOUND
+| - move to column zero or to the col no that is given as prefix
+- - move to first non-whitesapce of previous line
+_ - similar to ^ but uses numeric prefix oddly
+= - UNBOUND
++ - move to first non-whitespace of next line
+[ - move to previoud "{}" section
+] - move to next "{}" section
+{ - move to previous blank line separated section
+} - move to next blank line separated section
+; - repeat last f, F, t, T command
+' - move to marked line, first non-whitespace
+` - move to marked line, memorised column
+: - enter a command
+" - access numbered buffer, load or access letterd buffers
+~ - toggle case of current character and move cursor forward
+, - reverse direction of last f, F, t, T command
+. - repeat last text changing command
+/ - search forwards
+? - search backwards
+< - unindent command
+> - indent command
 
 
-" ^A - UNBOUND
-" ^B - back (up) one screen 
-" ^C - UNBOUND
-" ^D - down half screen
-" ^E - scroll text up
-" ^F - foreward (down) one screen
-" ^G - show status
-" ^H - backspace 
-" ^I - TAB / UNBOUND  
-" ^J - line down
-" ^K - UNBOUND
-" ^L - refresh screen
-" ^M - (CR) move to first non-whitespace of next line
-" ^N - move down one line
-" ^O - UNBOUND
-" ^P - move up one line
-" ^Q - XON
-" ^R - does nothing (varients: redraw, multiple-redo)
-" ^S - XOFF
-" ^T - go to file/code you were editing before the last tag jump
-" ^U - up half screen
-" ^V - UNBOUND / Visual block mode
-" ^W - UNBOUND
-" ^X - UNBOUND
-" ^Y - scroll text down
-" ^Z - suspend program
+^A - UNBOUND
+^B - back (up) one screen
+^C - UNBOUND
+^D - down half screen
+^E - scroll text up
+^F - foreward (down) one screen
+^G - show status
+^H - backspace
+^I - TAB / UNBOUND
+^J - line down
+^K - UNBOUND
+^L - refresh screen
+^M - (CR) move to first non-whitespace of next line
+^N - move down one line
+^O - UNBOUND
+^P - move up one line
+^Q - XON
+^R - does nothing (varients: redraw, multiple-redo)
+^S - XOFF
+^T - go to file/code you were editing before the last tag jump
+^U - up half screen
+^V - UNBOUND / Visual block mode
+^W - UNBOUND
+^X - UNBOUND
+^Y - scroll text down
+^Z - suspend program
 
-" ^[ - (ESC) cancel started command; otherwise UNBOUND
-" ^] - use word as cursor to lookup function in tags file, edit the file/code
-" ^\ - leave visual mode (goto ex mode)
-" ^^ - switch file buffers
-" ^_ - UNBOUND
-" ^? - (DELETE) UNBOUND
+^[ - (ESC) cancel started command; otherwise UNBOUND
+^] - use word as cursor to lookup function in tags file, edit the file/code
+^\ - leave visual mode (goto ex mode)
+^^ - switch file buffers
+^_ - UNBOUND
+^? - (DELETE) UNBOUND
