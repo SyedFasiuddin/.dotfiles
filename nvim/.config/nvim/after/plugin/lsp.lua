@@ -4,11 +4,19 @@ if not lsp_ok then
     return
 end
 
-local installer_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not installer_ok then
-    print("Failed to load nvim-lsp-installer!!!")
+-- local installer_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+-- if not installer_ok then
+--     print("Failed to load nvim-lsp-installer!!!")
+-- else
+--     lsp_installer.setup()
+-- end
+
+local mason_lsp_ok, mason_lsp = pcall(require, "mason-lspconfig")
+if not mason_lsp_ok then
+    print("Failed to load mason-lspconfig.nvim!!!")
+    return
 else
-    lsp_installer.setup()
+    mason_lsp.setup()
 end
 
 local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -68,21 +76,19 @@ lspconfig.sumneko_lua.setup({
     },
 })
 
+local ok, null_ls = pcall(require, "null-ls")
+if not ok then
+    print("Failed to load null-ls")
+    return
+end
 
--- local ok, null_ls = pcall(require, "null-ls")
--- if not ok then
---     print("Failed to load null-ls")
---     return
--- end
-
--- null_ls.setup({
---     sources = {
---        null_ls.builtins.formatting.stylua,
---        null_ls.builtins.diagnostics.eslint,
---        null_ls.builtins.completion.spell,
---     },
---     on_attach = keymaps,
--- })
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.stylua,
+        -- null_ls.builtins.diagnostics.eslint,
+        -- null_ls.builtins.completion.spell,
+    },
+})
 
 local servers = {
     "tsserver",
