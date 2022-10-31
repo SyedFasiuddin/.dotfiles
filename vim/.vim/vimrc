@@ -34,7 +34,7 @@ set scrolloff=8
 
 set nocompatible
 " set backspace=2
-set wildmode=full
+" set wildmode=full
 set pumheight=5         " this limits the popup to show 5 items
 set complete+=k         " this tells vim to look up the dictionary words
 set completeopt=menuone,noselect
@@ -127,8 +127,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [d <Plug>(coc-diagnostic-prev)
-nmap <silent> ]d <Plug>(coc-diagnostic-next)
+" nmap <silent> [d <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]d <Plug>(coc-diagnostic-next)
 " :h [d and :h ]d
 
 " GoTo code navigation.
@@ -205,7 +205,12 @@ set path+=**
 set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignorecase
+set wildoptions=pum
 set wildmenu
 " set wildmode=list:full
 
 set fillchars=""
+
+set list
+set listchars=trail:-
+autocmd BufWritePre *.txt :%s/\s\+$//e
