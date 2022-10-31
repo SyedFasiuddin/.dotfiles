@@ -1,8 +1,8 @@
 call plug#begin()
 
 Plug 'SirVer/ultisnips'
-Plug 'lervag/vimtex'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'lervag/vimtex'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plug 'itchyny/lightline.vim'
 Plug 'junegunn/limelight.vim'
@@ -34,13 +34,14 @@ set scrolloff=8
 
 set nocompatible
 " set backspace=2
-set wildmode=longest,list,full
+set wildmode=full
 set pumheight=5         " this limits the popup to show 5 items
 set complete+=k         " this tells vim to look up the dictionary words
-set completeopt=menuone,longest
+set completeopt=menuone,noselect
 set shortmess+=c        " this tells not to show msg in bottom while selecting items from popup menu
 set spell
 set spelllang=en_us
+set dictionary+=/usr/share/dict/words
 
 set textwidth=80        " shorthand tw
 set formatoptions+=t    " shorthand fo
@@ -122,7 +123,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " coc configurations
 " inoremap <expr> > pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> < pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+" inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -205,4 +206,6 @@ set wildignore+=**/node_modules/**
 set wildignore+=**/.git/**
 set wildignorecase
 set wildmenu
-set wildmode=list:full
+" set wildmode=list:full
+
+set fillchars=""
