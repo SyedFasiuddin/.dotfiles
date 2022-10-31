@@ -26,7 +26,7 @@ tmux has-session -t "$DIR" 2> /dev/null ||
 )
 
 if [[ -z $TMUX ]]; then
-    tmux -a -t $DIR
+    tmux a -t $DIR
 else
     tmux switch-client -t $DIR
 fi
