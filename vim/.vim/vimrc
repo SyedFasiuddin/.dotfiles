@@ -57,14 +57,14 @@ set noshowmode
 set noswapfile
 set showcmd
 
-set laststatus=2        " to display statusline 
-set statusline=
-set statusline+=\ %f    " relative file name
-set statusline+=\ %M    " file modified or not
-set statusline+=\%=     " right side separator
-set statusline+=%{wordcount().words} " display no of words in curr buf
+" set laststatus=2        " to display statusline
+" set statusline=
+" set statusline+=\ %f    " relative file name
+" set statusline+=\ %M    " file modified or not
+" set statusline+=\%=     " right side separator
+" set statusline+=%{wordcount().words} " display no of words in curr buf
 " set statusline+=\ %L    " total number of line in file
-set statusline+=\ [%n]  " buffer number enclosed in brackets 
+" set statusline+=\ [%n]  " buffer number enclosed in brackets
 " set laststatus=2
 " set statusline=
 " set statusline+=%#NonText#
