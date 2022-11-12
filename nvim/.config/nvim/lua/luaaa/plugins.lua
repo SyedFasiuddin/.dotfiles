@@ -8,7 +8,9 @@ end
 packer.init({
     display = {
         open_fn = function()
-            return require("packer.util").float({ border = "single" })
+            return require("packer.util").float({
+                border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            })
         end,
     },
 })
@@ -61,6 +63,8 @@ return packer.startup(function(use)
             require("Comment").setup()
         end,
     })
+
+    use("tpope/vim-sleuth")
 
     -- colorschemes
     use("luisiacc/gruvbox-baby")
