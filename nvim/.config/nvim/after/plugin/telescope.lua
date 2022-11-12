@@ -89,6 +89,11 @@ vim.keymap.set('n', ';r',
             additional_args = function()
                 return { "--hidden" }
             end,
+            file_ignore_patterns = {
+                ".git",
+                "node_modules",
+                "*-lock.*",
+            },
         })
     end
 )
