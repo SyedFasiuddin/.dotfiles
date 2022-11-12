@@ -50,7 +50,7 @@ COLORS_GIT_STATUS_UNSTAGED=yellow
  PROMPT='$(current_dir)$(return_status)'
 
 # Right Prompt
- RPROMPT='$(git_status)'
+# RPROMPT='$(git_status)'
 
 # Enable redrawing of prompt variables
  setopt promptsubst
