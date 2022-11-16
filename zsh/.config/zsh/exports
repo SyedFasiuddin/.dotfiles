@@ -10,3 +10,5 @@ export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
 # This is for the Z directory jumper database file
 # It defaults to home directory which I donot want to be cluttered
 export _Z_DATA="$XDG_CACHE_HOME/z/.z"
+
+export PATH="$PATH:$HOME/.local/bin"

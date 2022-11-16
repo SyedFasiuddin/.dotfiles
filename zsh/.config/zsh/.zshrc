@@ -9,10 +9,6 @@ if [ -f ~/.config/zsh/aliases ]; then
     . ~/.config/zsh/aliases
 fi
 
-if [ -f ~/.config/zsh/func ]; then
-    . ~/.config/zsh/func
-fi
-
 # nvm stuff
 nvm_node(){
     export NVM_DIR="$HOME/.nvm"
@@ -112,6 +108,4 @@ source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 # elapsed=$(($now-$timer))
 # echo $elapsed
 # zprof
-
-PATH="${PATH:+${PATH}:}$HOME/.local/bin"
 

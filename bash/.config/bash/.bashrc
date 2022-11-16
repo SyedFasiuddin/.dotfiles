@@ -89,16 +89,12 @@
 # # colored GCC warnings and errors
 # #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 # 
-if [ -f ~/.config/bash/aliases ]; then
-    . ~/.config/bash/aliases
+if [ -f ~/.config/zsh/aliases ]; then
+    . ~/.config/zsh/aliases
 fi
 
-if [ -f ~/.config/bash/exports ]; then
-    . ~/.config/bash/exports
-fi
-
-if [ -f ~/.config/bash/tmuxFunctions ]; then
-    . ~/.config/bash/tmuxFunctions
+if [ -f ~/.config/zsh/exports ]; then
+    . ~/.config/zsh/exports
 fi
 
 # # enable programmable completion features (you don't need to enable
