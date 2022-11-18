@@ -4,4 +4,14 @@ if not status_ok then
     return
 end
 
-mason.setup()
+mason.setup({
+    ui = {
+        -- border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            -- package_uninstalled = "✗",
+        },
+    },
+})
