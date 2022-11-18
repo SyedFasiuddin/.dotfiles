@@ -66,6 +66,8 @@ return packer.startup(function(use)
 
     use("tpope/vim-sleuth")
 
+    use("mfussenegger/nvim-jdtls")
+
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("gruvbox-community/gruvbox")
