@@ -43,7 +43,8 @@ COLORS_GIT_STATUS_STAGED=red
 COLORS_GIT_STATUS_UNSTAGED=yellow
 
 # Left Prompt
- PROMPT='$(current_dir)$(return_status)'
+# PROMPT='$(current_dir)$(return_status)'
+PROMPT='$(current_dir)'
 
 # Right Prompt
 # RPROMPT='$(git_status)'
