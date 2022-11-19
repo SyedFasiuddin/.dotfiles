@@ -105,6 +105,15 @@ fi
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
+########################################
+# zsh history stuff
+HISTSIZE=1000000000
+HISTFILESIZE=1000000000
+SAVEHIST=1000
+HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+
 # now=$(gdate "+%N")
 # elapsed=$(($now-$timer))
 # echo $elapsed
