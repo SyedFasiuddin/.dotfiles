@@ -10,6 +10,8 @@ packer_compiled.lua
 # vim
 **/plugged/
 **/autoload/
+**/spell/
+**/.netrwhist
 
 # zsh
 **/.zcompdump
