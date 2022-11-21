@@ -1,10 +1,5 @@
 call plug#begin()
 
-Plug 'SirVer/ultisnips'
-" Plug 'lervag/vimtex'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Plug 'itchyny/lightline.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 
@@ -167,6 +162,8 @@ noremap <A-l> :vertical resize -2<CR>
 nnoremap <leader>s :source ~/.vim/vimrc<CR>
 nnoremap <F2> :Goyo<CR>
 inoremap <F2> <ESC>:Goyo<CR>a
+inoremap <F3> <ESC>:r! date "+\%H:\%M"<CR>kddA<C-J><C-J>
+inoremap <F4> <ESC>:r! date "+\%a, \%d \%b \%Y"<CR>I\|<ESC>A\|<ESC>kddA<C-J><C-J>
 
 " trying to not use these keys so removed their bindings
 nnoremap Q          <nop> " enter ex mode
