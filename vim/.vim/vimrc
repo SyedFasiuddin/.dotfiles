@@ -122,50 +122,36 @@ syntax enable
 ""  Keymaps  ""
 """""""""""""""
 
-noremap <space> <nop>
+noremap  <space>    <Nop>
+inoremap <BS>       <Nop>
+inoremap jj         <ESC>
+
 let mapleader=" "
 
-" Pane navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 " Pane resize
-noremap <A-h> :vertical resize +2<CR>
-noremap <A-j> :resize +2<CR>
-noremap <A-k> :resize -2<CR>  
-noremap <A-l> :vertical resize -2<CR>
+noremap <C-h>       :vertical resize +2<CR>
+noremap <C-j>       :resize +2<CR>
+noremap <C-k>       :resize -2<CR>
+noremap <C-l>       :vertical resize -2<CR>
 
-nnoremap <leader>s :source ~/.vim/vimrc<CR>
-nnoremap <F2> :Goyo<CR>
-inoremap <F2> <ESC>:Goyo<CR>a
-inoremap <F3> <ESC>:r! date "+\%H:\%M"<CR>kddA<C-J><C-J>
-inoremap <F4> <ESC>:r! date "+\%a, \%d \%b \%Y"<CR>I\|<ESC>A\|<ESC>kddA<C-J><C-J>
+nnoremap <leader>s  :source ~/.vim/vimrc<CR>
+nnoremap <F2>       :Goyo<CR>
+inoremap <F2>       <ESC>:Goyo<CR>a
+inoremap <F3>       <ESC>:r! date "+\%H:\%M"<CR>kddA<C-J><C-J>
+inoremap <F4>       <ESC>:r! date "+\%a, \%d \%b \%Y"<CR>I\|<ESC>A\|<ESC>kddA<C-J><C-J>
 
 " trying to not use these keys so removed their bindings
-nnoremap Q          <nop> " enter ex mode
-nnoremap <Up>       <nop>
-nnoremap <Down>     <nop>
-nnoremap <Left>     <nop>
-nnoremap <Right>    <nop>
+nnoremap Q          <Nop> " enter ex mode
+nnoremap <Up>       <Nop>
+nnoremap <Down>     <Nop>
+nnoremap <Left>     <Nop>
+nnoremap <Right>    <Nop>
 
-" ESC
-inoremap jj <Esc>
-
-inoremap <BS> <Nop>
-
-inoremap <C-k> <Nop>
-inoremap <C-l> <Nop>
-
-inoremap <C-k> <S-Left>
-inoremap <C-l> <S-Right>
-
-inoremap <S-Left> <Nop>
-inoremap <S-Right> <Nop>
+inoremap <S-Left>   <Nop>
+inoremap <S-Right>  <Nop>
 " in MacOS CTRL left and right switches between woekspaces
-inoremap <C-Left> <Nop>
-inoremap <C-Right> <Nop>
+inoremap <C-Left>   <Nop>
+inoremap <C-Right>  <Nop>
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
