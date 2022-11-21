@@ -12,7 +12,9 @@ packer_compiled.lua
 **/autoload/
 
 # zsh
-**/.DS_*
 **/.zcompdump
 **/.zsh_sessions/
 **/.zsh_history
+
+# MacOS
+**/.DS_*
