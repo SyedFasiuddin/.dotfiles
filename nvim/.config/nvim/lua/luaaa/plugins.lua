@@ -29,7 +29,6 @@ return packer.startup(function(use)
     -- use "saadparwaiz1/cmp_luasnip"
 
     use("neovim/nvim-lspconfig")
-    -- use "williamboman/nvim-lsp-installer"
     use("williamboman/mason.nvim")
     use("williamboman/mason-lspconfig.nvim")
 
@@ -46,10 +45,6 @@ return packer.startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     })
-    -- use({
-    --     "alvarosevilla95/luatab.nvim",
-    --     requires = "kyazdani42/nvim-web-devicons",
-    -- })
 
     use({
         "nvim-telescope/telescope.nvim",
@@ -70,6 +65,4 @@ return packer.startup(function(use)
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("gruvbox-community/gruvbox")
-    use("folke/tokyonight.nvim")
-    use("Shatur/neovim-ayu")
 end)
