@@ -47,6 +47,11 @@ local on_attach = function(_, bufnr)
     end, bufopts)
 end
 
+-- Make runtime files discoverable to the server
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, 'lua/?.lua')
+table.insert(runtime_path, 'lua/?/init.lua')
+
 lspconfig.sumneko_lua.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -56,7 +61,7 @@ lspconfig.sumneko_lua.setup({
                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
                 version = "LuaJIT",
                 -- Setup your lua path
-                path = vim.split(package.path, ";"),
+                path = runtime_path,
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
@@ -65,10 +70,10 @@ lspconfig.sumneko_lua.setup({
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+                    vim.api.nvim_get_runtime_file("", true),
                 },
             },
+            telemetry = { enable = false },
         },
     },
 })
