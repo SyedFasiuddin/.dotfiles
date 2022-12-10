@@ -101,6 +101,7 @@ local servers = {
     "intelephense",
     "html",
     "sqlls",
+    "rust_analyzer",
 }
 
 for _, value in pairs(servers) do
