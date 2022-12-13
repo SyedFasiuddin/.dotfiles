@@ -7,31 +7,48 @@ fi
 
 cd "$HOME/Documents/Journal"
 
-year=`date "+%Y"`
-month=`date "+%m"`
-day=`date "+%d"`
+date=(`date "+%Y %m %b %d %a %H %M"`)
+year=${date[0]}
+month_no=${date[1]}
+month_str=${date[2]}
+day_no=${date[3]}
+day_str=${date[4]}
+hour=${date[5]}
+min=${date[6]}
 
 if [[ -d "$year" ]] ; then
-    if [[ ! -d "$year/$month" ]] ; then
-        mkdir "$year/$month"
+    if [[ ! -d "$year/$month_no" ]] ; then
+        mkdir "$year/$month_no"
     fi
 else
-    mkdir "$year" "$year/$month"
+    mkdir "$year" "$year/$month_no"
 fi
+
+file="$year/$month_no/$day_no.txt"
+
+if [[ ! -f "$file" ]] ; then
+    echo "|$day_str, $day_no $month_str $year|" >> $file
+fi
+
+echo "" >> $file
+echo "$hour:$min" >> $file
+echo "" >> $file
 
 if [[ "$TERM_PROGRAM" = tmux ]] ; then
     if ! tmux has-session -t MASTER 2> /dev/null ; then
-        echo "MASTER session does not exist"
-        exit 1
+        tmux new-session -d -s MASTER
+        tmux new-window -d -n note -t MASTER
+        tmux send-keys -t MASTER:note "vi $file" Enter
+        tmux switch-client -t MASTER:note
     fi
 
     tmux list-windows -t MASTER | grep note 1> /dev/null ||
     ( tmux neww -d -n note -t MASTER &&
-    tmux send-keys -t MASTER:note "vi \"$year/$month/$day.txt\"" Enter )
+    tmux send-keys -t MASTER:note "vi $file" Enter )
 
     tmux switch-client -t MASTER:note
 
 else
-    vi "$year/$month/$day.txt"
+    vi $file
 fi
 
