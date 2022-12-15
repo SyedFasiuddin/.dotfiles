@@ -5,9 +5,6 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" set number
-" set relativenumber
-
 set visualbell
 set noerrorbells
 
@@ -41,10 +38,6 @@ set dictionary+=/usr/share/dict/words
 set textwidth=80        " shorthand tw
 set formatoptions+=t    " shorthand fo
 
-" to change the cursor from block to bar in insert mode
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-
 set splitbelow
 set splitright
 
@@ -52,21 +45,10 @@ set noshowmode
 set noswapfile
 set showcmd
 
-" set laststatus=2        " to display statusline
-" set statusline=
-" set statusline+=\ %f    " relative file name
-" set statusline+=\ %M    " file modified or not
-" set statusline+=\%=     " right side separator
-" set statusline+=%{wordcount().words} " display no of words in curr buf
-" set statusline+=\ %L    " total number of line in file
-" set statusline+=\ [%n]  " buffer number enclosed in brackets
-" set laststatus=2
-" set statusline=
-" set statusline+=%#NonText#
-
 colorscheme slate
 set background=dark
 set termguicolors
+hi! Normal ctermbg=NONE guibg=NONE
 
 " limelight configurations
 " let g:limelight_conceal_ctermfg = 'gray'
@@ -150,11 +132,6 @@ inoremap <S-Right>  <Nop>
 " in MacOS CTRL left and right switches between woekspaces
 inoremap <C-Left>   <Nop>
 inoremap <C-Right>  <Nop>
-
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
-
-hi! StatusLine guifg=#ffffff guibg=NONE
 
 " the braces that are highlighted are due to this default vim plugin which is
 " disabled using this line
