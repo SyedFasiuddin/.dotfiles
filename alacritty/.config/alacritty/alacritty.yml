@@ -1,17 +1,13 @@
 live_config_reload: true
 
 window:
-  # dimensions:
-    # columns: 180
-    # lines: 60
   opacity: 0.8
   padding:
     x: 12
     y: 12
   dynamic_padding: true
-  startup_mode: Windowed              # macOS only
-  decorations: buttonless             # macOS only
-  #decorations: none                  # for others only
+  startup_mode: Windowed
+  decorations: buttonless
 
 scrolling:
   history: 10000
@@ -21,7 +17,6 @@ env:
   TERM: xterm-256color
 
 shell:
-#  program: cmd 
   program: /opt/homebrew/bin/tmux
   args:
     - new
@@ -44,31 +39,16 @@ cursor:
   style: Block
   blinking: Always
   unfocused_hollow: true
-  # hide_when_typing: true
 
 mouse:
   hide_when_typing: true
 
 key_bindings:
     - { key: Return,   mods: Command,       action: ToggleFullscreen             }
-  #  - { key: Equals,   mods: Control,       action: IncreaseFontSize             }
-  #  - { key: Minus,    mods: Control,       action: DecreaseFontSize             }
-  #  - { key: Q,        mods: Alt,           action: Quit                         }
-
-
-#######################################
-##      START OF COLOR SCHEMES       ##
-#######################################
-
-# Dim colors
-#
-# If the dim colors are not set, they will be calculated automatically based
-# on the `normal` colors.
 
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the below list. ##
 ## ###################################################################
-# Available themes are:
 
 import:
   - ~/.config/alacritty/colorschemes/ayu-dark.yml
@@ -92,7 +72,3 @@ import:
 # - ~/.config/alacritty/colorschemes/tokyonight-storm.yml
 # - ~/.config/alacritty/colorschemes/tokyonight.yml
 # - ~/.config/alacritty/colorschemes/tomorrow-night.yml
-
-#######################################
-##       END OF COLOR SCHEMES        ##
-#######################################
