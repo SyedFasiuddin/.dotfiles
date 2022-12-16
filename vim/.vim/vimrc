@@ -50,14 +50,10 @@ set background=dark
 set termguicolors
 hi! Normal ctermbg=NONE guibg=NONE
 
-" limelight configurations
-" let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
-" let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient = 0.7
 
-" goyo configurations
 let g:goyo_width=80
 let g:goyo_height="60%"
 
@@ -96,57 +92,20 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set encoding=utf-8
-
-syntax enable
-
 """""""""""""""
 ""  Keymaps  ""
 """""""""""""""
 
-noremap  <space>    <Nop>
 inoremap <BS>       <Nop>
 inoremap jj         <ESC>
 
-let mapleader=" "
-
-" Pane resize
-noremap <C-h>       :vertical resize +2<CR>
-noremap <C-j>       :resize +2<CR>
-noremap <C-k>       :resize -2<CR>
-noremap <C-l>       :vertical resize -2<CR>
-
-nnoremap <leader>s  :source ~/.vim/vimrc<CR>
 nnoremap <F2>       :Goyo<CR>
 inoremap <F2>       <ESC>:Goyo<CR>a
 
-" trying to not use these keys so removed their bindings
-nnoremap Q          <Nop> " enter ex mode
-nnoremap <Up>       <Nop>
-nnoremap <Down>     <Nop>
-nnoremap <Left>     <Nop>
-nnoremap <Right>    <Nop>
-
-inoremap <S-Left>   <Nop>
-inoremap <S-Right>  <Nop>
-" in MacOS CTRL left and right switches between woekspaces
-inoremap <C-Left>   <Nop>
-inoremap <C-Right>  <Nop>
-
-" the braces that are highlighted are due to this default vim plugin which is
-" disabled using this line
 let loaded_matchparen = 1
-
-set path+=**
-set wildignore+=**/node_modules/**
-set wildignore+=**/.git/**
-set wildignorecase
-set wildoptions=pum
-set wildmenu
-" set wildmode=list:full
-
-set fillchars=""
 
 set list
 set listchars=trail:-
 autocmd BufWritePre *.txt :%s/\s\+$//e
+
+set foldmethod=marker
