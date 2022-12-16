@@ -24,12 +24,6 @@ vim.g.mapleader = " "
 ---- Normal Mode Keymaps ----
 -----------------------------
 
--- Window Navigation
--- keymap("n", "<C-h>", "<C-w>h", opts)
--- keymap("n", "<C-j>", "<C-w>j", opts)
--- keymap("n", "<C-k>", "<C-w>k", opts)
--- keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Window Resize
 -- keymap("n", "<A-h>", ":vertical resize +2<CR>", opts)
 -- keymap("n", "<A-j>", ":resize +2<CR>", opts)
@@ -60,27 +54,3 @@ keymap("i", "jj", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
-
------------------------------
----- Vim hard mode like  ----
------------------------------
-
-keymap("n", "<Up>"    , "<Nop>", opts)
-keymap("n", "<Down>"  , "<Nop>", opts)
-keymap("n", "<Right>" , "<Nop>", opts)
-keymap("n", "<Left>"  , "<Nop>", opts)
-keymap("n", "<Enter>" , "<Nop>", opts)
-keymap("n", "<BS>"    , "<Nop>", opts)
-
-keymap("v", "<Up>"    , "<Nop>", opts)
-keymap("v", "<Down>"  , "<Nop>", opts)
-keymap("v", "<Right>" , "<Nop>", opts)
-keymap("v", "<Left>"  , "<Nop>", opts)
-keymap("v", "<Enter>" , "<Nop>", opts)
-keymap("v", "<BS>"    , "<Nop>", opts)
-
-keymap("i", "<Up>"    , "<Nop>", opts)
-keymap("i", "<Down>"  , "<Nop>", opts)
-keymap("i", "<Right>" , "<Nop>", opts)
-keymap("i", "<Left>"  , "<Nop>", opts)

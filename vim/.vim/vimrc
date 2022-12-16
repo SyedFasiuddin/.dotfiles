@@ -2,6 +2,7 @@ call plug#begin()
 
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'SyedFasiuddin/nop.vim'
 
 call plug#end()
 
@@ -84,9 +85,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 filetype plugin indent on
 
-inoremap <BS>       <Nop>
 inoremap jj         <ESC>
-
 nnoremap <F2>       :Goyo<CR>
 inoremap <F2>       <ESC>:Goyo<CR>a
 
