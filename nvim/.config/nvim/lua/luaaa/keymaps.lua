@@ -30,10 +30,10 @@ vim.g.mapleader = " "
 -- keymap("n", "<A-k>", ":resize -2<CR>", opts)
 -- keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
 -- on MacOS there is no Alt key, and I don't want to find a work around
-keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-j>", ":resize -2<CR>", opts)
-keymap("n", "<C-k>", ":resize +2<CR>", opts)
-keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<C-j>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-k>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
 
 -- File explorer
 -- 30 means take 30% of space

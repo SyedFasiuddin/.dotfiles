@@ -64,6 +64,8 @@ return packer.startup(function(use)
 
     use("SyedFasiuddin/nop.vim")
 
+    use("theprimeagen/harpoon")
+
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("gruvbox-community/gruvbox")
