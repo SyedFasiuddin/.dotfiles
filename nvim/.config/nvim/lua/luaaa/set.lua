@@ -18,7 +18,7 @@ local sets = {
     scrolloff = 8,              -- vertical
     sidescrolloff = 8,          -- horizontal
 
-    -- guicursor = "",          -- block shaped cursor in insert modw
+    guicursor = "",             -- block shaped cursor in insert modw
     termguicolors = true,
     background = "dark",
 
