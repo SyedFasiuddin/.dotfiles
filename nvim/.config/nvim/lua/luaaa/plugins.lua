@@ -66,6 +66,13 @@ return packer.startup(function(use)
 
     use("theprimeagen/harpoon")
 
+    use({
+        "folke/neodev.nvim",
+        config = function ()
+            require("neodev").setup()
+        end
+    })
+
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("gruvbox-community/gruvbox")
