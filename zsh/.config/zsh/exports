@@ -5,8 +5,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
-
 # This is for the Z directory jumper database file
 # It defaults to home directory which I donot want to be cluttered
 export _Z_DATA="$XDG_CACHE_HOME/z/.z"
@@ -25,3 +23,6 @@ export LESS_TERMCAP_so=$'\E[01;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
+export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
+
+export ABDUCO_SOCKET_DIR="/tmp"
