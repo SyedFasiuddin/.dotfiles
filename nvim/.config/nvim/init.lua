@@ -2,7 +2,7 @@ require("luaaa.plugins")
 require("luaaa.set")
 require("luaaa.keymaps")
 
-vim.cmd [[autocmd BufWritePre *.txt :%s/\s\+$//e]]
+vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

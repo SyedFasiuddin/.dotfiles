@@ -93,6 +93,6 @@ let loaded_matchparen = 1
 
 set list
 set listchars=trail:-
-autocmd BufWritePre *.txt :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 set foldmethod=marker
