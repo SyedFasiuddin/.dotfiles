@@ -39,7 +39,6 @@ return packer.startup(function(use)
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate",
     })
-    use("p00f/nvim-ts-rainbow") -- bracketpaircolorizer
 
     use({
         "nvim-lualine/lualine.nvim",
@@ -70,6 +69,13 @@ return packer.startup(function(use)
         "folke/neodev.nvim",
         config = function ()
             require("neodev").setup()
+        end
+    })
+
+    use({
+        "j-hui/fidget.nvim",
+        config = function ()
+            require("fidget").setup()
         end
     })
 
