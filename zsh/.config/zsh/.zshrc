@@ -107,11 +107,11 @@ source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 ########################################
 # zsh history stuff
-HISTSIZE=1000000000
-HISTFILESIZE=1000000000
-SAVEHIST=1000
-HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
-setopt INC_APPEND_HISTORY
+export HISTSIZE=1000000000
+export HISTFILESIZE=1000000000
+export SAVEHIST=1000000000
+export HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
+setopt INC_APPEND_HISTORY_TIME
 setopt EXTENDED_HISTORY
 
 zmodload zsh/complist
