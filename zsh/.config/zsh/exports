@@ -5,9 +5,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# This is for the Z directory jumper database file
-# It defaults to home directory which I donot want to be cluttered
-export _Z_DATA="$XDG_CACHE_HOME/z/.z"
+# Zoxide: directory jumper
+export _ZO_DATA_DIR="$XDG_DATA_HOME"
 
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -25,4 +24,5 @@ export LESS_TERMCAP_us=$'\E[1;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
 
+# Abduco: Session management
 export ABDUCO_SOCKET_DIR="/tmp"

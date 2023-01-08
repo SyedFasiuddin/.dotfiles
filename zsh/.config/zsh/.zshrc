@@ -17,6 +17,8 @@ if [ -f ~/.config/zsh/prompt_common.zsh ]; then
     . ~/.config/zsh/prompt_common.zsh
 fi
 
+eval "$(zoxide init zsh)"
+
 # nvm stuff
 nvm_node(){
     export NVM_DIR="$HOME/.nvm"
@@ -29,10 +31,6 @@ nvm_node(){
 
 # rust stuff
 . "$HOME/.cargo/env"
-
-# z directory jumper
-. "$XDG_STATE_HOME/z/z.sh"
-
 
 # syntax highlight plugin for zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
