@@ -9,6 +9,10 @@ if [ -f ~/.config/zsh/aliases ]; then
     . ~/.config/zsh/aliases
 fi
 
+if [ -f ~/.config/zsh/.fzf.zsh ]; then
+    . ~/.config/zsh/.fzf.zsh
+fi
+
 # nvm stuff
 nvm_node(){
     export NVM_DIR="$HOME/.nvm"
@@ -89,21 +93,6 @@ git_status() {
 
 # syntax highlight plugin for zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# fuzzy search, reverse search
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-fi
-
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-# ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 ########################################
 # zsh history stuff
