@@ -67,7 +67,7 @@ function! s:goyo_enter()
     Limelight
     hi! Normal ctermbg=NONE guibg=NONE
 endfunction
-                              
+
 function! s:goyo_leave()
     if executable('tmux') && strlen($TMUX)
         silent !tmux set status on
@@ -92,7 +92,7 @@ inoremap <F2>       <ESC>:Goyo<CR>a
 let loaded_matchparen = 1
 
 set list
-set listchars=trail:-
+set listchars=trail:-,tab:>-
 autocmd BufWritePre * :%s/\s\+$//e
 
 set foldmethod=marker
