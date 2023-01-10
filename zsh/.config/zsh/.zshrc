@@ -66,6 +66,13 @@ zstyle ":completion:*" use-compctl false
 zstyle ":completion:*" verbose true
 zstyle ":completion:*:kill*" command "ps -U $USER -o pid,%cpu,tty,cputime,cmd"
 
+bindkey -v
+export KEYTIMEOUT=1
+autoload edit-command-line
+zle -N edit-command-line
+bindkey "^v" edit-command-line
+bindkey "^?" backward-delete-char
+
 # now=$(gdate "+%N")
 # elapsed=$(($now-$timer))
 # echo $elapsed
