@@ -29,8 +29,6 @@ local sets = {
     splitbelow = true,
     splitright = true,
 
-    mouse = "a",                -- enable mouse
-
     backup = false,
     swapfile = false,
     fileencoding = "utf-8",
