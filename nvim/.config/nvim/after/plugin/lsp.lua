@@ -42,7 +42,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "<Leader>c", vim.lsp.buf.code_action, bufopts)
 
-    vim.keymap.set("n", "<Leader>f", function()
+    vim.keymap.set("n", "<F3>", function()
         vim.lsp.buf.format({ async = true })
     end, bufopts)
 end

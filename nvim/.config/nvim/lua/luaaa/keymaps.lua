@@ -36,8 +36,7 @@ vim.g.mapleader = " "
 -- keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
 
 -- File explorer
--- 30 means take 30% of space
--- keymap("n", "<Leader>e", ":Lex 30<CR>", opts)
+keymap("n", "<Leader>v", "<Cmd>Ex<CR>", opts)
 
 -----------------------------
 ---- Insert Mode Keymaps ----

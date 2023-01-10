@@ -23,7 +23,7 @@ telescope.setup({
     },
 })
 
-vim.keymap.set('n', ';f',
+vim.keymap.set('n', '<Leader>f',
     function()
         builtin.find_files({
             file_ignore_patterns = {
@@ -36,7 +36,7 @@ vim.keymap.set('n', ';f',
     end
 )
 
-vim.keymap.set('n', ';r',
+vim.keymap.set('n', '<Leader>g',
     function()
         builtin.live_grep({
             additional_args = function()
@@ -51,11 +51,11 @@ vim.keymap.set('n', ';r',
     end
 )
 
-vim.keymap.set('n', ';t', function() builtin.help_tags() end)
-vim.keymap.set('n', ';;', function() builtin.resume() end)
-vim.keymap.set('n', ';d', function() builtin.diagnostics() end)
+vim.keymap.set('n', '<Leader>t', function() builtin.help_tags() end)
+vim.keymap.set('n', '<Leader>;', function() builtin.resume() end)
+vim.keymap.set('n', '<Leader>d', function() builtin.diagnostics() end)
 
-vim.keymap.set('n', ';b',
+vim.keymap.set('n', '<Leader>b',
     function()
         builtin.buffers({
             initial_mode = "normal"

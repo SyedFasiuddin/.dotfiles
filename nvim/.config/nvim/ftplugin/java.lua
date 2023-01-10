@@ -46,7 +46,7 @@ config.on_attach = function(_, bufnr)
     vim.keymap.set("n", "crc", jdtls.extract_constant, bufopts)
     vim.keymap.set("n", "crm", jdtls.extract_method, bufopts)
 
-    vim.keymap.set("n", "<Leader>f", function()
+    vim.keymap.set("n", "<F3>", function()
         vim.lsp.buf.format({ async = true })
     end, bufopts)
 end
