@@ -17,6 +17,7 @@ if [ -f ~/.config/zsh/prompt_common.zsh ]; then
     . ~/.config/zsh/prompt_common.zsh
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
 # nvm stuff
