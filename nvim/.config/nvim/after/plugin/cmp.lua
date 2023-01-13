@@ -49,14 +49,11 @@ cmp.setup({
         select = false,
     },
 
-    -- window = {
-    --     documentation = {
-    --         winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-    --     },
-    --     completion = {
-    --         winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-    --     },
-    -- },
+    window = {
+        -- completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+
     -- experimental = {
     --     native_menu = false,
     --     ghost_text = false,
