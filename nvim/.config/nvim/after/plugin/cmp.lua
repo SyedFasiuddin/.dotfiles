@@ -21,7 +21,15 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
-        { name = "buffer" },
+        {
+            name = "buffer",
+            keyword_length = 5,
+            option = {
+                get_bufnrs = function ()
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        },
     },
     mapping = {
         -- Default are C-n and C-p of vim and nvim, which are enabled in telescope as well,
