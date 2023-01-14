@@ -34,8 +34,6 @@ return packer.startup(function(use)
 
     use("hrsh7th/cmp-nvim-lsp") -- make lsp a source in cmp
 
-    use("jose-elias-alvarez/null-ls.nvim")
-
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate",
     })
