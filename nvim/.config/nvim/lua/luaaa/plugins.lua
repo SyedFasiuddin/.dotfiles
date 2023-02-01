@@ -79,5 +79,5 @@ return packer.startup(function(use)
 
     -- colorschemes
     use("luisiacc/gruvbox-baby")
-    use("gruvbox-community/gruvbox")
+    use("morhetz/gruvbox")
 end)
