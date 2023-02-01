@@ -20,16 +20,6 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
-# nvm stuff
-nvm_node(){
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-#    [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-#    alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-#    alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
-}
-
 # rust stuff
 . "$HOME/.cargo/env"
 
