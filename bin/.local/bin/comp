@@ -1,0 +1,28 @@
+#! /bin/sh
+
+# comp -> competitive programming
+# TODO:
+#  [x] make directory for current date
+#      [x] inside it make 3 files
+#      [x] question.txt
+#      [x] note.txt
+#      [x] main.cpp
+#  [x] change to that directory and open v
+#  [ ] if possible automate copying the question from LeetCode
+
+if [[ ! -d "$HOME/Developer/CompetitiveProgramming" ]] ; then
+    echo "Competitive Programming folder not found"
+    exit 1
+fi
+
+cd "$HOME/Developer/CompetitiveProgramming"
+
+date=(`date "+%Y %m %d"`)
+year=${date[0]}
+month=${date[1]}
+day=${date[2]}
+
+mkdir -p "$year/$month/$day"
+touch "$year/$month/$day/question.txt" "$year/$month/$day/note.txt"\
+    "$year/$month/$day/main.cpp"
+nvim

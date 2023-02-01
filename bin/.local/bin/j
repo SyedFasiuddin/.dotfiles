@@ -16,13 +16,7 @@ day_str=${date[4]}
 hour=${date[5]}
 min=${date[6]}
 
-if [[ -d "$year" ]] ; then
-    if [[ ! -d "$year/$month_no" ]] ; then
-        mkdir "$year/$month_no"
-    fi
-else
-    mkdir "$year" "$year/$month_no"
-fi
+mkdir -p "$year/$month_no"
 
 file="$year/$month_no/$day_no.txt"
 
@@ -51,4 +45,3 @@ if [[ "$TERM_PROGRAM" = tmux ]] ; then
 else
     vi $file
 fi
-
