@@ -10,6 +10,7 @@ if [ -f ~/.config/bash/.fzf.bash ]; then
     . ~/.config/bash/.fzf.bash
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init bash)"
 
 # # enable programmable completion features (you don't need to enable
