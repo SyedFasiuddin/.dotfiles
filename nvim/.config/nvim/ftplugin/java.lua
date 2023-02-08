@@ -4,11 +4,23 @@ if not ok then
     return
 end
 
+local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_ok then
+    print("java cmp failed to load")
+    return
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
 local root_markers = { "gradlew", ".git", ".gradlew", "mvnw" }
 local root_dir = jdtls.setup.find_root(root_markers)
 local home = os.getenv("HOME")
 
 local config = {}
+
+config.root_dir = root_dir
+config.capabilities = capabilities
 
 config.cmd = {
     "java",
@@ -50,5 +62,23 @@ config.on_attach = function(_, bufnr)
         vim.lsp.buf.format({ async = true })
     end, bufopts)
 end
+
+config.settings = {
+    java = {
+        format = {
+            settings = {
+                url = home .. "/.local/share/eclipse/eclipse-java-google-style.xml",
+                profile = "GoogleStyle",
+            }
+        },
+        project = {
+            referencedLibraries = {
+                -- home .. "/Developer/Java/javax.servlet-3.0.0.v201112011016.jar",
+                home .. "/Developer/Java/mysql-connector-java-8.0.30.jar",
+                "/opt/homebrew/Cellar/tomcat/10.1.5/libexec/lib/servlet-api.jar",
+            }
+        }
+    }
+}
 
 jdtls.start_or_attach(config)
