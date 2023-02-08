@@ -45,5 +45,10 @@ yabai -m rule --add app="^Telegram$" space=4 manage=off
 yabai -m rule --add app="^Messages$" space=4 manage=off
 yabai -m rule --add app="^FaceTime$" space=4
 yabai -m rule --add app="^Numi$" manage=off
-yabai -m rule --add app="^Alacritty$" space=1
-yabai -m rule --add app="^Safari$" space=2
+
+yabai -m rule --add app="^Alacritty$"     space=1
+
+yabai -m rule --add app="^Min$"           space=2
+yabai -m rule --add app="^Safari$"        space=2
+yabai -m rule --add app="^Brave Browser$" space=2
+yabai -m rule --add app="^Google Chrome$" space=2
