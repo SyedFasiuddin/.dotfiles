@@ -23,6 +23,9 @@ vim.g.gruvbox_baby_keyword_style = "NONE"
 vim.g.gruvbox_baby_function_style = "NONE"
 vim.g.gruvbox_baby_comment_style = "NONE"
 
+vim.cmd[[ hi WinSeparator guifg=darkgray ]]
+vim.cmd[[ hi ColouColumn guibg=darkgray ]]
+
 -- setting colorscheme here
 -- options for any colorschemes should go above this
 status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

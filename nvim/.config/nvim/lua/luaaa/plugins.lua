@@ -80,4 +80,8 @@ return packer.startup(function(use)
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("morhetz/gruvbox")
+    use("navarasu/onedark.nvim")
+    use("NLKNguyen/papercolor-theme")
+    use("nyoom-engineering/oxocarbon.nvim")
+    use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
 end)
