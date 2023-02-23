@@ -11,12 +11,10 @@ if not status_ok then
     return
 end
 
--- gruvbox related
+-- morhetz/gruvbox
 vim.g.gruvbox_contrast_dark = "hard"
 
--- vim.opt.background = "dark"
-
--- gruvbox-baby related
+-- luisiacc/gruvbox-baby
 vim.g.gruvbox_baby_background_color = "dark"
 vim.g.gruvbox_baby_transparent_mode = true
 vim.g.gruvbox_baby_keyword_style = "NONE"
@@ -26,12 +24,5 @@ vim.g.gruvbox_baby_comment_style = "NONE"
 vim.cmd[[ hi WinSeparator guifg=darkgray ]]
 vim.cmd[[ hi ColouColumn guibg=darkgray ]]
 
--- setting colorscheme here
--- options for any colorschemes should go above this
-status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-    print("Colorscheme " .. colorscheme .. " notfound")
-    return
-end
-
-vim.cmd("hi NormalFloat guibg=None")
+-- Finally set colorscheme
+vim.cmd[[ colorscheme gruvbox-baby ]]
