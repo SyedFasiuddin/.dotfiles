@@ -25,6 +25,13 @@ export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
 # Abduco: Session management
 export ABDUCO_SOCKET_DIR="/tmp"
 
+# fnm: NodeJS version manager written in Rust
+export FNM_DIR="$HOME/Developer/JS/.fnm"
+
+# Rust
+export CARGO_HOME="$HOME/Developer/Rust/.cargo/"
+export RUSTUP_HOME="$HOME/Developer/Rust/.rustup/"
+
 # Misc
 export PATH="$HOME/.local/bin:$PATH"
 export LANG=en_US.UTF-8

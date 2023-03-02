@@ -10,8 +10,11 @@ if [ -f ~/.config/bash/.fzf.bash ]; then
     . ~/.config/bash/.fzf.bash
 fi
 
+. "$HOME/Developer/Rust/.cargo/env"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init bash)"
+eval "$(fnm env)"
 
 # # enable programmable completion features (you don't need to enable
 # # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -24,10 +27,7 @@ eval "$(zoxide init bash)"
 #   fi
 # fi
 
-
 export PS1="\e[0;32m\W \e[0;00m"
-
-. "$HOME/.cargo/env"
 
 set -o vi # to use vi keys to move in the read line
 

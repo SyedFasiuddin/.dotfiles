@@ -17,11 +17,11 @@ if [ -f ~/.config/zsh/prompt_common.zsh ]; then
     . ~/.config/zsh/prompt_common.zsh
 fi
 
+. "$HOME/Developer/Rust/.cargo/env"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
-
-# rust stuff
-. "$HOME/.cargo/env"
+eval "$(fnm env)"
 
 # syntax highlight plugin for zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
