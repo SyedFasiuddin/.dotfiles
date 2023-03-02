@@ -21,10 +21,16 @@ lualine.setup({
         lualine_a = {
             { "mode", fmt = function(str) return str:sub(1, 3) end },
         },
-        lualine_b = { "filename" },
-        lualine_c = { "diff", "diagnostics" },
+        lualine_b = {
+            {
+                "diagnostics",
+                symbols = { error = "", warn = "", info = "", hint = "" },
+                always_visible = true,
+            }
+        },
+        lualine_c = { "%f" },
         lualine_x = { "encoding", "fileformat" },
-        lualine_y = {},
+        lualine_y = { "diff" },
         lualine_z = { "filetype" },
     },
     tabline = {
