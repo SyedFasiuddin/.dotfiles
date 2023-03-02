@@ -7,7 +7,7 @@ end
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = "gruvbox-baby",
+        theme = "auto",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
         globalstatus = true,
@@ -19,8 +19,7 @@ lualine.setup({
     },
     sections = {
         lualine_a = {
-            "mode",
-            -- { "mode", fmt = function(str) return str:sub(1,2) end },
+            { "mode", fmt = function(str) return str:sub(1, 3) end },
         },
         lualine_b = { "filename" },
         lualine_c = { "diff", "diagnostics" },
