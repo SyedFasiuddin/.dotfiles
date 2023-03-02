@@ -18,12 +18,24 @@ vim.g.gruvbox_baby_function_style = "NONE"
 vim.g.gruvbox_baby_comment_style = "NONE"
 
 vim.g.gruvbox_baby_highlights = {
-    WinSeparator = { fg = "#969696", bg = "NONE",    style = "NONE" },
+    WinSeparator = { fg = "#E0E0E0", bg = "NONE",    style = "NONE" },
     ColorColumn  = { fg = "NONE",    bg = "#3C3836", style = "NONE" },
     LineNr       = { fg = "#7C6F64", bg = "NONE",    style = "NONE" },
     CursorLineNr = { fg = "#FABD2F", bg = "NONE",    style = "NONE" },
     Comment      = { fg = "#928374", bg = "NONE",    style = "NONE" },
 }
+
+-- navarasu/onedark.nvim
+require("onedark").setup({
+    style = "darker",
+    ending_tildes = true,
+    code_style = {
+        comments = "NONE",
+    },
+    highlights = {
+        WinSeparator = { fg = "#E0E0E0", bg = "NONE",    style = "NONE" },
+    },
+})
 
 -- Finally set colorscheme
 vim.cmd[[ colorscheme gruvbox-baby ]]
