@@ -20,16 +20,21 @@ export LESS_TERMCAP_so=$'\E[01;33m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[1;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
-export LESSHISTFILE="$XDG_CONFIG_HOME/less/history"
+export LESSHISTFILE="$XDG_CACHE_HOME/.less_history"
+
+# MySQL
+export MYSQL_HISTFILE="$XDG_CACHE_HOME/.mysql_history"
 
 # Abduco: Session management
 export ABDUCO_SOCKET_DIR="/tmp"
 
 # fnm: NodeJS version manager written in Rust
 export FNM_DIR="$HOME/Developer/JS/.fnm"
+export NODE_REPL_HISTORY="$XDG_CACHE_HOME/.node_repl_history"
+export NODE_REPL_HISTORY_SIZE=1000000000
 
 # bob: nvim version manager
-export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$XDG_DATA_HOME/bob/nvim-bin:$PATH"
 
 # Rust
 export CARGO_HOME="$HOME/Developer/Rust/.cargo/"

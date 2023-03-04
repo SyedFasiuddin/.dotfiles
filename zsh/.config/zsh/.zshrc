@@ -30,7 +30,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export HISTSIZE=1000000000
 export HISTFILESIZE=1000000000
 export SAVEHIST=1000000000
-export HISTFILE=$XDG_CACHE_HOME/zsh/.zsh_history
+export HISTFILE=$XDG_CACHE_HOME/.zsh_history
 setopt INC_APPEND_HISTORY_TIME
 setopt EXTENDED_HISTORY
 
