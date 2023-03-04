@@ -1,0 +1,115 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Date::Calc qw(Days_in_Month);
+
+my $journal = "$ENV{HOME}/Documents/Journal";
+
+my ($sec, $min, $hour, $day, $mon, $year, $wday, $yday, $isdst) = localtime;
+$year += 1900;
+$mon++;
+
+my $file = sprintf("$journal/%04d/%02d/%02d.txt", $year, $mon, $day);
+my $sunday_file = $file;
+
+my $head = "\n" . "Weekly Stuff:\n" .
+           "┏━━━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┳━━━━━┓\n" .
+           "┃       ┃ Mon ┃ Tue ┃ Wed ┃ Thu ┃ Fri ┃ Sat ┃ Sun ┃\n" .
+           "┣━━━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━╋━━━━━┫";
+
+my @tasks_lines = ( "", "", "", "", ""); # can i do this by reading from file?
+
+my $foot = "┗━━━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┻━━━━━┛";
+
+sub check_if_everything_ok {
+    if ( ! -d $journal ) {
+        print STDERR "Journal not found";
+        exit 1;
+    }
+
+    if ( $wday != 0 ) {
+        print STDERR "You can run this script only on Sunday!!!\n";
+        exit 1;
+    }
+
+    if ( ! -f $sunday_file ) {
+        print STDERR "Have you journaled anything today?\n";
+        exit 1;
+    }
+}
+
+sub next_file {
+    if ( $day-- == 1 ) {
+        $mon--;
+        $day = Days_in_Month($year, $mon);
+    } # handle case where month is 1 or 0
+
+    $file = sprintf("$journal/%04d/%02d/%02d.txt", $year, $mon, $day);
+};
+
+sub skip_day {
+    my $i = 0;
+    while ( $i-- != -5) {
+        $tasks_lines[$i] = "  -  ┃" . $tasks_lines[$i] ;
+    }
+};
+
+sub get_data_from_past_week_files {
+    my $count = 7;
+    my $fp = undef;
+
+    while ( $count-- != 0 ) {
+        open($fp, "<", $file) or do {
+            print STDERR "Cannot open file $file\n";
+            skip_day;
+            next_file;
+            next;
+        };
+
+        chomp(my @lines = <$fp>);
+
+        my $i = 0;
+        while ( $i-- != -5) {
+            my $c = substr( $lines[$i], -1, 1 );
+            if ( $c ne "X" and $c ne "Y" ) { $c = "?" }
+            $tasks_lines[$i] = "  $c  ┃" . $tasks_lines[$i] ;
+        }
+
+        close($fp);
+        next_file;
+    }
+}
+
+sub add_task_names {
+    # can I get these from the files??
+    $tasks_lines[0] = "┃ Rust  ┃" . $tasks_lines[0];
+    $tasks_lines[1] = "┃ Code  ┃" . $tasks_lines[1];
+    $tasks_lines[2] = "┃ CP    ┃" . $tasks_lines[2];
+    $tasks_lines[3] = "┃ Study ┃" . $tasks_lines[3];
+    $tasks_lines[4] = "┃ Book  ┃" . $tasks_lines[4];
+}
+
+sub write_to_sunday_file {
+    my $fp = undef;
+
+    open($fp, ">>", $sunday_file);
+
+    $fp->print($head . "\n");
+    for my $i (0 .. $#tasks_lines) {
+        $fp->print($tasks_lines[$i] . "\n");
+    }
+    $fp->print($foot . "\n");
+
+    close($fp);
+}
+
+sub main {
+    check_if_everything_ok;
+    get_data_from_past_week_files;
+    add_task_names;
+    write_to_sunday_file;
+}
+
+main;
+print STDOUT "Done\n";
+exit 0;
