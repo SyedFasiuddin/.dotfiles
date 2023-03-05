@@ -24,24 +24,15 @@ if [[ ! -f "$file" ]] ; then
     echo "|$day_str, $day_no $month_str $year|" >> $file
 fi
 
-echo "" >> $file
-echo "$hour:$min" >> $file
-echo "" >> $file
+echo "\n$hour:$min\n" >> $file
 
 if [[ "$TERM_PROGRAM" = tmux ]] ; then
     if ! tmux has-session -t MASTER 2> /dev/null ; then
         tmux new-session -d -s MASTER
-        tmux new-window -d -n note -t MASTER
-        tmux send-keys -t MASTER:note "vi $file" Enter
-        tmux switch-client -t MASTER:note
     fi
 
-    tmux list-windows -t MASTER | grep note 1> /dev/null ||
-    ( tmux neww -d -n note -t MASTER &&
-    tmux send-keys -t MASTER:note "vi $file" Enter )
-
+    tmux neww -d -n note -t MASTER "vi $file"
     tmux switch-client -t MASTER:note
-
 else
     vi $file
 fi
