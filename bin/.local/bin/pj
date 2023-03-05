@@ -55,11 +55,9 @@ sub skip_day {
 };
 
 sub get_data_from_past_week_files {
-    my $count = 7;
-    my $fp = undef;
-
-    while ( $count-- != 0 ) {
-        open($fp, "<", $file) or do {
+    my $num_of_days = 7;
+    while ( $num_of_days-- != 0 ) {
+        open(my $fp, "<", $file) or do {
             print STDERR "Cannot open file $file\n";
             skip_day;
             next_file;
@@ -67,6 +65,7 @@ sub get_data_from_past_week_files {
         };
 
         chomp(my @lines = <$fp>);
+        close($fp);
 
         my $i = 0;
         while ( $i-- != -5) {
@@ -74,8 +73,6 @@ sub get_data_from_past_week_files {
             if ( $c ne "X" and $c ne "Y" ) { $c = "?" }
             $tasks_lines[$i] = "  $c  ┃" . $tasks_lines[$i] ;
         }
-
-        close($fp);
         next_file;
     }
 }
@@ -90,16 +87,14 @@ sub add_task_names {
 }
 
 sub write_to_sunday_file {
-    my $fp = undef;
-
-    open($fp, ">>", $sunday_file);
-
-    $fp->print($head . "\n");
+    my $str = $head . "\n";
     for my $i (0 .. $#tasks_lines) {
-        $fp->print($tasks_lines[$i] . "\n");
+        $str = $str . $tasks_lines[$i] . "\n";
     }
-    $fp->print($foot . "\n");
+    $str = $str . $foot . "\n";
 
+    open(my $fp, ">>", $sunday_file);
+    $fp->print($str);
     close($fp);
 }
 
