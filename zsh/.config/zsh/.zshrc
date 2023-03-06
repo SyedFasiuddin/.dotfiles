@@ -9,10 +9,6 @@ if [ -f ~/.config/zsh/aliases ]; then
     . ~/.config/zsh/aliases
 fi
 
-if [ -f ~/.config/zsh/.fzf.zsh ]; then
-    . ~/.config/zsh/.fzf.zsh
-fi
-
 if [ -f ~/.config/zsh/prompt_common.zsh ]; then
     . ~/.config/zsh/prompt_common.zsh
 fi
@@ -69,3 +65,6 @@ bindkey "^?" backward-delete-char
 # echo $elapsed
 # zprof
 
+if [ -f ~/.config/zsh/.fzf.zsh ]; then
+    . ~/.config/zsh/.fzf.zsh
+fi
