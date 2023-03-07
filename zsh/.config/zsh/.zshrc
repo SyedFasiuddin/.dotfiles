@@ -1,5 +1,4 @@
 # zmodload zsh/zprof
-# timer=$(gdate "+%N")
 
 if [ -f ~/.config/zsh/exports ]; then
     . ~/.config/zsh/exports
@@ -61,11 +60,8 @@ zle -N edit-command-line
 bindkey "^v" edit-command-line
 bindkey "^?" backward-delete-char
 
-# now=$(gdate "+%N")
-# elapsed=$(($now-$timer))
-# echo $elapsed
-# zprof
-
 if [ -f ~/.config/zsh/.fzf.zsh ]; then
     . ~/.config/zsh/.fzf.zsh
 fi
+
+# zprof
