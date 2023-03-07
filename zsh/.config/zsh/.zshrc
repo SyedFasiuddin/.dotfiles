@@ -18,6 +18,7 @@ fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env)"
+eval "$(pyenv init -)"
 
 # syntax highlight plugin for zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
