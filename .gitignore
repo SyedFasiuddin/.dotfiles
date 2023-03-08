@@ -14,3 +14,6 @@ packer_compiled.lua
 
 # MacOS
 **/.DS_*
+
+# gh
+hosts.yml
