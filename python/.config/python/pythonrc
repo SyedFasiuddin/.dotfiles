@@ -16,4 +16,4 @@ except IOError:
 atexit.register(readline.write_history_file, histfile)
 del os, histfile, readline, rlcompleter
 
-# vim: set ft=python :
+# vim: set ft=python:

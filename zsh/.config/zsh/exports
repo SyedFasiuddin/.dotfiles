@@ -44,6 +44,8 @@ export PATH="$XDG_DATA_HOME/bob/nvim-bin:$PATH"
 # Rust
 export CARGO_HOME="$HOME/Developer/Rust/.cargo/"
 export RUSTUP_HOME="$HOME/Developer/Rust/.rustup/"
+export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
+export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 
 # fzf
 export FZF_DEFAULT_OPTS="$_ZO_FZF_OPTS"
@@ -56,4 +58,4 @@ export PATH="$HOME/.local/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# vim: set ft=sh
+# vim: set ft=sh:

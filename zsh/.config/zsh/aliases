@@ -27,4 +27,4 @@ alias v="nvim"
 # misc
 alias ed="ed -p\"ed: \""
 
-# vim: set ft=sh
+# vim: set ft=sh:
