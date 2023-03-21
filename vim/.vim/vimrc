@@ -37,6 +37,9 @@ set dictionary+=/usr/share/dict/words
 
 set textwidth=80        " shorthand tw
 set formatoptions+=t    " shorthand fo
+set formatoptions+=n
+set formatoptions+=2
+set formatoptions+=a
 
 set splitbelow
 set splitright
