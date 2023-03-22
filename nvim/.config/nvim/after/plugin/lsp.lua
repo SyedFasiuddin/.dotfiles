@@ -50,7 +50,7 @@ local servers = {
     "html",
     "sqlls",
     "rust_analyzer",
-    "sumneko_lua",
+    "lua_ls",
 }
 
 for _, value in pairs(servers) do
