@@ -38,7 +38,11 @@ bindkey -M menuselect "l" vi-forward-char
 setopt MENU_COMPLETE
 
 autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' $XDG_CACHE_HOME/zcompdump) ]; then
+    compinit -d $XDG_CACHE_HOME/zcompdump
+else
+    compinit -C -d $XDG_CACHE_HOME/zcompdump
+fi
 zstyle ":completion:*:*:*:*:*" menu select
 zstyle ":completion:*" auto-description "specify: %d"
 zstyle ":completion:*" completer _expand _complete
