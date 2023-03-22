@@ -12,6 +12,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init bash)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
+eval "$(starship init bash)"
 
 # # enable programmable completion features (you don't need to enable
 # # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -24,7 +25,7 @@ eval "$(pyenv init -)"
 #   fi
 # fi
 
-export PS1="\e[0;32m\W \e[0;00m"
+# export PS1="\e[0;32m\W \e[0;00m"
 
 set -o vi # to use vi keys to move in the read line
 
