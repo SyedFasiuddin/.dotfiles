@@ -31,6 +31,7 @@ export ABDUCO_SOCKET_DIR="/tmp"
 export FNM_DIR="$HOME/Developer/JS/.fnm"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/.node_repl_history"
 export NODE_REPL_HISTORY_SIZE=1000000000
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # pyenv: Python version manager
 export PYENV_ROOT="$HOME/Developer/Python/.pyenv"
