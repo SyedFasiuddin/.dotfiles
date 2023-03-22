@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if [[ ! -d "$HOME/Documents/Journal" ]] ; then
     echo "Journal not found"

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if ! tmux has-session -t MASTER 2> /dev/null ; then
     echo "MASTER session does not exist"
@@ -8,5 +8,4 @@ fi
 tmux list-windows -t MASTER | grep update 1> /dev/null ||
 tmux neww -d -n update -t MASTER
 
-tmux send-keys -t MASTER:update "brew update && brew upgrade" Enter
-
+tmux send-keys -t MASTER:update "update-util" Enter

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 if [[ ! -d "$HOME/Developer/CompetitiveProgramming" ]] ; then
     echo "Competitive Programming folder not found"
