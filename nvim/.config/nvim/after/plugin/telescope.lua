@@ -27,8 +27,9 @@ vim.keymap.set('n', '<Leader>f',
     function()
         builtin.find_files({
             file_ignore_patterns = {
-                ".git",
-                "node_modules",
+                ".git/",
+                "node_modules/",
+                "dist/",
             },
             no_ignore = false,
             hidden = true,
@@ -43,8 +44,9 @@ vim.keymap.set('n', '<Leader>g',
                 return { "--hidden" }
             end,
             file_ignore_patterns = {
-                ".git",
-                "node_modules",
+                ".git/",
+                "node_modules/",
+                "dist/",
                 "*-lock.*",
             },
         })
