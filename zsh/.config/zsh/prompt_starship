@@ -4,11 +4,9 @@ configure_prompt() {
     case "$PROMPT_ALTERNATIVE" in
         twoline)
             export STARSHIP_CONFIG=""
-            eval "$(starship init zsh)"
             ;;
         oneline)
             export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
-            eval "$(starship init zsh)"
             ;;
     esac
 }
@@ -28,5 +26,7 @@ zle -N toggle_oneline_prompt
 bindkey ^P toggle_oneline_prompt
 
 configure_prompt
+
+eval "$(starship init zsh)"
 
 # vim: set ft=sh:
