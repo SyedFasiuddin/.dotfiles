@@ -18,7 +18,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
-eval "$(starship init zsh)"
 
 # syntax highlight plugin for zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -64,6 +63,10 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^v" edit-command-line
 bindkey "^?" backward-delete-char
+
+if [ -f ~/.config/zsh/prompt_starship ]; then
+    . ~/.config/zsh/prompt_starship
+fi
 
 if [ -f ~/.config/zsh/.fzf.zsh ]; then
     . ~/.config/zsh/.fzf.zsh
