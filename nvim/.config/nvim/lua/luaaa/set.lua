@@ -15,9 +15,6 @@ local sets = {
     cursorline = true,
     colorcolumn = "80",
 
-    scrolloff = 8,              -- vertical
-    sidescrolloff = 8,          -- horizontal
-
     guicursor = "",             -- block shaped cursor in insert modw
     termguicolors = true,
     background = "dark",
@@ -33,11 +30,8 @@ local sets = {
     swapfile = false,
     fileencoding = "utf-8",
 
-    ignorecase = true,
-
     timeoutlen = 200,           -- wait only for these many milisec for mapped sequence to complete
 
-    -- completion menu, brought here from cmp.lua
     completeopt = { "menu", "menuone", "noselect" },
     pumheight = 8,
 
