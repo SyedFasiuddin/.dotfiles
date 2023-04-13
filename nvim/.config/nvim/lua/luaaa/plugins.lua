@@ -26,7 +26,7 @@ return packer.startup(function(use)
     use("hrsh7th/nvim-cmp") -- completion menu handler
     use("hrsh7th/cmp-buffer") -- source which gives completion from buffer
     use("L3MON4D3/LuaSnip") -- snippets engine
-    -- use "saadparwaiz1/cmp_luasnip"
+    use("saadparwaiz1/cmp_luasnip")
 
     use("neovim/nvim-lspconfig")
     use("williamboman/mason.nvim")

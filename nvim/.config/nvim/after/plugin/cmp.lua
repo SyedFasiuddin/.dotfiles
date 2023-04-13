@@ -1,15 +1,16 @@
-local status_ok, cmp = pcall(require, "cmp")
-if not status_ok then
-    print("Unable to load cmp")
+local cmp_ok, cmp = pcall(require, "cmp")
+if not cmp_ok then
+    print("Failed to load cmp!!!")
     return
 end
 
-local status_ok, luasnip = pcall(require, "luasnip")
-if not status_ok then
-    print("Unable to load luasnip")
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+if not luasnip_ok then
+    print("Failed to load luasnip!!!")
     return
 end
 
+luasnip.config.setup()
 require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup({
@@ -25,35 +26,47 @@ cmp.setup({
             name = "buffer",
             keyword_length = 5,
             option = {
-                get_bufnrs = function ()
+                get_bufnrs = function()
                     return vim.api.nvim_list_bufs()
                 end
             }
         },
     },
-    mapping = {
-        -- Default are C-n and C-p of vim and nvim, which are enabled in telescope as well,
-        -- so to keep it consistent, removing these and using them.
-        -- ["<"] = cmp.mapping.select_prev_item(),
-        -- [">"] = cmp.mapping.select_next_item(),
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
+    mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
-        ["<C-Space>"] = cmp.mapping.complete(), -- bring up completion menu
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion menu
-    },
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-n>"] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_next_item()
+                elseif luasnip.expand_or_jumpable() then
+                    luasnip.expand_or_jump()
+                else
+                    fallback()
+                end
+            end, { "i", "s" }),
+        ["<C-p>"] = cmp.mapping(
+            function(fallback)
+                if cmp.visible() then
+                    cmp.select_prev_item()
+                elseif luasnip.jumpable(-1) then
+                    luasnip.jump(-1)
+                else
+                    fallback()
+                end
+            end, { "i", "s" }),
+    }),
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
-
     window = {
         -- completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
-
     -- experimental = {
     --     native_menu = false,
     --     ghost_text = false,
