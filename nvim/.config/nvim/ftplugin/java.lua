@@ -15,7 +15,15 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 local root_markers = { "gradlew", ".git", ".gradlew", "mvnw" }
 local root_dir = jdtls.setup.find_root(root_markers)
+local data_home = os.getenv("XDG_DATA_HOME")
 local home = os.getenv("HOME")
+local dependencies_folder = home .. "/Developer/Java/jar-dependencies"
+
+local dependencies = {
+    "/opt/homebrew/Cellar/tomcat/10.1.7/libexec/lib/servlet-api.jar"
+}
+vim.list_extend(dependencies,
+    vim.split(vim.fn.glob(dependencies_folder .. "/*.jar"), "\n"))
 
 local config = {}
 
@@ -36,13 +44,13 @@ config.cmd = {
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
 
     "-jar",
-    home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+    data_home .. "/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
 
     "-configuration",
-    home .. "/.local/share/nvim/mason/packages/jdtls/config_mac",
+    data_home .. "/nvim/mason/packages/jdtls/config_mac",
 
     "-data",
-    home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t"),
+    data_home .. "/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t"),
 }
 
 config.on_attach = function(_, bufnr)
@@ -67,16 +75,12 @@ config.settings = {
     java = {
         format = {
             settings = {
-                url = home .. "/.local/share/eclipse/eclipse-java-google-style.xml",
+                url = data_home .. "/eclipse/eclipse-java-google-style.xml",
                 profile = "GoogleStyle",
             }
         },
         project = {
-            referencedLibraries = {
-                -- home .. "/Developer/Java/javax.servlet-3.0.0.v201112011016.jar",
-                home .. "/Developer/Java/mysql-connector-java-8.0.30.jar",
-                "/opt/homebrew/Cellar/tomcat/10.1.5/libexec/lib/servlet-api.jar",
-            }
+            referencedLibraries = dependencies,
         }
     }
 }
