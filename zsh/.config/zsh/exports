@@ -10,6 +10,8 @@ export _ZO_FZF_OPTS="--reverse --info=inline --height 40%"
 # Java
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+export CLASSPATH="/opt/homebrew/Cellar/tomcat/10.1.7/libexec/lib/*"
+export CLASSPATH="$CLASSPATH:$HOME/Developer/Java/jar-dependencies/*"
 
 # Less: Pager
 export LESS_TERMCAP_mb=$'\E[1;31m'
