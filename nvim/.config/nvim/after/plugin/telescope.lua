@@ -1,17 +1,11 @@
-local status, telescope = pcall(require, "telescope")
-if not status then
+local ok, telescope = pcall(require, "telescope")
+if not ok then
     print("Failed to load Telescope")
     return
 end
 
-local _, actions = pcall(require, "telescope.actions")
-local _, builtin = pcall(require, "telescope.builtin")
--- not checking if these return ok since they will be loaded on first
--- load of telescope above and then they will use same reference table
-
--- local function telescope_buffer_dir()
---     return vim.fn.expand('%:p:h')
--- end
+local actions = require("telescope.actions")
+local builtin = require("telescope.builtin")
 
 telescope.setup({
     defaults = {
@@ -23,7 +17,7 @@ telescope.setup({
     },
 })
 
-vim.keymap.set('n', '<Leader>f',
+vim.keymap.set("n", "<Leader>f",
     function()
         builtin.find_files({
             file_ignore_patterns = {
@@ -34,10 +28,12 @@ vim.keymap.set('n', '<Leader>f',
             no_ignore = false,
             hidden = true,
         })
-    end
+    end, {
+        desc = "Telescope: Open [f]ile picker"
+    }
 )
 
-vim.keymap.set('n', '<Leader>g',
+vim.keymap.set("n", "<Leader>g",
     function()
         builtin.live_grep({
             additional_args = function()
@@ -50,17 +46,47 @@ vim.keymap.set('n', '<Leader>g',
                 "*-lock.*",
             },
         })
-    end
+    end, {
+        desc = "Telescope: [g]rep search"
+    }
 )
 
-vim.keymap.set('n', '<Leader>t', function() builtin.help_tags() end)
-vim.keymap.set('n', '<Leader>;', function() builtin.resume() end)
-vim.keymap.set('n', '<Leader>d', function() builtin.diagnostics() end)
+vim.keymap.set("n", "<Leader>t",
+    function()
+        builtin.help_tags()
+    end, {
+        desc = "Telescope: Open help [t]ags"
+    }
+)
 
-vim.keymap.set('n', '<Leader>b',
+vim.keymap.set("n", "<Leader>;",
+    function()
+        builtin.resume()
+    end, {
+        desc = "Telescope: Resume the last picker with entire state"
+    }
+)
+
+vim.keymap.set("n", "<Leader>d",
+    function()
+        builtin.diagnostics()
+    end, {
+        desc = "Telescope: Open lsp [d]iagnostics"
+    }
+)
+
+vim.keymap.set("n", "<Leader><space>",
+    "<Cmd>Telescope<CR>", {
+        desc = "Telescope: Open telescope options"
+    }
+)
+
+vim.keymap.set("n", "<Leader>b",
     function()
         builtin.buffers({
             initial_mode = "normal"
         })
-    end
+    end, {
+        desc = "Telescope: List open [b]uffers"
+    }
 )
