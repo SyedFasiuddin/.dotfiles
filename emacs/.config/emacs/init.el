@@ -51,6 +51,12 @@
     (auto-fill-mode 1)))
 (setq-default fill-column 80)
 
+(setq ispell-program-name "/opt/homebrew/bin/ispell")
+(dolist (hook '(org-mode-hook))
+  (add-hook hook
+    (lambda ()
+      (flyspell-mode 1))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
