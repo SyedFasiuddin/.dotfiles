@@ -57,6 +57,14 @@
     (lambda ()
       (flyspell-mode 1))))
 
+(setq org-hide-emphasis-markers t
+      org-pretty-entities t
+      org-src-fontify-natively t)
+
+(use-package org-appear
+  :ensure t
+  :hook (org-mode . org-appear-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
