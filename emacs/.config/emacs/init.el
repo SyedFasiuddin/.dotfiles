@@ -1,4 +1,3 @@
-;; Minimal look
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
@@ -7,3 +6,8 @@
       make-backup-files nil
       global-hl-line-mode t)
 (set-frame-font "SF Mono 16")
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(require 'use-package)
