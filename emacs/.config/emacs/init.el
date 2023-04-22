@@ -46,6 +46,11 @@
   :ensure t
   :after org-roam)
 
+(add-hook 'org-mode-hook
+  (lambda ()
+    (auto-fill-mode 1)))
+(setq-default fill-column 80)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
