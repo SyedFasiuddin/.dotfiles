@@ -65,6 +65,13 @@
   :ensure t
   :hook (org-mode . org-appear-mode))
 
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook
+    (lambda ()
+      (org-bullets-mode 1))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
