@@ -42,6 +42,10 @@
   (define-key minibuffer-local-completion-map (kbd "SPC") 'self-insert-command)
   (org-roam-db-autosync-mode))
 
+(use-package org-roam-ui
+  :ensure t
+  :after org-roam)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
