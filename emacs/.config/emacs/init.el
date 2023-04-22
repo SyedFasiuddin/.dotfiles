@@ -11,3 +11,8 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (require 'use-package)
+
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
