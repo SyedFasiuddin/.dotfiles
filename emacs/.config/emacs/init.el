@@ -77,6 +77,12 @@
   :init
   (vertico-mode))
 
+(use-package orderless
+  :ensure t
+  :init
+  (setq completion-styles '(orderless substring basic)
+        completion-ignore-case t))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
