@@ -43,7 +43,9 @@
          ("C-c n i" . org-roam-node-insert))
   :config
   (define-key minibuffer-local-completion-map (kbd "SPC") 'self-insert-command)
-  (org-roam-db-autosync-mode))
+  (org-roam-db-autosync-mode)
+  (setq org-roam-node-display-template
+        (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))))
 
 (use-package org-roam-ui
   :ensure t
