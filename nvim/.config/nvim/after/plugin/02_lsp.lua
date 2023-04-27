@@ -46,9 +46,6 @@ local servers = {
     "texlab",
     "clangd",
     "bashls",
-    "intelephense",
-    "html",
-    "sqlls",
     "rust_analyzer",
     "lua_ls",
 }
