@@ -8,6 +8,7 @@ window:
   dynamic_padding: true
   startup_mode: Windowed
   decorations: buttonless
+  option_as_alt: OnlyLeft
 
 scrolling:
   history: 50000
