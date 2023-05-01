@@ -21,10 +21,10 @@ alias gp="git pull"
 alias gP="git push"
 alias gs="git status"
 
-# vim/nvim
+# Editors
 alias v="nvim"
-
-# misc
 alias ed="ed -p\"ed: \""
+alias em="emacsclient -nw -a ''"
+alias emg="emacsclient -c -a '' &"
 
 # vim: set ft=sh:
