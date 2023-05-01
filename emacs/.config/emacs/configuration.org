@@ -1,16 +1,44 @@
+#+title: Emacs Configuration
+#+options: toc:nil num:nil
+
+* Basics
+
+** Minimal Look
+
+   Remove all clutter from the screen, i.e. tool bar, menu bar, scroll bar, and
+   startup screen.
+
+   #+BEGIN_SRC emacs-lisp
+     (tool-bar-mode 0)
+     (menu-bar-mode 0)
+     (add-to-list 'default-frame-alist
+                  '(vertical-scroll-bars . nil))
+     (setq inhibit-startup-screen 1)
+   #+END_SRC
+
+** Fonts
+
+   Only mono space fonts, there is a whole lot of stuff to discover here.
+
+   #+BEGIN_SRC emacs-lisp
+     (add-to-list 'default-frame-alist
+                  '(font . "SF Mono 16"))
+   #+END_SRC
+
+** Other quality life improvements
+
+   Things done here:
+   - Tell Emacs not to create backup files (it is annoying)
+   - Highlight current line (cursor line)
+   - Display the column number in Emacs mode line.
+
+   #+BEGIN_SRC emacs-lisp
+     (setq make-backup-files nil)
+     (global-hl-line-mode t)
+     (column-number-mode 1)
+   #+END_SRC
+
 #+BEGIN_SRC emacs-lisp
-(tool-bar-mode 0)
-(menu-bar-mode 0)
-(column-number-mode 1)
-(setq inhibit-startup-screen 1
-      make-backup-files nil
-      global-hl-line-mode t)
-
-(add-to-list 'default-frame-alist
-             '(font . "SF Mono 16"))
-(add-to-list 'default-frame-alist
-	     '(vertical-scroll-bars . nil))
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
