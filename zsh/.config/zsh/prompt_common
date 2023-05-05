@@ -53,3 +53,5 @@ git_status() {
 
     echo -n "${message}"
 }
+
+# vim: set ft=sh:
