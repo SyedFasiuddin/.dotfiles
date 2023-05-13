@@ -38,31 +38,5 @@ mouse:
 key_bindings:
     - { key: Return, mods: Command, action: ToggleFullscreen }
 
-######################################################################
-## SET THEME: Choose ONE color scheme from those in the below list. ##
-## ###################################################################
-
 import:
-  - ~/.config/alacritty/colorschemes/ayu-dark.yml
-# - ~/.config/alacritty/colorschemes/catppuccin-frappe.yml
-# - ~/.config/alacritty/colorschemes/catppuccin-macchiato.yml
-# - ~/.config/alacritty/colorschemes/catppuccin-mocha.yml
-# - ~/.config/alacritty/colorschemes/custom-light.yml
-# - ~/.config/alacritty/colorschemes/doom-one.yml
-# - ~/.config/alacritty/colorschemes/dracula.yml
-# - ~/.config/alacritty/colorschemes/github-dark.yml
-# - ~/.config/alacritty/colorschemes/gruvbox-dark.yml
-# - ~/.config/alacritty/colorschemes/gruvbox-powerline.yml
-# - ~/.config/alacritty/colorschemes/gruvbox.yml
-# - ~/.config/alacritty/colorschemes/monokai.yml
-# - ~/.config/alacritty/colorschemes/moonfly.yml
-# - ~/.config/alacritty/colorschemes/nord.yml
-# - ~/.config/alacritty/colorschemes/oceanic-next.yml
-# - ~/.config/alacritty/colorschemes/onedark.yml
-# - ~/.config/alacritty/colorschemes/papercolor.yml
-# - ~/.config/alacritty/colorschemes/solarized-dark.yml
-# - ~/.config/alacritty/colorschemes/solarized-light.yml
-# - ~/.config/alacritty/colorschemes/sonokai.yml
-# - ~/.config/alacritty/colorschemes/tokyonight-storm.yml
-# - ~/.config/alacritty/colorschemes/tokyonight.yml
-# - ~/.config/alacritty/colorschemes/tomorrow-night.yml
+  - ~/.config/alacritty/theme.yml
