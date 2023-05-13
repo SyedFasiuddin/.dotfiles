@@ -57,6 +57,8 @@ zstyle ":completion:*" use-compctl false
 zstyle ":completion:*" verbose true
 zstyle ":completion:*:kill*" command "ps -U $USER -o pid,%cpu,tty,cputime,cmd"
 
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
 bindkey -v
 export KEYTIMEOUT=1
 autoload edit-command-line
