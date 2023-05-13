@@ -16,6 +16,11 @@ echo "\n\
 brew cleanup
 
 echo "\n\
+==== brew autoremove ==========================================================\
+\n"
+brew autoremove
+
+echo "\n\
 ==== rustup update ============================================================\
 \n"
 rustup update
