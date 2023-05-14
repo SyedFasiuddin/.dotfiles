@@ -12,3 +12,5 @@ o.spellfile:append(spellfile_en)
 o.dictionary:append("/usr/share/dict/words")
 
 o.textwidth = 80
+o.number = false
+o.relativenumber = false
