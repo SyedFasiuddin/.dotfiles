@@ -29,7 +29,17 @@ lualine.setup({
             }
         },
         lualine_c = { "%f" },
-        lualine_x = { "encoding", "fileformat" },
+        lualine_x = {
+            "encoding",
+            {
+                "fileformat",
+                symbols = {
+                    unix = "Unix",
+                    dos = "Dos",
+                    mac = "Mac",
+                }
+            }
+        },
         lualine_y = { "diff" },
         lualine_z = { "filetype" },
     },
