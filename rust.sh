@@ -16,13 +16,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 export PATH="$PATH:$CARGO_HOME/bin"
 
 cargo install cargo-binstall --locked
-cargo binstall sccache -y
+cargo install sccache -y
 
 export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 
 # Install everything
-cargo binstall\
+cargo install\
       alacritty\
       bacon bob\
       cargo-info cargo-install-update cargo-install-update-config\
