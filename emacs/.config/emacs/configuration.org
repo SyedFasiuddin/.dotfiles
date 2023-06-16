@@ -219,7 +219,8 @@
      (setq org-hide-emphasis-markers t
            org-pretty-entities t
            org-src-fontify-natively t
-           org-startup-folded t)
+           org-startup-folded t
+           org-hide-block-startup 1)
    #+END_SRC
 
 ** Minimal look
