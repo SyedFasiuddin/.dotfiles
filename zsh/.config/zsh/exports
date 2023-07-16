@@ -38,26 +38,26 @@ export MYSQL_HISTFILE="$XDG_CACHE_HOME/.mysql_history"
 export ABDUCO_SOCKET_DIR="/tmp"
 
 # fnm: NodeJS version manager written in Rust
-export FNM_DIR="$HOME/Developer/JS/.fnm"
+export FNM_DIR="$DEV/JS/.fnm"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/.node_repl_history"
 export NODE_REPL_HISTORY_SIZE=1000000000
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # pyenv: Python version manager
-export PYENV_ROOT="$HOME/Developer/Python/.pyenv"
+export PYENV_ROOT="$DEV/Python/.pyenv"
 export PYENV_VERSION="3.11"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-export JUPYTER_CONFIG_DIR="$HOME/Developer/Python/.jupyter"
+export JUPYTER_CONFIG_DIR="$DEV/Python/.jupyter"
 export JUPYTER_DATA_DIR="$XDG_DATA_HOME/jupyter"
-export IPYTHONDIR="$HOME/Developer/Python/.ipython"
+export IPYTHONDIR="$DEV/Python/.ipython"
 
 # bob: nvim version manager
 export PATH="$XDG_DATA_HOME/bob/nvim-bin:$PATH"
 
 # Rust
-export CARGO_HOME="$HOME/Developer/Rust/.cargo"
-export RUSTUP_HOME="$HOME/Developer/Rust/.rustup"
+export CARGO_HOME="$DEV/Rust/.cargo"
+export RUSTUP_HOME="$DEV/Rust/.rustup"
 export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 
