@@ -34,6 +34,7 @@ draw_bold_text_with_bright_colors: true
 
 mouse:
   hide_when_typing: true
+  enabled: false
 
 key_bindings:
     - { key: Return, mods: Command, action: ToggleFullscreen }
