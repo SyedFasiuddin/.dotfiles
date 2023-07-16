@@ -21,7 +21,6 @@ set fileencoding=utf-8
 set smartindent
 set autoindent
 
-set cursorline
 set colorcolumn=80
 
 set nocompatible
@@ -39,18 +38,13 @@ set textwidth=80        " shorthand tw
 set formatoptions+=t    " shorthand fo
 set formatoptions+=n
 set formatoptions+=2
-set formatoptions+=a
+" set formatoptions+=a
 
 set splitbelow
 set splitright
 
 set noswapfile
 set showcmd
-
-colorscheme slate
-set background=dark
-set termguicolors
-hi! Normal ctermbg=NONE guibg=NONE
 
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_conceal_guifg = '#777777'
@@ -65,10 +59,8 @@ function! s:goyo_enter()
     endif
 
     set noshowcmd
-    set nocursorline
     set scrolloff=999
     Limelight
-    hi! Normal ctermbg=NONE guibg=NONE
 endfunction
 
 function! s:goyo_leave()
@@ -77,10 +69,8 @@ function! s:goyo_leave()
     endif
 
     set showcmd
-    set cursorline
     set scrolloff=0
     Limelight!
-    hi! Normal ctermbg=NONE guibg=NONE
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
