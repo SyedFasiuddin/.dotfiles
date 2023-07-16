@@ -2,16 +2,24 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
+DEV="$HOME/Developer"
 
 # Zoxide: Directory jumper
 export _ZO_DATA_DIR="$XDG_DATA_HOME"
 export _ZO_FZF_OPTS="--reverse --info=inline --height 40%"
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+JDK="/opt/homebrew/Cellar/openjdk@17/17.0.7"
+export JAVA_HOME="$JDK/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME:$PATH"
+export CPPFLAGS="-I/$JDK/include"
 export CLASSPATH="/opt/homebrew/Cellar/tomcat/10.1.7/libexec/lib/*"
-export CLASSPATH="$CLASSPATH:$HOME/Developer/Java/jar-dependencies/*"
+export CLASSPATH="$CLASSPATH:$DEV/Java/jar-dependencies/*"
+# Doesn't seem to work
+# export GRADLE_USER_HOME="$DEV/Java/.gradle"
+# export M2_HOME="$DEV/Java/.m2"
+# export MAVEN_HOME="$M2_HOME"
+# export MAVEN_REPOSITORY="$M2_HOME/repository"
 
 # Less: Pager
 export LESS_TERMCAP_mb=$'\E[1;31m'
