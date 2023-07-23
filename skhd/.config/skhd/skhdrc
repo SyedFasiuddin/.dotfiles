@@ -1,7 +1,20 @@
+:: default
+:: layer1
+
+default < rshift - n ; layer1
+layer1 <  rshift - n ; default
+
+layer1 < q : skhd -t "1"
+layer1 < w : skhd -t "2"
+layer1 < e : skhd -t "3"
+layer1 < r : skhd -t "4"
+layer1 < t : skhd -t "5"
+layer1 < y : skhd -t "6"
+layer1 < u : skhd -t "7"
+layer1 < i : skhd -t "8"
+layer1 < o : skhd -t "9"
+layer1 < p : skhd -t "0"
+
 .load "yabai.skhd"
 
-cmd - return : alacritty
-
-.blacklist [
-    "alacritty"
-]
+default < cmd - return : alacritty
