@@ -27,4 +27,6 @@ alias ed="ed -p\"ed: \""
 alias em="emacsclient -nw -a ''"
 alias emg="emacsclient -c -a '' &"
 
+alias wget="wget --hsts-file='~/.cache/wget-hsts'"
+
 # vim: set ft=sh:
