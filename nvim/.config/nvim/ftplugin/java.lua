@@ -10,8 +10,7 @@ if not cmp_ok then
     return
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local root_markers = { "gradlew", ".git", ".gradlew", "mvnw" }
 local root_dir = jdtls.setup.find_root(root_markers)
@@ -44,7 +43,8 @@ config.cmd = {
     "--add-opens", "java.base/java.lang=ALL-UNNAMED",
 
     "-jar",
-    data_home .. "/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+    vim.fn.glob(data_home ..
+    "/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 
     "-configuration",
     data_home .. "/nvim/mason/packages/jdtls/config_mac",
