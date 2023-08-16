@@ -1,0 +1,47 @@
+# import = ["~/.config/alacritty/theme.toml"]
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 16
+
+[font.bold]
+family = "SF Mono"
+style = "Bold"
+
+[font.normal]
+family = "SF Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Command"
+
+[mouse]
+# enabled = false
+hide_when_typing = true
+
+[scrolling]
+history = 0
+multiplier = 0
+
+[shell]
+args = ["new", "-A", "-s", "MASTER"]
+program = "/opt/homebrew/bin/tmux"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+option_as_alt = "OnlyLeft"
+
+[window.padding]
+x = 10
+y = 10
+
+# [colorscheme]
+# mode = "System"
+# light = "~/.config/alacritty/colorschemes/modus-operandi.toml"
+# dark = "~/.config/alacritty/colorschemes/modus-vivendi.toml"
