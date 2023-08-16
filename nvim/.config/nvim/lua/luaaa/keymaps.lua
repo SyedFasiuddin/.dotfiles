@@ -53,3 +53,7 @@ keymap("i", "jj", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Quickfix list
+keymap("n", "[q", ":cp<CR>", opts)
+keymap("n", "]q", ":cn<CR>", opts)
