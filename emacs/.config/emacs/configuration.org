@@ -47,15 +47,15 @@
   #+BEGIN_SRC emacs-lisp
     (defvar bootstrap-version)
     (let ((bootstrap-file
-	   (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-	  (bootstrap-version 6))
+           (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+          (bootstrap-version 6))
       (unless (file-exists-p bootstrap-file)
-	(with-current-buffer
-	    (url-retrieve-synchronously
-	     "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-	     'silent 'inhibit-cookies)
-	  (goto-char (point-max))
-	  (eval-print-last-sexp)))
+        (with-current-buffer
+            (url-retrieve-synchronously
+             "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+             'silent 'inhibit-cookies)
+          (goto-char (point-max))
+          (eval-print-last-sexp)))
       (load bootstrap-file nil 'nomessage))
   #+END_SRC
 
@@ -80,7 +80,7 @@
        :ensure t
        :config
        (setq doom-themes-enable-bold t
-	     doom-themes-enable-italic t)
+             doom-themes-enable-italic t)
        (doom-themes-visual-bell-config)
        (doom-themes-org-config))
 
@@ -88,12 +88,18 @@
        :ensure t
        :config
        (setq modus-themes-italic-constructs t
-	     modus-themes-bold-constructs t))
+             modus-themes-bold-constructs t))
    #+END_SRC
 
 *** Set color scheme
    #+BEGIN_SRC emacs-lisp
-     (load-theme 'modus-operandi :no-confirm)
+     (defun my/apply-theme (appearance)
+       (mapc #'disable-theme custom-enabled-themes)
+       (pcase appearance
+         ('light (load-theme 'modus-operandi t))
+         ('dark (load-theme 'modus-vivendi t))))
+
+     (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
    #+END_SRC
 
 ** Org roam
@@ -205,7 +211,6 @@
    for org mode.
 
    #+BEGIN_SRC emacs-lisp
-     (setq ispell-program-name "/opt/homebrew/bin/ispell")
      (dolist (hook '(org-mode-hook))
        (add-hook hook
          (lambda ()
