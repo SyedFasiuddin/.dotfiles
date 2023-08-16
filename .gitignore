@@ -9,6 +9,7 @@ packer_compiled.lua
 **/autoload/
 **/spell/
 **/.netrwhist
+**/viminfo
 
 # zsh
 **/.zcompdump
