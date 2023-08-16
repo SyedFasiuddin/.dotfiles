@@ -55,8 +55,6 @@ return packer.startup(function(use)
         end,
     })
 
-    use("tpope/vim-sleuth")
-
     use("mfussenegger/nvim-jdtls")
 
     use("SyedFasiuddin/nop.vim")
