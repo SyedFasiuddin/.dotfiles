@@ -89,3 +89,5 @@ set listchars=trail:-,tab:>-
 autocmd BufWritePre * :%s/\s\+$//e
 
 set foldmethod=marker
+
+set viminfofile=~/.vim/viminfo
