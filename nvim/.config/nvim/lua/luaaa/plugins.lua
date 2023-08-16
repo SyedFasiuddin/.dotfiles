@@ -75,4 +75,16 @@ return packer.startup(function(use)
     use("morhetz/gruvbox")
     use("navarasu/onedark.nvim")
     use("NLKNguyen/papercolor-theme")
+
+    use({
+        "~/Developer/Lua/theme-toggle-nvim/",
+        config = function ()
+            require("theme-toggle-nvim").setup({
+                colorscheme = {
+                    light = "onedark",
+                    dark = "gruvbox",
+                }
+            })
+        end
+    })
 end)

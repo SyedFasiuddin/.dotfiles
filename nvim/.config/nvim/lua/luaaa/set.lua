@@ -17,7 +17,6 @@ local sets = {
 
     guicursor = "",             -- block shaped cursor in insert modw
     termguicolors = true,
-    background = "dark",
 
     numberwidth = 3,            -- number column width
     signcolumn = "no",          -- glyph column in margin

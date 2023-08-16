@@ -65,4 +65,4 @@ vim.api.nvim_create_user_command("ChangeColorScheme", function(opts)
 end, { nargs = "?" })
 
 -- Finally set colorscheme
-set_colorscheme("")
+-- set_colorscheme("")
