@@ -8,20 +8,31 @@ if [[ -z $DIR ]]; then
     exit 1
 fi
 
-tmux has-session -t "$DIR" 2> /dev/null ||
-(   tmux new -d -s $DIR
+tmux has-session -t "$DIR" 2> /dev/null || (
+    tmux new -d -s $DIR
 
-    tmux rename-window -t $DIR:1 server
-    tmux split-window -h -t $DIR:server
+    # 1st & 3rd window
+    if [[ -f "Cargo.toml" ]] ; then
+        # Rust
+        tmux rename-window -t $DIR:1 bacon
+        tmux send-keys -t $DIR:1 'bacon' Enter
 
-    tmux neww -d -n vi -t $DIR
-    tmux send-keys -t $DIR:vi 'nvim' Enter
+        tmux neww -d -n cargo -t $DIR:3
+    else
+        # Other (Assuming JavaScript)
+        tmux rename-window -t $DIR:1 server
+        tmux split-window -h -t $DIR:server
 
-    tmux neww -d -n misc -t $DIR
+        tmux neww -d -n misc -t $DIR:3
+    fi
 
+    # 2nd window
+    tmux neww -d -n vi -t $DIR:2
+    tmux send-keys -t $DIR:2 'nvim' Enter
+
+    # 4th window
     if [[ -d ".git" ]] ; then
-        tmux neww -d -n git -t $DIR
-        tmux send-keys -t $DIR:git 'lazygit' Enter
+        tmux neww -d -n git -t $DIR:4
     fi
 )
 
@@ -30,7 +41,3 @@ if [[ -z $TMUX ]]; then
 else
     tmux switch-client -t $DIR
 fi
-
-# as new session is being created in a folder that session's working directory
-# will be that folder
-
