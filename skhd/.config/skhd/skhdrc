@@ -1,19 +1,30 @@
 :: default
 :: layer1
 
-default < rshift - n ; layer1
-layer1 <  rshift - n ; default
+default < rshift - b ; layer1
+layer1 <  rshift - b ; default
 
-layer1 < q : skhd -t "1"
-layer1 < w : skhd -t "2"
-layer1 < e : skhd -t "3"
-layer1 < r : skhd -t "4"
-layer1 < t : skhd -t "5"
-layer1 < y : skhd -t "6"
-layer1 < u : skhd -t "7"
-layer1 < i : skhd -t "8"
-layer1 < o : skhd -t "9"
-layer1 < p : skhd -t "0"
+layer1 < q : skhd -t "!"
+layer1 < w : skhd -t "@"
+layer1 < e : skhd -t "#"
+layer1 < r : skhd -t "$"
+layer1 < t : skhd -t "%"
+layer1 < y : skhd -t "^"
+layer1 < u : skhd -t "&"
+layer1 < i : skhd -t "*"
+layer1 < o : skhd -t "("
+layer1 < p : skhd -t ")"
+
+layer1 < a : skhd -t "1"
+layer1 < s : skhd -t "2"
+layer1 < d : skhd -t "3"
+layer1 < f : skhd -t "4"
+layer1 < g : skhd -t "5"
+layer1 < h : skhd -t "6"
+layer1 < j : skhd -t "7"
+layer1 < k : skhd -t "8"
+layer1 < l : skhd -t "9"
+layer1 < 0x29 : skhd -t "0" # semicolon
 
 .load "yabai.skhd"
 
