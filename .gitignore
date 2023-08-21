@@ -1,5 +1,5 @@
 # alacritty
-**/theme.yml
+**/theme.toml
 
 # nvim
 packer_compiled.lua
