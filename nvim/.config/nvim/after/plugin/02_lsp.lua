@@ -52,7 +52,12 @@ local servers = {
 
 for _, value in pairs(servers) do
     lspconfig[value].setup({
-        on_attach = on_attach,
+        on_attach = function (client, bufnr)
+            if value == "clangd"  then
+                client.server_capabilities.signatureHelpProvider = false
+            end
+            on_attach(client, bufnr)
+        end,
         capabilities = capabilities,
     })
 end
