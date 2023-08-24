@@ -32,37 +32,6 @@ require("onedark").setup({
         comments = "NONE",
     },
     highlights = {
-        WinSeparator = { fg = "#E0E0E0", bg = "NONE",    style = "NONE" },
+        WinSeparator = { fg = "#000000", bg = "NONE",    style = "NONE" },
     },
 })
-
-local set_colorscheme = function(colo)
-    if colo ~= "" then
-        vim.cmd.colorscheme(colo)
-        return
-    end
-
-    local file_path = string.format("%s/colorscheme", vim.fn.stdpath("data"))
-    local fp = io.open(file_path)
-    if not fp then
-        print("Cannot read colorscheme file!!!")
-        return
-    end
-
-    -- file is supposed to be of type:
-    -- line 1: name of colorscheme
-    -- line 2: background mode
-    local colorscheme = fp:read("*l")
-    local bg_mode = fp:read("*l")
-    fp:close()
-
-    vim.opt.background = bg_mode
-    vim.cmd.colorscheme(colorscheme)
-end
-
-vim.api.nvim_create_user_command("ChangeColorScheme", function(opts)
-    set_colorscheme(opts.args)
-end, { nargs = "?" })
-
--- Finally set colorscheme
--- set_colorscheme("")
