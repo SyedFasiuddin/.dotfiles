@@ -45,9 +45,7 @@ local servers = {
     "pyright",
     "texlab",
     "clangd",
-    "bashls",
     "rust_analyzer",
-    "lua_ls",
 }
 
 for _, value in pairs(servers) do
