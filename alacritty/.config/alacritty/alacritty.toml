@@ -1,8 +1,5 @@
-# import = ["~/.config/alacritty/theme.toml"]
+import = ["~/.config/alacritty/theme.toml"]
 live_config_reload = true
-
-[colors]
-draw_bold_text_with_bright_colors = true
 
 [font]
 size = 16
@@ -40,8 +37,3 @@ option_as_alt = "OnlyLeft"
 [window.padding]
 x = 10
 y = 10
-
-# [colorscheme]
-# mode = "System"
-# light = "~/.config/alacritty/colorschemes/modus-operandi.toml"
-# dark = "~/.config/alacritty/colorschemes/modus-vivendi.toml"

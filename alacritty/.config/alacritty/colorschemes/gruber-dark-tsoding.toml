@@ -1,0 +1,52 @@
+[colors.primary]
+background = "#181818"
+foreground = "#F4F4FF"
+
+[colors.cursor]
+text    = "#181818"
+cursor  = "#FFDD33"
+
+[colors.normal]
+black   = "#181818"
+red     = "#F43841"
+green   = "#73C936"
+yellow  = "#FFDD33"
+blue    = "#96A6C8"
+magenta = "#9E95C7"
+cyan    = "#95A99F"
+white   = "#F4F4FF"
+
+[colors.bright]
+black   = "#52494E"
+red     = "#C73C3F"
+green   = "#453D41"
+yellow  = "#484848"
+blue    = "#E4E4EF"
+magenta = "#F5F5F5"
+cyan    = "#CC8C3C"
+white   = "#E4E4EF"
+
+# Source: https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
+# (let ((gruber-darker-fg        "#e4e4ef")
+#       (gruber-darker-fg+1      "#f4f4ff")
+#       (gruber-darker-fg+2      "#f5f5f5")
+#       (gruber-darker-white     "#ffffff")
+#       (gruber-darker-black     "#000000")
+#       (gruber-darker-bg-1      "#101010")
+#       (gruber-darker-bg        "#181818")
+#       (gruber-darker-bg+1      "#282828")
+#       (gruber-darker-bg+2      "#453d41")
+#       (gruber-darker-bg+3      "#484848")
+#       (gruber-darker-bg+4      "#52494e")
+#       (gruber-darker-red-1     "#c73c3f")
+#       (gruber-darker-red       "#f43841")
+#       (gruber-darker-red+1     "#ff4f58")
+#       (gruber-darker-green     "#73c936")
+#       (gruber-darker-yellow    "#ffdd33")
+#       (gruber-darker-brown     "#cc8c3c")
+#       (gruber-darker-quartz    "#95a99f")
+#       (gruber-darker-niagara-2 "#303540")
+#       (gruber-darker-niagara-1 "#565f73")
+#       (gruber-darker-niagara   "#96a6c8")
+#       (gruber-darker-wisteria  "#9e95c7")
+
