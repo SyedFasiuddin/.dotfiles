@@ -61,28 +61,10 @@ return packer.startup(function(use)
 
     use("theprimeagen/harpoon")
 
-    use({
-        "folke/neodev.nvim",
-        config = function ()
-            require("neodev").setup()
-        end
-    })
-
     -- colorschemes
     use("luisiacc/gruvbox-baby")
     use("morhetz/gruvbox")
     use("navarasu/onedark.nvim")
     use("NLKNguyen/papercolor-theme")
-
-    use({
-        "~/Developer/Lua/theme-toggle-nvim/",
-        config = function ()
-            require("theme-toggle-nvim").setup({
-                colorscheme = {
-                    light = "onedark",
-                    dark = "gruvbox",
-                }
-            })
-        end
-    })
+    use("thimc/gruber-darker.nvim")
 end)

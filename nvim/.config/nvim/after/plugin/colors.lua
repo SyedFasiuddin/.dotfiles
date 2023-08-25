@@ -35,3 +35,5 @@ require("onedark").setup({
         WinSeparator = { fg = "#000000", bg = "NONE",    style = "NONE" },
     },
 })
+
+vim.cmd.colorscheme("gruber-darker")
