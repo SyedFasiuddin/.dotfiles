@@ -67,4 +67,23 @@ return packer.startup(function(use)
     use("navarasu/onedark.nvim")
     use("NLKNguyen/papercolor-theme")
     use("thimc/gruber-darker.nvim")
+
+    use {
+        "nvim-orgmode/orgmode",
+        config = function()
+            vim.opt.conceallevel = 2
+            vim.opt.concealcursor = "nc"
+            require("orgmode").setup_ts_grammar()
+            require("orgmode").setup({
+                org_hide_emphasis_markers = true
+            })
+        end
+    }
+
+    use({
+        "akinsho/org-bullets.nvim",
+        config = function()
+            require("org-bullets").setup()
+        end
+    })
 end)
