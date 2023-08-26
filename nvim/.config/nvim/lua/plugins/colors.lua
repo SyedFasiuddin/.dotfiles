@@ -1,6 +1,7 @@
 return {
     {
         "luisiacc/gruvbox-baby",
+        lazy = true,
         config = function()
             vim.g.gruvbox_baby_background_color = "dark"
             vim.g.gruvbox_baby_transparent_mode = true
@@ -19,25 +20,35 @@ return {
     },
     {
         "morhetz/gruvbox",
+        lazy = true,
         config = function()
             vim.g.gruvbox_contrast_dark = "hard"
         end
     },
     {
         "navarasu/onedark.nvim",
+        lazy = true,
+        opts = {
+            style = "darker",
+            ending_tildes = true,
+            code_style = {
+                comments = "NONE",
+            },
+            highlights = {
+                WinSeparator = { fg = "#000000", bg = "NONE",    style = "NONE" },
+            },
+        },
+    },
+    {
+        "thimc/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            require("onedark").setup({
-                style = "darker",
-                ending_tildes = true,
-                code_style = {
-                    comments = "NONE",
-                },
-                highlights = {
-                    WinSeparator = { fg = "#000000", bg = "NONE",    style = "NONE" },
-                },
-            })
+            vim.cmd.colorscheme("gruber-darker")
         end
     },
-    "NLKNguyen/papercolor-theme",
-    "thimc/gruber-darker.nvim",
+    {
+        "NLKNguyen/papercolor-theme",
+        lazy = true,
+    },
 }

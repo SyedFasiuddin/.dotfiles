@@ -15,8 +15,6 @@ vim.g.mapleader = " "
 
 require("lazy").setup("plugins")
 
-vim.cmd.colorscheme("gruber-darker")
-
 require("autocmd")
 require("set")
 require("keymaps")
