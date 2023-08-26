@@ -1,22 +1,25 @@
-require("luaaa.plugins")
-require("luaaa.set")
-require("luaaa.keymaps")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
+vim.g.mapleader = " "
 
--- [[ Highlight on yank ]]
--- See `:help vim.highlight.on_yank()`
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank({
-            timeout = 40,
-        })
-    end,
-    group = highlight_group,
-    pattern = '*',
-})
--- kickstart.nvim and ThePrimeagen
+require("lazy").setup("plugins")
+
+vim.cmd.colorscheme("gruber-darker")
+
+require("autocmd")
+require("set")
+require("keymaps")
 
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0

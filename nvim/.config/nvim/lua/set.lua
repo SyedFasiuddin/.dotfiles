@@ -40,4 +40,3 @@ local sets = {
 for key, value in pairs(sets) do
     vim.opt[key] = value
 end
-
