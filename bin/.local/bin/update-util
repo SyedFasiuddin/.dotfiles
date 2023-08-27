@@ -31,9 +31,9 @@ echo "\n\
 cargo install-update -a
 
 echo "\n\
-==== nvim +TSUpdate +qa =======================================================\
+==== nvim --headless \"+Lazy! sync\" +qa ======================================\
 \n"
-nvim +TSUpdate +qa
+nvim --headless "+Lazy! sync" +qa
 
 echo "\n\
 ==== vim +PlugUpdate +qa ======================================================\
