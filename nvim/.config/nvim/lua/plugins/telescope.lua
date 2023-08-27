@@ -3,8 +3,8 @@ return {
     branch = '0.1.x',
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-lua/popup.nvim"
     },
+    event = "UIEnter",
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")

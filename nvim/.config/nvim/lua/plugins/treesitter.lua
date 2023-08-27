@@ -1,6 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = "VeryLazy",
     opts = {
         highlight = {
             enable = true,
@@ -13,5 +14,5 @@ return {
             enable = true,
             extended_mode = true,
         },
-    }
+    },
 }
