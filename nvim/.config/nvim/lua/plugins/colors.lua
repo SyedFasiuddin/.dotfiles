@@ -2,7 +2,7 @@ return {
     {
         "luisiacc/gruvbox-baby",
         lazy = true,
-        config = function()
+        init = function()
             vim.g.gruvbox_baby_background_color = "dark"
             vim.g.gruvbox_baby_transparent_mode = true
             vim.g.gruvbox_baby_keyword_style = "NONE"
@@ -21,7 +21,7 @@ return {
     {
         "morhetz/gruvbox",
         lazy = true,
-        config = function()
+        init = function()
             vim.g.gruvbox_contrast_dark = "hard"
         end
     },
