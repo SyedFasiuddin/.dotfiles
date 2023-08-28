@@ -40,3 +40,9 @@ local sets = {
 for key, value in pairs(sets) do
     vim.opt[key] = value
 end
+
+for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
+    vim.g["loaded_" .. provider .. "_provider"] = 0
+end
+
+vim.g.netrw_banner = 0
