@@ -3,10 +3,6 @@ local keymap = vim.api.nvim_set_keymap
 
 local opts = { noremap = true, silent = true }
 
--- setting leader to space
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-
 -- A -- Alt/Option key
 -- C -- Control key
 -- S -- Shift key
