@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 });
 
 vim.api.nvim_create_autocmd("BufReadPre", {
-    pattern = { "*.md", ".txt", ".org" },
+    pattern = { "*.md", "*.txt", "*.org" },
     callback = function ()
         local o = vim.opt_local
 
