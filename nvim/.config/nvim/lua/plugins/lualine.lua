@@ -1,10 +1,9 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
-    event = "UIEnter",
+    event = "BufReadPost",
     opts = {
         options = {
-            icons_enabled = true,
+            icons_enabled = false,
             theme = "auto",
             section_separators = { left = "", right = "" },
             component_separators = { left = "", right = "" },

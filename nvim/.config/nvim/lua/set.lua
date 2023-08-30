@@ -35,6 +35,7 @@ local sets = {
     pumheight = 8,
 
     showmode = false,           -- ex line showing mode
+    laststatus = 0,
 }
 
 for key, value in pairs(sets) do
