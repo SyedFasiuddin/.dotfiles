@@ -1,41 +1,14 @@
 #!/bin/sh
 
-echo "\n\
-==== brew update ==============================================================\
-\n"
+set -xe
+
 brew update
-
-echo "\n\
-==== brew upgrade =============================================================\
-\n"
 brew upgrade
-
-echo "\n\
-==== brew cleanup =============================================================\
-\n"
 brew cleanup
-
-echo "\n\
-==== brew autoremove ==========================================================\
-\n"
 brew autoremove
 
-echo "\n\
-==== rustup update ============================================================\
-\n"
 rustup update
-
-echo "\n\
-==== cargo install-update -a ==================================================\
-\n"
 cargo install-update -a
 
-echo "\n\
-==== nvim --headless \"+Lazy! sync\" +qa ======================================\
-\n"
 nvim --headless "+Lazy! sync" +qa
-
-echo "\n\
-==== vim +PlugUpdate +qa ======================================================\
-\n"
 vim +PlugUpdate +qa
