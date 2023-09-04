@@ -1,9 +1,6 @@
 # alacritty
 **/theme.toml
 
-# nvim
-packer_compiled.lua
-
 # vim
 **/plugged/
 **/autoload/
