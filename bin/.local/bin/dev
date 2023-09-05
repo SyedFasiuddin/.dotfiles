@@ -5,4 +5,4 @@ if [[ ! -d "$HOME/Documents/dev.log" ]] ; then
     exit 1
 fi
 
-nvim "$HOME/Documents/dev.log/README.md"
+$EDITOR "$HOME/Documents/dev.log/README.md"

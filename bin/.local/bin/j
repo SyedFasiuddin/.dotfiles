@@ -31,8 +31,8 @@ if [[ "$TERM_PROGRAM" = tmux ]] ; then
         tmux new-session -d -s MASTER
     fi
 
-    tmux neww -d -n note -t MASTER "vi $file"
+    tmux neww -d -n note -t MASTER "$EDITOR $file"
     tmux switch-client -t MASTER:note
 else
-    vi $file
+    $EDITOR $file
 fi

@@ -11,4 +11,3 @@ rustup update
 cargo install-update -a
 
 nvim --headless "+Lazy! sync" +qa
-vim +PlugUpdate +qa

@@ -15,4 +15,4 @@ day=${date[2]}
 mkdir -p "$year/$month/$day"
 touch "$year/$month/$day/question.txt" "$year/$month/$day/note.txt"\
     "$year/$month/$day/solution.rs"
-nvim
+$EDITOR
