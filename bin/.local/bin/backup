@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -xe
+
+# Only run on sunday
+[ $(date "+%a") != "Sun" ] && exit 1
+
+# Substract 1 because I consider Monday as first day of week while `date'
+# considers Sunday as first day of week
+week_num=$(($(date "+%U") - 1))
+
+[ -d $HOME/Documents/Journal ] && (
+    cd $HOME/Documents/Journal
+    git add .
+    git commit -m "Week $week_num"
+    git push
+)
+
+[ -d $HOME/Documents/dev.log ] && (
+    cd $HOME/Documents/dev.log
+    git add .
+    git commit -m "Week $week_num"
+    git push
+)
+
+[ -d $HOME/Documents/Zettelkasten ] && (
+    cd $HOME/Documents/Zettelkasten
+    git add .
+    git commit -m "Week $week_num"
+    git push
+)
