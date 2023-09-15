@@ -2,10 +2,6 @@ if [ -f ~/.config/zsh/exports ]; then
     . ~/.config/zsh/exports
 fi
 
-if [ -f ~/.config/zsh/aliases ]; then
-    . ~/.config/zsh/aliases
-fi
-
 . "$HOME/Developer/Rust/.cargo/env"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -33,6 +29,10 @@ set -o vi # to use vi keys to move in the read line
 bind 'set completion-ignore-case on'
 shopt -s cdspell
 complete -d cd
+
+if [ -f ~/.config/zsh/aliases ]; then
+    . ~/.config/zsh/aliases
+fi
 
 if [ -f ~/.config/bash/.fzf.bash ]; then
     . ~/.config/bash/.fzf.bash

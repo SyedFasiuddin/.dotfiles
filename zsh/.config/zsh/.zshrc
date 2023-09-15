@@ -4,10 +4,6 @@ if [ -f ~/.config/zsh/exports ]; then
     . ~/.config/zsh/exports
 fi
 
-if [ -f ~/.config/zsh/aliases ]; then
-    . ~/.config/zsh/aliases
-fi
-
 # if [ -f ~/.config/zsh/prompt_common.zsh ]; then
 #     . ~/.config/zsh/prompt_common.zsh
 # fi
@@ -65,6 +61,10 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey "^v" edit-command-line
 bindkey "^?" backward-delete-char
+
+if [ -f ~/.config/zsh/aliases ]; then
+    . ~/.config/zsh/aliases
+fi
 
 if [ -f ~/.config/zsh/prompt_starship ]; then
     . ~/.config/zsh/prompt_starship
