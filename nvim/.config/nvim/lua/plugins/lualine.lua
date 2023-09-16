@@ -1,6 +1,6 @@
 return {
     "nvim-lualine/lualine.nvim",
-    event = "BufReadPost",
+    event = { "LspAttach", "WinNew", "TabNew" },
     opts = {
         options = {
             icons_enabled = false,
@@ -50,6 +50,15 @@ return {
                         active = "lualine_c_inactive",
                         inactive = "lualine_a_active",
                     },
+                    cond = function()
+                        if #vim.api.nvim_list_tabpages() > 1 then
+                            vim.opt.showtabline = 1
+                            return true
+                        else
+                            vim.opt.showtabline = 0
+                            return false
+                        end
+                    end,
                     fmt = function(name, context)
                         local buflist = vim.fn.tabpagebuflist(context.tabnr)
                         local winnr = vim.fn.tabpagewinnr(context.tabnr)
@@ -61,21 +70,21 @@ return {
             },
         },
     },
-    config = function(_, opts)
-        require("lualine").setup(opts)
-
-        vim.keymap.set("n", "<C-w>,", function()
-            vim.ui.input({
-                prompt = "Enter new tab name: ",
-            }, function(input)
-                if input then
-                    vim.cmd("LualineRenameTab " .. input)
-                else
-                    vim.cmd("LualineRenameTab")
-                end
-            end)
-        end, { desc = "Rename tabs" })
-
-        vim.opt.showtabline = 1
-    end
+    keys = {
+        {
+            "<C-w>,",
+            function()
+                vim.ui.input({
+                    prompt = "Enter new tab name: ",
+                }, function(input)
+                        if input then
+                            vim.cmd("LualineRenameTab " .. input)
+                        else
+                            vim.cmd("LualineRenameTab")
+                        end
+                    end)
+            end,
+            desc = "Rename tabs",
+        },
+    },
 }
