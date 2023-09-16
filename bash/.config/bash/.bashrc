@@ -2,8 +2,6 @@ if [ -f ~/.config/zsh/exports ]; then
     . ~/.config/zsh/exports
 fi
 
-. "$HOME/Developer/Rust/.cargo/env"
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init bash)"
 eval "$(fnm env)"

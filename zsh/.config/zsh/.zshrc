@@ -8,8 +8,6 @@ fi
 #     . ~/.config/zsh/prompt_common.zsh
 # fi
 
-. "$HOME/Developer/Rust/.cargo/env"
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fnm env)"

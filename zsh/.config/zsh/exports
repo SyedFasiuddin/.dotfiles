@@ -63,6 +63,7 @@ export CARGO_HOME="$DEV/Rust/.cargo"
 export RUSTUP_HOME="$DEV/Rust/.rustup"
 export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # Go
 export GOPATH="$DEV/Go/.go"
