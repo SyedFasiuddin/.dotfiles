@@ -29,6 +29,6 @@ alias emg="emacsclient -c -a '' &"
 
 alias matrix="iamb -C ~/.config"
 alias wget="wget --no-hsts \
-    --ca-certificate=$(brew --prefix)/share/ca-certificates/cacert.pem"
+    --ca-certificate=$HOMEBREW_PREFIX/share/ca-certificates/cacert.pem"
 
 # vim: set ft=sh:

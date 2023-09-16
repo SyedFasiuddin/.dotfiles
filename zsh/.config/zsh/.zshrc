@@ -15,8 +15,9 @@ eval "$(zoxide init zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 
-# syntax highlight plugin for zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Syntax highlight and Autocompletion
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
 
 # zsh history stuff
 export HISTSIZE=1000000000
@@ -52,8 +53,6 @@ zstyle ":completion:*" select-prompt %SScrolling active: current selection at %p
 zstyle ":completion:*" use-compctl false
 zstyle ":completion:*" verbose true
 zstyle ":completion:*:kill*" command "ps -U $USER -o pid,%cpu,tty,cputime,cmd"
-
-fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
 bindkey -v
 export KEYTIMEOUT=1
