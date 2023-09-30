@@ -1,27 +1,47 @@
 return {
     "theprimeagen/harpoon",
-    event = "VeryLazy",
-    config = function()
-        local mark = require("harpoon.mark")
-        local ui = require("harpoon.ui")
-
-        vim.keymap.set("n", "<Leader>a", mark.add_file, { desc = "Harpoon: [A]dd" })
-        vim.keymap.set("n", "<Leader>w", ui.toggle_quick_menu,
-        { desc = "Harpoon: Vie[w]" })
-
-        local function set_harpoon_keys(opts)
-            for key, num in pairs(opts) do
-                vim.keymap.set("n", "<Leader>" .. key, function()
-                    ui.nav_file(num)
-                end, { desc = "Harpoon: File [" .. num .. "]" })
-            end
-        end
-
-        set_harpoon_keys({
-            ["h"] = 1,
-            ["j"] = 2,
-            ["k"] = 3,
-            ["l"] = 4,
-        })
-    end
+    keys = {
+        {
+            "<Leader>a",
+            function()
+                require("harpoon.mark").add_file()
+            end,
+            { desc = "Harpoon: [A]dd" }
+        },
+        {
+            "<Leader>w",
+            function()
+                require("harpoon.ui").toggle_quick_menu()
+            end,
+            { desc = "Harpoon: Vie[w]" }
+        },
+        {
+            "<Leader>h",
+            function()
+                require("harpoon.ui").nav_file(1)
+            end,
+            { desc = "Harpoon: File [1]" }
+        },
+        {
+            "<Leader>j",
+            function()
+                require("harpoon.ui").nav_file(2)
+            end,
+            { desc = "Harpoon: File [2]" }
+        },
+        {
+            "<Leader>k",
+            function()
+                require("harpoon.ui").nav_file(3)
+            end,
+            { desc = "Harpoon: File [3]" }
+        },
+        {
+            "<Leader>l",
+            function()
+                require("harpoon.ui").nav_file(4)
+            end,
+            { desc = "Harpoon: File [4]" }
+        },
+    },
 }
