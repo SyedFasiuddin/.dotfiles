@@ -13,12 +13,14 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $XDG_DATA_HOME/zsh/site-functions $fpath)
 
 # zsh history stuff
-export HISTSIZE=1000000000
-export HISTFILESIZE=1000000000
-export SAVEHIST=1000000000
 export HISTFILE=$XDG_CACHE_HOME/.zsh_history
-setopt INC_APPEND_HISTORY_TIME
+export HISTFILESIZE=$HIST_SIZE
+export HISTSIZE=$HIST_SIZE
+export SAVEHIST=$HIST_SIZE
 setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+setopt SHARE_HISTORY
 
 zmodload zsh/complist
 bindkey -M menuselect "h" vi-backward-char
