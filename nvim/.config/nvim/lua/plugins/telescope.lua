@@ -4,25 +4,19 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    event = "UIEnter",
-    config = function()
-        local telescope = require("telescope")
-        local actions = require("telescope.actions")
-        local builtin = require("telescope.builtin")
-
-        telescope.setup({
-            defaults = {
-                mappings = {
-                    n = {
-                        ["q"] = actions.close
-                    },
-                },
-            },
-        })
-
-        vim.keymap.set("n", "<Leader>f",
+    lazy = true,
+    config = true,
+    cmd = "Telescope",
+    keys = {
+        {
+            "<Leader><space>",
+            "<Cmd> Telescope <CR>",
+            { desc = "Telescope: Open telescope options" }
+        },
+        {
+            "<Leader>f",
             function()
-                builtin.find_files({
+                require("telescope.builtin").find_files({
                     file_ignore_patterns = {
                         ".git/",
                         "node_modules/",
@@ -31,12 +25,13 @@ return {
                     no_ignore = false,
                     hidden = true,
                 })
-            end, { desc = "Telescope: Open [f]ile picker" }
-        )
-
-        vim.keymap.set("n", "<Leader>g",
+            end,
+            { desc = "Telescope: Open [f]ile picker" }
+        },
+        {
+            "<Leader>g",
             function()
-                builtin.live_grep({
+                require("telescope.builtin").live_grep({
                     additional_args = function()
                         return { "--hidden" }
                     end,
@@ -47,37 +42,28 @@ return {
                         "*-lock.*",
                     },
                 })
-            end, { desc = "Telescope: [g]rep search" }
-        )
-
-        vim.keymap.set("n", "<Leader>t",
-            function()
-                builtin.help_tags()
-            end, { desc = "Telescope: Open help [t]ags" }
-        )
-
-        vim.keymap.set("n", "<Leader>;",
-            function()
-                builtin.resume()
-            end, { desc = "Telescope: Resume the last picker with entire state" }
-        )
-
-        vim.keymap.set("n", "<Leader>d",
-            function()
-                builtin.diagnostics()
-            end, { desc = "Telescope: Open lsp [d]iagnostics" }
-        )
-
-        vim.keymap.set("n", "<Leader><space>", "<Cmd>Telescope<CR>", {
-            desc = "Telescope: Open telescope options"
-        })
-
-        vim.keymap.set("n", "<Leader>b",
-            function()
-                builtin.buffers({
-                    initial_mode = "normal"
-                })
-            end, { desc = "Telescope: List open [b]uffers" }
-        )
-    end
+            end,
+            { desc = "Telescope: [g]rep search" }
+        },
+        {
+            "<Leader>d",
+            "<Cmd> Telescope diagnostics <CR>",
+            { desc = "Telescope: Open lsp [d]iagnostics" }
+        },
+        {
+            "<Leader>b",
+            "<Cmd> Telescope buffers <CR>",
+            { desc = "Telescope: List open [b]uffers" }
+        },
+        {
+            "<Leader>t",
+            "<Cmd> Telescope help_tags <CR>",
+            { desc = "Telescope: Open help [t]ags" }
+        },
+        {
+            "<Leader>;",
+            "<Cmd> Telescope resume <CR>",
+            { desc = "Telescope: Resume the last picker with entire state" }
+        },
+    },
 }
