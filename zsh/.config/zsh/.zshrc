@@ -10,7 +10,7 @@ eval "$(pyenv init -)"
 
 # Syntax highlight and Autocompletion
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $fpath)
+fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $XDG_DATA_HOME/zsh/site-functions $fpath)
 
 # zsh history stuff
 export HISTSIZE=1000000000
