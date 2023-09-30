@@ -1,12 +1,7 @@
 # zmodload zsh/zprof
 
-if [ -f ~/.config/zsh/exports ]; then
-    . ~/.config/zsh/exports
-fi
-
-# if [ -f ~/.config/zsh/prompt_common.zsh ]; then
-#     . ~/.config/zsh/prompt_common.zsh
-# fi
+[ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
+# [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
@@ -59,16 +54,8 @@ zle -N edit-command-line
 bindkey "^v" edit-command-line
 bindkey "^?" backward-delete-char
 
-if [ -f ~/.config/zsh/aliases ]; then
-    . ~/.config/zsh/aliases
-fi
-
-if [ -f ~/.config/zsh/prompt_starship ]; then
-    . ~/.config/zsh/prompt_starship
-fi
-
-if [ -f ~/.config/zsh/.fzf.zsh ]; then
-    . ~/.config/zsh/.fzf.zsh
-fi
+[ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
+[ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
+[ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
 
 # zprof
