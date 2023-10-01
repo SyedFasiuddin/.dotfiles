@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -xe
+set -x
 
 brew update
 brew upgrade
@@ -10,4 +10,10 @@ brew autoremove
 rustup update
 cargo install-update -a
 
+fnm install --lts
+fnm default lts-latest
+
+pyenv update
+
+bob use latest
 nvim --headless "+Lazy! sync" +qa
