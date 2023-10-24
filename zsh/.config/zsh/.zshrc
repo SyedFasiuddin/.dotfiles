@@ -11,10 +11,8 @@
 # zmodload zsh/zprof
 
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
-# [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(zoxide init zsh)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 
@@ -67,8 +65,11 @@ bindkey "^v" edit-command-line
 bindkey "^?" backward-delete-char
 
 [ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
+# [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
 [ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
 [ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
+
+eval "$(zoxide init zsh)"
 
 # End profiling
 
