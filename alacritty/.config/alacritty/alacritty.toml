@@ -4,13 +4,8 @@ live_config_reload = true
 [font]
 size = 16
 
-[font.bold]
-family = "SF Mono"
-style = "Bold"
-
 [font.normal]
 family = "SF Mono"
-style = "Regular"
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
@@ -18,7 +13,6 @@ key = "Return"
 mods = "Command"
 
 [mouse]
-# enabled = false
 hide_when_typing = true
 
 [scrolling]
