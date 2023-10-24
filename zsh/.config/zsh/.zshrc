@@ -1,3 +1,13 @@
+# Start profiling: https://stackoverflow.com/a/4351664/2103996
+
+# Per-command profiling:
+# zmodload zsh/datetime
+# setopt promptsubst
+# PS4='+$EPOCHREALTIME %N:%i> '
+# exec 3>&2 2> startlog.$$
+# setopt xtrace prompt_subst
+
+# Per-function profiling:
 # zmodload zsh/zprof
 
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
@@ -60,4 +70,11 @@ bindkey "^?" backward-delete-char
 [ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
 [ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
 
-# zprof
+# End profiling
+
+# Per-command profiling:
+# unsetopt xtrace
+# exec 2>&3 3>&-
+
+# Per-function profiling:
+# zprof > /tmp/zsh_perf
