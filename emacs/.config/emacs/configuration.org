@@ -3,23 +3,11 @@
 
 * Basics
 ** Minimal Look
-   Remove all clutter from the screen, i.e. tool bar, menu bar, scroll bar, and
-   startup screen.
+   Remove all clutter from the screen
 
    #+BEGIN_SRC emacs-lisp
-     (tool-bar-mode 0)
      (menu-bar-mode 0)
-     (add-to-list 'default-frame-alist
-                  '(vertical-scroll-bars . nil))
      (setq inhibit-startup-screen 1)
-   #+END_SRC
-
-** Fonts
-   Only mono space fonts, there is a whole lot of stuff to discover here.
-
-   #+BEGIN_SRC emacs-lisp
-     (add-to-list 'default-frame-alist
-                  '(font . "SF Mono 16"))
    #+END_SRC
 
 ** Other quality life improvements
@@ -30,6 +18,8 @@
 
    #+BEGIN_SRC emacs-lisp
      (setq make-backup-files nil)
+     (setq auto-save-default nil)
+
      (global-hl-line-mode t)
      (column-number-mode 1)
    #+END_SRC
@@ -43,23 +33,18 @@
     (require 'use-package)
   #+END_SRC
 
-** =straight.el=
-  #+BEGIN_SRC emacs-lisp
-    (defvar bootstrap-version)
-    (let ((bootstrap-file
-           (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-          (bootstrap-version 6))
-      (unless (file-exists-p bootstrap-file)
-        (with-current-buffer
-            (url-retrieve-synchronously
-             "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-             'silent 'inhibit-cookies)
-          (goto-char (point-max))
-          (eval-print-last-sexp)))
-      (load bootstrap-file nil 'nomessage))
-  #+END_SRC
-
 * Packages
+** Color schemes
+   #+BEGIN_SRC emacs-lisp
+     (use-package modus-themes
+       :ensure t
+       :config
+       (setq modus-themes-italic-constructs t
+             modus-themes-bold-constructs t))
+
+     (load-theme 'modus-vivendi t)
+   #+END_SRC
+
 ** Evil mode
    evil: Extensive vim emulation, provides vim keys and modes (you can't live
    without it).
@@ -69,37 +54,6 @@
        :ensure t
        :config
        (evil-mode 1))
-   #+END_SRC
-
-** Color schemes
-   Doom has a collection of themes to use and Modus has just two, light and dark
-   and they are the best in Emacs world.
-
-   #+BEGIN_SRC emacs-lisp
-     (use-package doom-themes
-       :ensure t
-       :config
-       (setq doom-themes-enable-bold t
-             doom-themes-enable-italic t)
-       (doom-themes-visual-bell-config)
-       (doom-themes-org-config))
-
-     (use-package modus-themes
-       :ensure t
-       :config
-       (setq modus-themes-italic-constructs t
-             modus-themes-bold-constructs t))
-   #+END_SRC
-
-*** Set color scheme
-   #+BEGIN_SRC emacs-lisp
-     (defun my/apply-theme (appearance)
-       (mapc #'disable-theme custom-enabled-themes)
-       (pcase appearance
-         ('light (load-theme 'modus-operandi t))
-         ('dark (load-theme 'modus-vivendi t))))
-
-     (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
    #+END_SRC
 
 ** Org roam
@@ -179,20 +133,6 @@
              completion-ignore-case t))
    #+END_SRC
 
-** Nano-emacs
-   Sort of a distribution of emacs which has good UI; also we could pick and
-   choose only parts of it we need, this is like mini.nvim from neovim world.
-
-   #+BEGIN_SRC emacs-lisp
-     (straight-use-package
-       '(nano-emacs :type git :host github :repo "rougier/nano-emacs"))
-
-     ;;(require 'nano)
-     (require 'nano-faces)
-     (require 'nano-modeline)
-     (require 'nano-layout)
-   #+END_SRC
-
 * Misc
 ** Wrap at 80 column
    #+BEGIN_SRC emacs-lisp
@@ -228,49 +168,12 @@
            org-hide-block-startup 1)
    #+END_SRC
 
-** Minimal look
-   Package =nano-emacs= messes this up and so had to write these again.
+** =customize= interface
+   The =custom-set-variable= block that gets added again and again in =init.el=
+   file can be moved into its own file which will not be version controlled in
+   my setup. One less annoyance.
 
    #+BEGIN_SRC emacs-lisp
-     (menu-bar-mode 0)
-     (tool-bar-mode 0)
-     (fringe-mode '(0 . 0))
-     (scroll-bar-mode 0)
-     (window-divider-mode 0)
-     (setq-default mode-line-format nil)
-     (set-face-attribute 'default nil :height 160)
-   #+END_SRC
-
-** Eye candy for Mac OS
-   These things are just for Mac OS, these options make the UI more minimal by
-   removing the title bar; it doesn't actually remove it but blends the title
-   bar with the entire window and the theme also then applies to it; and not
-   showing file name in title bar, which is default.
-
-   #+BEGIN_SRC emacs-lisp
-     (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-     (add-to-list 'default-frame-alist '(ns-appearance . dark))
-     (setq-default frame-title-format '(""))
-   #+END_SRC
-
-** Display \( \LaTeX \) fragments
-   Emacs was unable to find the files required by \( \TeX \) to display the
-   \(\LaTeX \) blocks as they will be displayed in PDF when rendered.
-
-   And so firstly told where all the files live and then loaded the language
-   with babel, which is the compiler kindda thing that takes any source program
-   from org mode and runs it through the language compiler and outputs the
-   result back into the org mode buffer.
-
-   Finally making the rendered \( \LaTeX \) block of proper size as that of font.
-
-   #+BEGIN_SRC emacs-lisp
-     (setq exec-path (append exec-path '("/usr/local/texlive/2023basic/bin/universal-darwin")))
-
-     (org-babel-do-load-languages
-      'org-babel-load-languages
-      '((latex . t)))
-
-     (plist-put org-format-latex-options :scale 1.5)
-     (setq org-latex-image-default-width ".5")
+     (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+     (load custom-file)
    #+END_SRC
