@@ -20,10 +20,6 @@ brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask min
 
-# Cloud Storage
-brew install --cask dropbox
-brew install --cask onedrive
-
 # Dev stuff
 brew install --cask alacritty
 brew install --cask docker
