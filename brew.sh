@@ -43,7 +43,7 @@ brew install yabai
 
 # Editors
 brew tap d12frosted/emacs-plus
-brew install emacs-plus
+brew install emacs-plus --without-cocoa
 brew install nano
 
 # Messaging

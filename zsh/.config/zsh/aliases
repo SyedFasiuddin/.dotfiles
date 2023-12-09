@@ -25,7 +25,6 @@ alias gs="git status"
 alias v="nvim"
 alias ed="ed -p\"ed: \""
 alias em="emacsclient -nw -a ''"
-alias emg="emacsclient -c -a '' &"
 
 alias matrix="iamb -C ~/.config"
 alias wget="wget --no-hsts \
