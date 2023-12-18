@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -xe
+set -x
 
 # Only run on sunday
 [ $(date "+%a") != "Sun" ] && exit 1
@@ -9,23 +9,14 @@ set -xe
 # considers Sunday as first day of week
 week_num=$(($(date "+%U") - 1))
 
-[ -d $HOME/Documents/Journal ] && (
-    cd $HOME/Documents/Journal
+function do_stuff () {
+    cd $1
     git add .
     git commit -m "Week $week_num"
     git push
-)
+    git archive -o "$HOME/Desktop/$(basename $1)-$week_num.tar.gz" HEAD
+}
 
-[ -d $HOME/Documents/dev.log ] && (
-    cd $HOME/Documents/dev.log
-    git add .
-    git commit -m "Week $week_num"
-    git push
-)
-
-[ -d $HOME/Documents/Zettelkasten ] && (
-    cd $HOME/Documents/Zettelkasten
-    git add .
-    git commit -m "Week $week_num"
-    git push
-)
+[ -d $HOME/Documents/Journal ] && do_stuff $HOME/Documents/Journal
+[ -d $HOME/Documents/dev.log ] && do_stuff $HOME/Documents/dev.log
+[ -d $HOME/Documents/Zettelkasten ] && do_stuff $HOME/Documents/Zettelkasten
