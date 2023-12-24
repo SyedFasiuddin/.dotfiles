@@ -17,6 +17,11 @@ function do_stuff () {
     git archive -o "$HOME/Desktop/$(basename $1)-$week_num.tar.gz" HEAD
 }
 
-[ -d $HOME/Documents/Journal ] && do_stuff $HOME/Documents/Journal
-[ -d $HOME/Documents/dev.log ] && do_stuff $HOME/Documents/dev.log
-[ -d $HOME/Documents/Zettelkasten ] && do_stuff $HOME/Documents/Zettelkasten
+dirs=(
+    $HOME/Documents/Chess
+    $HOME/Documents/Journal
+    $HOME/Documents/Zettelkasten
+    $HOME/Documents/dev.log
+)
+
+for dir in ${dirs[@]}; do [ -d $dir ] && do_stuff $dir; done
