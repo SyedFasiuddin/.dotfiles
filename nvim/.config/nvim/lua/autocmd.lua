@@ -23,25 +23,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 });
 
-vim.api.nvim_create_autocmd("BufReadPre", {
-    pattern = { "*.md", "*.txt", "*.org" },
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "plaintex", "latex", "tex", "gitcommit", "markdown", "text", "org" },
     callback = function ()
         local o = vim.opt_local
 
         o.number = false
         o.relativenumber = false
+        o.wrap = false
 
         o.list = true
         o.listchars:append("tab:>-")
 
         o.spell = true
         o.spelllang:append("en_us")
-
         local spellfile_en = os.getenv("HOME") .. "/.vim/spell/en.utf-8.add"
         o.spellfile:append(spellfile_en)
         o.dictionary:append("/usr/share/dict/words")
+    end,
+})
 
-        o.wrap = false
-        o.textwidth = 80
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "plaintex", "latex", "tex", "markdown", "text", "org" },
+    callback = function ()
+        vim.opt_local.textwidth = 80
     end,
 })
