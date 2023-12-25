@@ -1,7 +1,7 @@
 return {
     {
         "luisiacc/gruvbox-baby",
-        lazy = true,
+        lazy = false,
         init = function()
             vim.g.gruvbox_baby_background_color = "dark"
             vim.g.gruvbox_baby_transparent_mode = true
@@ -16,6 +16,10 @@ return {
                 CursorLineNr = { fg = "#FABD2F", bg = "NONE",    style = "NONE" },
                 Comment      = { fg = "#928374", bg = "NONE",    style = "NONE" },
             }
+        end,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("gruvbox-baby")
         end
     },
     {
@@ -41,11 +45,7 @@ return {
     },
     {
         "thimc/gruber-darker.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("gruber-darker")
-        end
+        lazy = true,
     },
     {
         "NLKNguyen/papercolor-theme",
