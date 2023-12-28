@@ -53,3 +53,5 @@ keymap("v", ">", ">gv", opts)
 -- Quickfix list
 keymap("n", "[q", ":cp<CR>", opts)
 keymap("n", "]q", ":cn<CR>", opts)
+
+keymap("n", "<F1>", "", opts)
