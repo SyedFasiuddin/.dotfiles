@@ -5,6 +5,7 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
+        "uga-rosa/cmp-dictionary",
         {
             "L3MON4D3/LuaSnip",
             config = function()
@@ -34,6 +35,10 @@ return {
                             return vim.api.nvim_list_bufs()
                         end
                     }
+                },
+                {
+                    name = "dictionary",
+                    keyword_length = 5,
                 },
             },
             mapping = cmp.mapping.preset.insert({
@@ -87,6 +92,7 @@ return {
                         buffer = "[Buf]",
                         nvim_lsp = "[LSP]",
                         luasnip = "[Snip]",
+                        dictionary = "[Dict]",
                     })[entry.source.name]
                     return vim_item
                 end,
