@@ -14,8 +14,9 @@ function do_stuff () {
     git add .
     git commit -m "Week $week_num"
     git push
-    git archive -o \
-        "$HOME/Desktop/$(basename $1 | sed 's/^\(.\).*/\1/')$week_num.tar.gz" HEAD
+    git archive --format=tar.gz HEAD \
+        | gpg --recipient "Syed Fasiuddin" --encrypt \
+        > $(basename $1 | sed 's/^\(.\).*/\1/')$week_num.tar.gz.gpg
 }
 
 dirs=(
