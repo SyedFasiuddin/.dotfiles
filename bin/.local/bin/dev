@@ -1,8 +1,0 @@
-#!/bin/sh
-
-if [[ ! -d "$HOME/Documents/dev.log" ]] ; then
-    echo "dev.log not found"
-    exit 1
-fi
-
-$EDITOR "$HOME/Documents/dev.log/README.md"
