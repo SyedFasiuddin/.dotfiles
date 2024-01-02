@@ -1,6 +1,9 @@
 import = ["~/.config/alacritty/theme.toml"]
 live_config_reload = true
 
+[cursor.style]
+blinking = "off"
+
 [font]
 size = 16
 
