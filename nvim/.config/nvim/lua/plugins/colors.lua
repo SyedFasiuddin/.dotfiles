@@ -15,6 +15,7 @@ return {
                 LineNr       = { fg = "#7C6F64", bg = "NONE",    style = "NONE" },
                 CursorLineNr = { fg = "#FABD2F", bg = "NONE",    style = "NONE" },
                 Comment      = { fg = "#928374", bg = "NONE",    style = "NONE" },
+                QuickFixLine = { fg = "NONE",    bg = "#32302F", style = "NONE" },
             }
         end,
         priority = 1000,
