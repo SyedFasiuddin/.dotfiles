@@ -1,3 +1,6 @@
 [user]
-	name = Syed Fasiuddin
-	email = syedfasiuddin.02@gmail.com
+    name = Syed Fasiuddin
+    email = syedfasiuddin.02@gmail.com
+
+[core]
+    pager = less -+FX
