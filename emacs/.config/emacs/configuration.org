@@ -42,6 +42,8 @@
        (setq modus-themes-italic-constructs t
              modus-themes-bold-constructs t))
 
+     (setq modus-vivendi-palette-overrides
+           '((bg-main nil)))
      (load-theme 'modus-vivendi t)
    #+END_SRC
 
