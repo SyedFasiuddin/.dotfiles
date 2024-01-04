@@ -15,7 +15,7 @@ if exists(":CompilerSet") != 2
 endif
 
 if exists("g:tectonic_v2_interface") && g:tectonic_v2_interface != 0
-    CompilerSet makeprg=tectonic\ -X\ build\ \\\|&\ tectonic_err_filter
+    CompilerSet makeprg=tectonic\ -X\ build\ $*\ \\\|&\ tectonic_err_filter
 else
     CompilerSet makeprg=tectonic\ \%:S
 endif
