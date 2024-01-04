@@ -47,3 +47,4 @@ for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 end
 
 vim.g.netrw_banner = 0
+vim.g.tex_flavor = "latex"
