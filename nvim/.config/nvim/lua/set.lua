@@ -33,9 +33,10 @@ local sets = {
 
     completeopt = { "menu", "menuone", "noselect" },
     pumheight = 8,
-
-    showmode = false,           -- ex line showing mode
     laststatus = 0,
+
+    list = true,
+    listchars = "tab:>-,trail: ,nbsp:+",
 }
 
 for key, value in pairs(sets) do

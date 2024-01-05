@@ -32,9 +32,6 @@ vim.api.nvim_create_autocmd("FileType", {
         o.relativenumber = false
         o.wrap = false
 
-        o.list = true
-        o.listchars:append("tab:>-")
-
         o.spell = true
         o.spelllang:append("en_us")
         local spellfile_en = os.getenv("HOME") .. "/.vim/spell/en.utf-8.add"

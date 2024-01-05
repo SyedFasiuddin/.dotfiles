@@ -16,6 +16,7 @@ return {
                 CursorLineNr = { fg = "#FABD2F", bg = "NONE",    style = "NONE" },
                 Comment      = { fg = "#928374", bg = "NONE",    style = "NONE" },
                 QuickFixLine = { fg = "NONE",    bg = "#32302F", style = "NONE" },
+                Whitespace   = { fg = "NONE",    bg = "red",     style = "NONE" },
             }
         end,
         priority = 1000,
