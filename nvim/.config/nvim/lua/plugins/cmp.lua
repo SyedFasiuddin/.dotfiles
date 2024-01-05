@@ -2,7 +2,6 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
         "uga-rosa/cmp-dictionary",
@@ -12,7 +11,10 @@ return {
                 require("luasnip").config.setup()
                 require("luasnip/loaders/from_vscode").lazy_load()
             end,
-            dependencies = { "rafamadriz/friendly-snippets" },
+            dependencies = {
+                "saadparwaiz1/cmp_luasnip",
+                "rafamadriz/friendly-snippets",
+            },
         },
     },
     config = function()
