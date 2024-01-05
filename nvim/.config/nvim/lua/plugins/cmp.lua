@@ -91,10 +91,10 @@ return {
             formatting = {
                 format = function(entry, vim_item)
                     vim_item.menu = ({
-                        buffer = "[Buf]",
-                        nvim_lsp = "[LSP]",
-                        luasnip = "[Snip]",
-                        dictionary = "[Dict]",
+                        buffer = "B",
+                        nvim_lsp = "L",
+                        luasnip = "S",
+                        dictionary = "D",
                     })[entry.source.name]
                     return vim_item
                 end,
