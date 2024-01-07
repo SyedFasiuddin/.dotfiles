@@ -4,10 +4,7 @@ set -x
 
 # Only run on sunday
 [ $(date "+%a") != "Sun" ] && exit 1
-
-# Substract 1 because I consider Monday as first day of week while `date'
-# considers Sunday as first day of week
-week_num=$(($(date "+%U") - 1))
+week_num=$(date "+%U")
 
 function do_stuff () {
     cd $1
