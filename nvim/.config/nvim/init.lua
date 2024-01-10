@@ -17,3 +17,4 @@ require("lazy").setup("plugins")
 require("autocmd")
 require("keymaps")
 require("set")
+vim.cmd [[ command -nargs=0 W :echo "noob" ]]

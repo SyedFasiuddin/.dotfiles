@@ -26,6 +26,8 @@ alias v="nvim"
 alias ed="ed -p\"ed: \""
 alias em="emacsclient -nw -a ''"
 
+# Misc
+alias :q="echo noob"
 alias matrix="iamb -C ~/.config"
 alias wget="wget --no-hsts \
     --ca-certificate=$HOMEBREW_PREFIX/share/ca-certificates/cacert.pem"
