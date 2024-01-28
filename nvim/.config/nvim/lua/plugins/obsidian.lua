@@ -36,6 +36,9 @@ return {
             },
         },
         disable_frontmatter = true,
+        ui = {
+            enable = false,
+        },
     },
     keys = {
         {

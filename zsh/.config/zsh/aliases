@@ -24,7 +24,6 @@ alias gs="git status"
 # Editors
 alias v="nvim"
 alias ed="ed -p\"ed: \""
-alias em="emacsclient -nw -a ''"
 
 # Misc
 alias :q="echo noob"
