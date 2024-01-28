@@ -17,39 +17,38 @@ return {
             },
         },
     },
-    config = function()
+    opts = function(_, opts)
         local cmp = require("cmp")
         local luasnip = require("luasnip")
-        cmp.setup({
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
+        opts.snippet = {
+            expand = function(args)
+                luasnip.lsp_expand(args.body)
+            end,
+        }
+        opts.sources = {
+            { name = "nvim_lsp" },
+            { name = "luasnip" },
+            {
+                name = "buffer",
+                keyword_length = 5,
+                option = {
+                    get_bufnrs = function()
+                        return vim.api.nvim_list_bufs()
+                    end
+                }
             },
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                {
-                    name = "buffer",
-                    keyword_length = 5,
-                    option = {
-                        get_bufnrs = function()
-                            return vim.api.nvim_list_bufs()
-                        end
-                    }
-                },
-                {
-                    name = "dictionary",
-                    keyword_length = 5,
-                },
+            {
+                name = "dictionary",
+                keyword_length = 5,
             },
-            mapping = cmp.mapping.preset.insert({
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<CR>"] = cmp.mapping.confirm({ select = false }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-e>"] = cmp.mapping.abort(),
-                ["<C-n>"] = cmp.mapping(
+        }
+        opts.mapping = cmp.mapping.preset.insert({
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),
+            ["<CR>"] = cmp.mapping.confirm({ select = false }),
+            ["<C-Space>"] = cmp.mapping.complete(),
+            ["<C-e>"] = cmp.mapping.abort(),
+            ["<C-n>"] = cmp.mapping(
                 function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
@@ -59,7 +58,7 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
-                ["<C-p>"] = cmp.mapping(
+            ["<C-p>"] = cmp.mapping(
                 function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
@@ -69,37 +68,34 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
-            }),
-            confirm_opts = {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = false,
-            },
-            window = {
-                -- completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-            -- experimental = {
-            --     native_menu = false,
-            --     ghost_text = false,
-            -- },
-            -- view = {
-            --     entries = {
-            --         name = "custom",
-            --     }
-            -- },
-
-            formatting = {
-                format = function(entry, vim_item)
-                    vim_item.menu = ({
-                        buffer = "B",
-                        nvim_lsp = "L",
-                        luasnip = "S",
-                        dictionary = "D",
-                    })[entry.source.name]
-                    return vim_item
-                end,
-            },
         })
-
+        opts.confirm_opts = {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        }
+        opts.window = {
+            -- completion = cmp.config.window.bordered(),
+            documentation = cmp.config.window.bordered(),
+        }
+        -- opts.experimental = {
+        --     native_menu = false,
+        --     ghost_text = false,
+        -- }
+        -- opts.view = {
+        --     entries = {
+        --         name = "custom",
+        --     }
+        -- }
+        opts.formatting = {
+            format = function(entry, vim_item)
+                vim_item.menu = ({
+                    buffer = "B",
+                    nvim_lsp = "L",
+                    luasnip = "S",
+                    dictionary = "D",
+                })[entry.source.name]
+                return vim_item
+            end,
+        }
     end
 }
