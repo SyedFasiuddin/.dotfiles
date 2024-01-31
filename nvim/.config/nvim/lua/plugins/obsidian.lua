@@ -44,7 +44,12 @@ return {
         {
             "<Leader>nf",
             "<Cmd> ObsidianQuickSwitch <CR>",
-            desc = "Obsidian: [N]ode [F]ind",
+            desc = "Obsidian: [N]ote [F]ind",
+        },
+        {
+            "<Leader>nc",
+            "<Cmd> ObsidianNew <CR>",
+            desc = "Obsidian: [N]ote [C]reate",
         },
     },
 }
