@@ -1,11 +1,17 @@
 return {
     "nvim-telescope/telescope.nvim",
-    branch = '0.1.x',
+    branch = "0.1.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
+        {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make"
+        },
     },
     lazy = true,
-    config = true,
+    config = function()
+        require("telescope").load_extension("fzf")
+    end,
     cmd = "Telescope",
     keys = {
         {
