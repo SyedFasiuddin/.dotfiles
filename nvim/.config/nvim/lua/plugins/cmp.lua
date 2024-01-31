@@ -88,11 +88,13 @@ return {
         -- }
         opts.formatting = {
             format = function(entry, vim_item)
+                vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
                 vim_item.menu = ({
                     buffer = "B",
                     nvim_lsp = "L",
                     luasnip = "S",
                     dictionary = "D",
+                    obsidian = "N",
                 })[entry.source.name]
                 return vim_item
             end,
