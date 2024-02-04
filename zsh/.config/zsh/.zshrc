@@ -79,6 +79,7 @@ bindkey '^Z' fg-bg
 # [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
 [ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
 [ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
+[ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 eval "$(zoxide init zsh)"
 

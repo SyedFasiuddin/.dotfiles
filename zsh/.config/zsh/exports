@@ -12,14 +12,11 @@ export _ZO_FZF_OPTS="--reverse --info=inline --height 40%"
 export _ZO_EXCLUDE_DIRS="$TMP/**"
 
 # Java
-JDK="/opt/homebrew/opt/openjdk"
-export JAVA_HOME="$JDK/libexec/openjdk.jdk/Contents/Home"
-export PATH="$JAVA_HOME:$PATH"
-export CPPFLAGS="-I$JDK/include"
-export CLASSPATH="/opt/homebrew/Cellar/tomcat/10.1.7/libexec/lib/*"
+export SDKMAN_DIR="$DEV/Java/.sdkman"
 export CLASSPATH="$CLASSPATH:$DEV/Java/jar-dependencies/*"
 # Doesn't seem to work
 # export GRADLE_USER_HOME="$DEV/Java/.gradle"
+# export GRADLE_HOME=$GRADLE_USER_HOME
 # export M2_HOME="$DEV/Java/.m2"
 # export MAVEN_HOME="$M2_HOME"
 # export MAVEN_REPOSITORY="$M2_HOME/repository"
