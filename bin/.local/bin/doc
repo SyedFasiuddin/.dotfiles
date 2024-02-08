@@ -1,0 +1,23 @@
+#!/bin/sh
+
+DOC=$HOME/Documents
+DEV=$HOME/Developer
+
+if [[ $1 == "rust" ]]; then
+    rustup doc --std
+elif [[ $1 == "c" ]]; then
+    open $DOC/cppreference/en/c.html
+elif [[ $1 == "cpp" ]]; then
+    open $DOC/cppreference/en/cpp.html
+elif [[ $1 == "java" || $1 == "java17" ]]; then
+    open $DOC/java-17-reference/index.html
+elif [[ $1 == "java-tut" ]]; then
+    open $DOC/oracle-java-tut/index.html
+elif [[ $1 == "zig" ]]; then
+    open $DEV/Zig/.zig/doc/langref.html
+else
+    echo "ERROR: cannot find documentation for '$1'"
+    exit 1
+fi
+
+exit 0
