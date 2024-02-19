@@ -12,7 +12,6 @@
 
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fnm env)"
 eval "$(pyenv init -)"
 

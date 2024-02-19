@@ -6,6 +6,14 @@ DEV="$HOME/Developer"
 TMP="/tmp"
 HIST_SIZE=1000000000
 
+# Homebrew `/opt/homebrew/bin/brew shellenv`
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}"
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+
 # Zoxide: Directory jumper
 export _ZO_DATA_DIR=$XDG_DATA_HOME
 export _ZO_FZF_OPTS="--reverse --info=inline --height 40%"
