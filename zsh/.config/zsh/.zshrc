@@ -12,9 +12,6 @@
 
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
-eval "$(fnm env)"
-eval "$(pyenv init -)"
-
 # Syntax highlight and Autocompletion
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $XDG_DATA_HOME/zsh/site-functions $fpath)
@@ -78,7 +75,16 @@ bindkey '^Z' fg-bg
 # [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
 [ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
 [ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
-[ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+function load() {
+    if [[ $1 == "java" ]]; then
+        [ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
+    elif [[ $1 == "python" ]]; then
+        eval "$(pyenv init -)"
+    elif [[ $1 == "node" ]]; then
+        eval "$(fnm env)"
+    fi
+}
 
 eval "$(zoxide init zsh)"
 
