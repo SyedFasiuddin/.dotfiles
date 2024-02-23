@@ -74,7 +74,7 @@ export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 export PATH="$CARGO_HOME/bin:$PATH"
 
 # Go
-export GOPATH="$DEV/Go/.go"
+export GOPATH="$DEV/.go"
 export PATH="$GOPATH/bin:$PATH"
 
 # Zig
