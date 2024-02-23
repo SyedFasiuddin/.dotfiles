@@ -14,7 +14,7 @@ elif [[ $1 == "java" || $1 == "java17" ]]; then
 elif [[ $1 == "java-tut" ]]; then
     open $DOC/oracle-java-tut/index.html
 elif [[ $1 == "zig" ]]; then
-    open $DEV/Zig/.zig/doc/langref.html
+    open $DEV/.zig/doc/langref.html
 else
     echo "ERROR: cannot find documentation for '$1'"
     exit 1

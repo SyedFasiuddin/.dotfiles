@@ -77,6 +77,9 @@ export PATH="$CARGO_HOME/bin:$PATH"
 export GOPATH="$DEV/Go/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# Zig
+export PATH="$DEV/.zig:$PATH"
+
 # fzf
 export FZF_DEFAULT_OPTS="$_ZO_FZF_OPTS"
 export FZF_COMPLETION_OPTS="$FZF_DEFAULT_OPTS"
