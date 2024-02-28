@@ -1,6 +1,6 @@
 PROMPT_ALTERNATIVE=oneline
 
-configure_prompt() {
+function configure_prompt() {
     case "$PROMPT_ALTERNATIVE" in
         twoline)
             export STARSHIP_CONFIG=""
@@ -11,7 +11,11 @@ configure_prompt() {
     esac
 }
 
-toggle_oneline_prompt(){
+function toggle_oneline_prompt() {
+    if [ ! -n "${STARSHIP_SHELL+1}" ]; then
+        eval "$(starship init zsh)"
+    fi
+
     if [ "$PROMPT_ALTERNATIVE" = oneline ]; then
         PROMPT_ALTERNATIVE=twoline
     else
@@ -27,6 +31,6 @@ bindkey ^P toggle_oneline_prompt
 
 configure_prompt
 
-eval "$(starship init zsh)"
+PROMPT="%F{blue}%B%c%b%f "
 
 # vim: set ft=sh:
