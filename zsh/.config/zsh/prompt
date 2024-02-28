@@ -1,4 +1,4 @@
-# [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
+# [ -f ~/.config/zsh/prompt_common ] && . ~/.config/zsh/prompt_common
 [ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
 
 # vim: set ft=sh:
