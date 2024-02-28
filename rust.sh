@@ -21,23 +21,21 @@ cargo install sccache -y
 export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 
-# Install everything
-cargo install\
-      alacritty\
-      bacon bob\
+# Install essentials
+cargo binstall fd-find ripgrep          # Common dependencies for a lot of things
+cargo binstall zoxide exa starship      # Regularly used stuff
+cargo binstall bob fnm                  # To be able to install other tools
+
+# Install everything else
+cargo binstall\
+      bacon\
       cargo-info cargo-install-update cargo-install-update-config\
       deno\
-      exa\
-      fd-find fnm\
-      gitui\
       hyperfine\
       mprocs\
-      neovide\
-      ripgrep\
-      speedtest-rs starship\
+      speedtest-rs\
       wiki-tui\
-      zellij zoxide\
-      -y
+      zellij
 
 echo "
 Rust stuff has been installed, make sure to remove lines added by rustup
