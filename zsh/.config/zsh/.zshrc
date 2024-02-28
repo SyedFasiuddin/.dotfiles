@@ -72,9 +72,8 @@ zle -N fg-bg
 bindkey '^Z' fg-bg
 
 [ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
-# [ -f ~/.config/zsh/prompt_common.zsh ] && . ~/.config/zsh/prompt_common.zsh
-[ -f ~/.config/zsh/prompt_starship ] && . ~/.config/zsh/prompt_starship
-[ -f ~/.config/zsh/.fzf.zsh ] && . ~/.config/zsh/.fzf.zsh
+[ -f ~/.config/zsh/prompt  ] && . ~/.config/zsh/prompt
+[ -f ~/.config/zsh/fzf.zsh ] && . ~/.config/zsh/fzf.zsh
 
 function load() {
     if [[ $1 == "java" ]]; then
