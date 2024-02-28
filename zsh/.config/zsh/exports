@@ -84,7 +84,7 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH="$DEV/.zig:$PATH"
 
 # fzf
-export FZF_DEFAULT_OPTS="$_ZO_FZF_OPTS"
+export FZF_DEFAULT_OPTS="$_ZO_FZF_OPTS --multi"
 export FZF_COMPLETION_OPTS="$FZF_DEFAULT_OPTS"
 export FZF_DEFAULT_COMMAND="fd -H -E .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
