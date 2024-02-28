@@ -17,3 +17,5 @@ pyenv update
 
 bob use latest
 nvim --headless "+Lazy! sync" +qa
+
+softwareupdate --download --recommended
