@@ -1,2 +1,4 @@
 set minibar
 set nohelp
+
+include ~/.local/share/nano/*.nanorc
