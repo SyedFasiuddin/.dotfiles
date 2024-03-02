@@ -12,8 +12,7 @@
 
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
-# Syntax highlight and Autocompletion
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Autocompletion
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $XDG_DATA_HOME/zsh/site-functions $fpath)
 
 # zsh history stuff
