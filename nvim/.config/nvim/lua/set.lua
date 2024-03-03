@@ -1,7 +1,4 @@
 local sets = {
-    number = true,
-    relativenumber = true,
-
     errorbells = false,
 
     tabstop = 4,
@@ -18,7 +15,6 @@ local sets = {
     guicursor = "",             -- block shaped cursor in insert modw
     termguicolors = true,
 
-    numberwidth = 3,            -- number column width
     signcolumn = "no",          -- glyph column in margin
     wrap = true,
 

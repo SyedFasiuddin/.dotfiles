@@ -15,10 +15,6 @@ return {
             backdrop = 1,
             width = 82,
             height = .50,
-            options = {
-                number = false,
-                relativenumber = false,
-            }
         },
     },
     keys = {

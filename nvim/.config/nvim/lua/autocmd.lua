@@ -27,11 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = { "plaintex", "latex", "tex", "gitcommit", "markdown", "text", "org" },
     callback = function ()
         local o = vim.opt_local
-
-        o.number = false
-        o.relativenumber = false
         o.wrap = false
-
         o.spell = true
         o.spelllang:append("en_us")
         local spellfile_en = os.getenv("HOME") .. "/.vim/spell/en.utf-8.add"
