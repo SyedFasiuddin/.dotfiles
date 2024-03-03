@@ -53,4 +53,8 @@ return {
         "NLKNguyen/papercolor-theme",
         lazy = true,
     },
+    {
+        "miikanissi/modus-themes.nvim",
+        lazy = true,
+    },
 }
