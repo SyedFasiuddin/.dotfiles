@@ -40,6 +40,7 @@ return {
                     if value == "clangd"  then
                         client.server_capabilities.signatureHelpProvider = false
                     end
+                    client.server_capabilities.semanticTokensProvider = nil
                     on_attach(client, bufnr)
                 end,
                 capabilities = capabilities,
