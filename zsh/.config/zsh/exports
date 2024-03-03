@@ -100,6 +100,7 @@ export EDITOR="nvim"
 export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 export INFOPATH="$XDG_DATA_HOME/info:$INFOPATH"
 export SCREENRC="$XDG_CONFIG_HOME/screenrc"
+export LEDGER_FILE="$HOME/Documents/Journal/main.dat"
 
 # Grep
 export GREP_OPTIONS="--color=auto"
