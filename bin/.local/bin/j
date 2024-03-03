@@ -16,6 +16,19 @@ day_str=${date[4]}
 hour=${date[5]}
 min=${date[6]}
 
+if [[ $# -ne 0 ]]; then
+    case $1 in
+        -l|--ledger)
+            $EDITOR "$year/ledger.dat"
+            exit 0
+            ;;
+        *)
+            echo "ERROR: unrecognised argument $1"
+            exit 1
+            ;;
+    esac
+fi
+
 mkdir -p "$year/$month_no"
 
 file="$year/$month_no/$day_no.txt"
