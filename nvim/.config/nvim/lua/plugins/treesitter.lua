@@ -16,5 +16,10 @@ return {
     },
     config = function (_, opts)
         require("nvim-treesitter.configs").setup(opts)
+        vim.cmd [[
+            set foldmethod=expr
+            set foldexpr=nvim_treesitter#foldexpr()
+            set nofoldenable
+        ]]
     end,
 }
