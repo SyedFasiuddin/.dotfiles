@@ -9,10 +9,6 @@ return {
         },
         indent = { enable = true },
         auto_install = true,
-        rainbow = {
-            enable = true,
-            extended_mode = true,
-        },
     },
     config = function (_, opts)
         require("nvim-treesitter.configs").setup(opts)
