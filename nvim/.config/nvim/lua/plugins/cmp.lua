@@ -46,7 +46,6 @@ return {
             ["<C-b>"] = cmp.mapping.scroll_docs(-4),
             ["<C-f>"] = cmp.mapping.scroll_docs(4),
             ["<CR>"] = cmp.mapping.confirm({ select = false }),
-            ["<C-Space>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
             ["<C-n>"] = cmp.mapping(
                 function(fallback)
@@ -99,5 +98,14 @@ return {
                 return vim_item
             end,
         }
-    end
+        opts.completion = {
+            autocomplete = false,
+        }
+    end,
+    config = function(_, opts)
+        require("cmp").setup(opts)
+        vim.cmd [[
+            inoremap <C-x><C-o> <Cmd> lua require("cmp").complete() <CR>
+        ]]
+    end,
 }
