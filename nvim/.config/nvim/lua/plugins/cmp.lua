@@ -3,7 +3,6 @@ return {
     event = "InsertEnter",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        "uga-rosa/cmp-dictionary",
         {
             "L3MON4D3/LuaSnip",
             config = function()
@@ -27,10 +26,6 @@ return {
         opts.sources = {
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            {
-                name = "dictionary",
-                keyword_length = 5,
-            },
         }
         opts.mapping = cmp.mapping.preset.insert({
             ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -81,7 +76,6 @@ return {
                 vim_item.menu = ({
                     nvim_lsp = "L",
                     luasnip = "S",
-                    dictionary = "D",
                     obsidian = "N",
                 })[entry.source.name]
                 return vim_item

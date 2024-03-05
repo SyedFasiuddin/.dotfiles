@@ -22,10 +22,6 @@ vim.api.nvim_create_autocmd("FileType", {
         local o = vim.opt_local
         o.wrap = false
         o.spell = true
-        o.spelllang:append("en_us")
-        local spellfile_en = os.getenv("HOME") .. "/.vim/spell/en.utf-8.add"
-        o.spellfile:append(spellfile_en)
-        o.dictionary:append("/usr/share/dict/words")
     end,
 })
 

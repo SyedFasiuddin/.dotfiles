@@ -47,3 +47,8 @@ vim.g.netrw_banner = 0
 vim.g.tex_flavor = "latex"
 
 vim.opt.path:append("**")
+
+vim.opt.spelllang:append("en_us")
+local spellfile_en = os.getenv("HOME") .. "/.vim/spell/en.utf-8.add"
+vim.opt.spellfile:append(spellfile_en)
+vim.opt.dictionary:append("/usr/share/dict/words")
