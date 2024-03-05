@@ -2,7 +2,6 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
         "uga-rosa/cmp-dictionary",
         {
@@ -28,15 +27,6 @@ return {
         opts.sources = {
             { name = "nvim_lsp" },
             { name = "luasnip" },
-            {
-                name = "buffer",
-                keyword_length = 5,
-                option = {
-                    get_bufnrs = function()
-                        return vim.api.nvim_list_bufs()
-                    end
-                }
-            },
             {
                 name = "dictionary",
                 keyword_length = 5,
@@ -89,7 +79,6 @@ return {
             format = function(entry, vim_item)
                 vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
                 vim_item.menu = ({
-                    buffer = "B",
                     nvim_lsp = "L",
                     luasnip = "S",
                     dictionary = "D",
