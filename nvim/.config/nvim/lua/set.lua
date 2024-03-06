@@ -29,7 +29,7 @@ local sets = {
 
     completeopt = { "menu", "menuone", "noselect" },
     pumheight = 8,
-    laststatus = 0,
+    laststatus = 1,
 
     list = true,
     listchars = "tab:>-,trail: ,nbsp:+",
