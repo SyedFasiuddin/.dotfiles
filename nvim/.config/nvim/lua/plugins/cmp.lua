@@ -52,6 +52,14 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
+            ["<C-g>"] = cmp.mapping(
+                function()
+                    if cmp.visible_docs() then
+                        cmp.close_docs()
+                    else
+                        cmp.open_docs()
+                    end
+                end, { "i", "s" }),
         })
         opts.confirm_opts = {
             behavior = cmp.ConfirmBehavior.Replace,
@@ -61,15 +69,11 @@ return {
             -- completion = cmp.config.window.bordered(),
             documentation = cmp.config.window.bordered(),
         }
-        -- opts.experimental = {
-        --     native_menu = false,
-        --     ghost_text = false,
-        -- }
-        -- opts.view = {
-        --     entries = {
-        --         name = "custom",
-        --     }
-        -- }
+        opts.view = {
+            docs = {
+                auto_open = false,
+            },
+        }
         opts.formatting = {
             format = function(entry, vim_item)
                 vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
