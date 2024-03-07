@@ -1,3 +1,1 @@
-if [ -f ~/.config/bash/.bashrc ]; then
-	. ~/.config/bash/.bashrc
-fi
+[ -f ~/.config/bash/bashrc ] && . ~/.config/bash/bashrc
