@@ -73,16 +73,7 @@ bindkey '^Z' fg-bg
 [ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
 [ -f ~/.config/zsh/prompt  ] && . ~/.config/zsh/prompt
 [ -f ~/.config/zsh/fzf.zsh ] && . ~/.config/zsh/fzf.zsh
-
-function load() {
-    if [[ $1 == "java" ]]; then
-        [ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
-    elif [[ $1 == "python" ]]; then
-        eval "$(pyenv init -)"
-    elif [[ $1 == "node" ]]; then
-        eval "$(fnm env)"
-    fi
-}
+[ -f ~/.config/zsh/utils   ] && . ~/.config/zsh/utils
 
 eval "$(zoxide init zsh)"
 

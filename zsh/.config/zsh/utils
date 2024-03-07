@@ -1,0 +1,11 @@
+function load() {
+    if [[ $1 == "java" ]]; then
+        [ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
+    elif [[ $1 == "python" ]]; then
+        eval "$(pyenv init -)"
+    elif [[ $1 == "node" ]]; then
+        eval "$(fnm env)"
+    fi
+}
+
+# vim: set ft=sh:
