@@ -1,6 +1,4 @@
-if [ -f ~/.config/zsh/exports ]; then
-    . ~/.config/zsh/exports
-fi
+[ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init bash)"
@@ -28,10 +26,6 @@ bind 'set completion-ignore-case on'
 shopt -s cdspell
 complete -d cd
 
-if [ -f ~/.config/zsh/aliases ]; then
-    . ~/.config/zsh/aliases
-fi
+[ -f ~/.config/zsh/aliases   ] && . ~/.config/zsh/aliases
+[ -f ~/.config/bash/fzf.bash ] && . ~/.config/bash/fzf.bash
 
-if [ -f ~/.config/bash/.fzf.bash ]; then
-    . ~/.config/bash/.fzf.bash
-fi
