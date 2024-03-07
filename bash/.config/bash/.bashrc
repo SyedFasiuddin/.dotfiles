@@ -1,9 +1,5 @@
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(zoxide init bash)"
-eval "$(fnm env)"
-eval "$(pyenv init -)"
 eval "$(starship init bash)"
 
 # # enable programmable completion features (you don't need to enable
@@ -28,4 +24,6 @@ complete -d cd
 
 [ -f ~/.config/zsh/aliases   ] && . ~/.config/zsh/aliases
 [ -f ~/.config/bash/fzf.bash ] && . ~/.config/bash/fzf.bash
+[ -f ~/.config/zsh/utils     ] && . ~/.config/zsh/utils
 
+eval "$(zoxide init bash)"
