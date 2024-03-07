@@ -7,8 +7,6 @@ export HISTFILE=$XDG_CACHE_HOME/.bash_history
 export HISTFILESIZE=$HIST_SIZE
 export HISTSIZE=$HIST_SIZE
 
-set -o vi # to use vi keys to move in the read line
-
 # some cd stuff
 bind 'set completion-ignore-case on'
 shopt -s cdspell
