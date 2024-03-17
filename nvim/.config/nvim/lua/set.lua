@@ -9,11 +9,9 @@ local sets = {
     smartindent = true,
     autoindent = true,
 
-    cursorline = true,
     colorcolumn = "80",
 
     guicursor = "",             -- block shaped cursor in insert modw
-    termguicolors = true,
 
     signcolumn = "no",          -- glyph column in margin
     wrap = true,

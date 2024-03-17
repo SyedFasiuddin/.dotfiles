@@ -1,7 +1,7 @@
 return {
     {
         "luisiacc/gruvbox-baby",
-        lazy = false,
+        lazy = true,
         init = function()
             vim.g.gruvbox_baby_background_color = "dark"
             vim.g.gruvbox_baby_transparent_mode = true
@@ -18,17 +18,19 @@ return {
                 QuickFixLine = { fg = "NONE",    bg = "#32302F", style = "NONE" },
                 Whitespace   = { fg = "NONE",    bg = "red",     style = "NONE" },
             }
+
+            vim.opt.cursorline = true
+            vim.opt.termguicolors = true
         end,
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("gruvbox-baby")
-        end
     },
     {
         "morhetz/gruvbox",
         lazy = true,
         init = function()
             vim.g.gruvbox_contrast_dark = "hard"
+
+            vim.opt.cursorline = true
+            vim.opt.termguicolors = true
         end
     },
     {
@@ -56,5 +58,15 @@ return {
     {
         "miikanissi/modus-themes.nvim",
         lazy = true,
+    },
+    {
+        "jeffkreeftmeijer/vim-dim",
+        lazy = false,
+        config = function()
+            vim.opt.cursorline = false
+            vim.opt.termguicolors = false
+            vim.cmd.colorscheme("dim")
+        end,
+        priority = 1000,
     },
 }
