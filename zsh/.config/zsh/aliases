@@ -1,7 +1,7 @@
 # listing
 alias ls="exa"
 alias la="exa -aFx"
-alias ll="exa -laF --icons"
+alias ll="exa -laF --no-icons"
 
 # tmux
 alias t="tmux"
