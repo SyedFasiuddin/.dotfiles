@@ -31,6 +31,9 @@ local sets = {
 
     list = true,
     listchars = "tab:>-,trail: ,nbsp:+",
+
+    backspace = "",             -- vi compatible
+    mouse = "",                 -- disable mouse
 }
 
 for key, value in pairs(sets) do
