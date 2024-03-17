@@ -80,7 +80,6 @@ return {
                 vim_item.menu = ({
                     nvim_lsp = "L",
                     luasnip = "S",
-                    obsidian = "N",
                 })[entry.source.name]
                 return vim_item
             end,
