@@ -7,7 +7,7 @@ import os
 readline.parse_and_bind("tab: complete")
 
 # history file
-histfile = os.path.join(os.environ["XDG_CACHE_HOME"], ".python_history")
+histfile = os.path.join(os.environ["XDG_CACHE_HOME"], "python_repl_history")
 
 try:
     readline.read_history_file(histfile)

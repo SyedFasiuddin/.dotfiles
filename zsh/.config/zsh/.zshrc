@@ -16,7 +16,7 @@
 fpath=($HOMEBREW_PREFIX/share/zsh/site-functions $XDG_DATA_HOME/zsh/site-functions $fpath)
 
 # zsh history stuff
-export HISTFILE=$XDG_CACHE_HOME/.zsh_history
+export HISTFILE=$XDG_CACHE_HOME/zsh_history
 export HISTFILESIZE=$HIST_SIZE
 export HISTSIZE=$HIST_SIZE
 export SAVEHIST=$HIST_SIZE
