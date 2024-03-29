@@ -1,0 +1,13 @@
+#!/bin/sh
+
+config_file=$(realpath ~/.config/alacritty/theme.toml)
+
+# Comment currently active theme
+sed -i "" -e "s/^  \(.*\)/# \1/" $config_file
+
+# Uncomments theme
+if [ $DARKMODE == 1 ]; then
+    sed -i "" -e "s/# \(.*gruvbox-dark.*\)/  \1/" $config_file
+else
+    sed -i "" -e "s/# \(.*operandi.*\)/  \1/" $config_file
+fi
