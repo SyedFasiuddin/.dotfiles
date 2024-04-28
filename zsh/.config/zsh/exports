@@ -20,15 +20,7 @@ export _ZO_FZF_OPTS="--reverse --info=inline --height 40%"
 export _ZO_EXCLUDE_DIRS="$TMP/**"
 
 # Java
-export SDKMAN_DIR="$DEV/Java/.sdkman"
 export CLASSPATH="$CLASSPATH:$DEV/Java/jar-dependencies/*"
-export PATH="$SDKMAN_DIR/candidates/java/current/bin:$PATH"
-# Doesn't seem to work
-# export GRADLE_USER_HOME="$DEV/Java/.gradle"
-# export GRADLE_HOME=$GRADLE_USER_HOME
-# export M2_HOME="$DEV/Java/.m2"
-# export MAVEN_HOME="$M2_HOME"
-# export MAVEN_REPOSITORY="$M2_HOME/repository"
 
 # Less: Pager
 export LESS_TERMCAP_mb=$'\E[1;31m'
@@ -66,13 +58,6 @@ export RUSTUP_HOME="$DEV/Rust/.rustup"
 export RUSTC_WRAPPER="$CARGO_HOME/bin/sccache"
 export SCCACHE_DIR="$XDG_CACHE_HOME/sccache"
 export PATH="$CARGO_HOME/bin:$PATH"
-
-# Go
-export GOPATH="$DEV/.go"
-export PATH="$GOPATH/bin:$PATH"
-
-# Zig
-export PATH="$DEV/.zig:$PATH"
 
 # fzf
 export FZF_DEFAULT_OPTS="$_ZO_FZF_OPTS --multi"

@@ -73,7 +73,6 @@ bindkey '^Z' fg-bg
 [ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
 [ -f ~/.config/zsh/prompt  ] && . ~/.config/zsh/prompt
 [ -f ~/.config/zsh/fzf.zsh ] && . ~/.config/zsh/fzf.zsh
-[ -f ~/.config/zsh/utils   ] && . ~/.config/zsh/utils
 
 eval "$(zoxide init zsh)"
 

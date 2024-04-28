@@ -1,7 +1,0 @@
-function load() {
-    if [[ $1 == "java" ]]; then
-        [ -f "${SDKMAN_DIR}/bin/sdkman-init.sh" ] && . "${SDKMAN_DIR}/bin/sdkman-init.sh"
-    fi
-}
-
-# vim: set ft=sh:
