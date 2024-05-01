@@ -21,7 +21,19 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    hello
+    abduco
+    aerc
+    fzf
+    gh
+    gnupg
+    jq
+    ledger
+    nano
+    pandoc
+    texinfo
+    tmux
+    universal-ctags
+    wget
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
