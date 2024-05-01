@@ -23,18 +23,39 @@ in
   home.packages = with pkgs; [
     abduco
     aerc
+    bacon
+    bat
+    du-dust
+    eza
+    fd
     fzf
     gh
     gnupg
+    hyperfine
     jq
     ledger
+    macchina
+    mdbook
+    mprocs
     nano
     neovim
+    onefetch
     pandoc
+    presenterm
+    procs
+    ripgrep
+    speedtest-rs
+    starship
+    tealdeer
+    teehee
     texinfo
     tmux
+    tokei
     universal-ctags
     wget
+    wiki-tui
+    zellij
+    zoxide
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
