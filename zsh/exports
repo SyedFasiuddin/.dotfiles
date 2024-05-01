@@ -49,9 +49,6 @@ export JUPYTER_CONFIG_DIR="$DEV/Python/.jupyter"
 export JUPYTER_DATA_DIR="$XDG_DATA_HOME/jupyter"
 export IPYTHONDIR="$DEV/Python/.ipython"
 
-# bob: nvim version manager
-export PATH="$XDG_DATA_HOME/bob/nvim-bin:$PATH"
-
 # Rust
 export CARGO_HOME="$DEV/Rust/.cargo"
 export RUSTUP_HOME="$DEV/Rust/.rustup"

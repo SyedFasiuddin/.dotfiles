@@ -29,6 +29,7 @@ in
     jq
     ledger
     nano
+    neovim
     pandoc
     texinfo
     tmux
