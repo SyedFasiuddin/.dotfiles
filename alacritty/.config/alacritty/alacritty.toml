@@ -22,10 +22,6 @@ hide_when_typing = true
 history = 0
 multiplier = 0
 
-[shell]
-args = ["new", "-A", "-s", "MASTER"]
-program = "/opt/homebrew/bin/tmux"
-
 [window]
 decorations = "buttonless"
 dynamic_padding = true
