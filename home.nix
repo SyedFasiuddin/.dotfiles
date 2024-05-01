@@ -49,9 +49,24 @@ in
     # '')
   ];
 
+  programs.zsh = {
+    enable = true;
+    dotDir = ".config/zsh";
+    initExtra = ''
+      [ -f ~/.config/zsh/custom.zshrc ] && . ~/.config/zsh/custom.zshrc
+    '';
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/zsh/custom.zshrc".source = ./zsh/custom.zshrc;
+    ".config/zsh/aliases".source = ./zsh/aliases;
+    ".config/zsh/exports".source = ./zsh/exports;
+    ".config/zsh/prompt".source = ./zsh/prompt;
+    ".config/zsh/prompt_common".source = ./zsh/prompt_common;
+    ".config/zsh/prompt_starship".source = ./zsh/prompt_starship;
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
