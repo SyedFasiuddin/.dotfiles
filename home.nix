@@ -48,6 +48,7 @@ in
     starship
     tealdeer
     teehee
+    terminus_font_ttf
     texinfo
     tmux
     tokei

@@ -1,8 +1,3 @@
-# listing
-alias ls="eza"
-alias la="eza -aFx"
-alias ll="eza -laF --icons=never"
-
 # tmux
 alias t="tmux"
 alias ta="tmux a"
