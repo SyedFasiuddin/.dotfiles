@@ -73,8 +73,6 @@ bindkey '^Z' fg-bg
 [ -f ~/.config/zsh/aliases ] && . ~/.config/zsh/aliases
 [ -f ~/.config/zsh/prompt  ] && . ~/.config/zsh/prompt
 
-eval "$(zoxide init zsh)"
-
 # End profiling
 
 # Per-command profiling:

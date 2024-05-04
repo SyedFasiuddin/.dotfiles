@@ -13,5 +13,3 @@ shopt -s cdspell
 complete -d cd
 
 [ -f ~/.config/zsh/aliases   ] && . ~/.config/zsh/aliases
-
-eval "$(zoxide init bash)"

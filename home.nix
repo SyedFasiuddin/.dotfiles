@@ -55,7 +55,6 @@ in
     wget
     wiki-tui
     zellij
-    zoxide
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -85,6 +84,7 @@ in
     '';
   };
   programs.fzf.enable = true;
+  programs.zoxide.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
