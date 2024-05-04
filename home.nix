@@ -28,7 +28,6 @@ in
     du-dust
     eza
     fd
-    fzf
     gh
     gnupg
     hyperfine
@@ -85,6 +84,7 @@ in
       [ -f ~/.config/zsh/custom.zshrc ] && . ~/.config/zsh/custom.zshrc
     '';
   };
+  programs.fzf.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
