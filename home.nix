@@ -31,16 +31,15 @@ in
     gh
     gnupg
     hyperfine
+    irssi
     jq
     ledger
     macchina
-    mdbook
     mprocs
     nano
     neovim
     onefetch
     pandoc
-    presenterm
     procs
     ripgrep
     speedtest-rs
@@ -48,12 +47,10 @@ in
     tealdeer
     teehee
     terminus_font_ttf
-    texinfo
+    texinfoInteractive
     tmux
     tokei
-    universal-ctags
     wget
-    wiki-tui
     zellij
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
