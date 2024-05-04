@@ -89,6 +89,11 @@ in
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/alacritty/" = {
+      source = ./alacritty;
+      recursive  = true;
+    };
+
     ".config/bash/custom.bashrc".source = ./bash/custom.bashrc;
 
     ".config/zsh/custom.zshrc".source = ./zsh/custom.zshrc;

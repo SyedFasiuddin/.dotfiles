@@ -18,10 +18,6 @@ mods = "Command"
 [mouse]
 hide_when_typing = true
 
-[scrolling]
-history = 0
-multiplier = 0
-
 [window]
 decorations = "buttonless"
 dynamic_padding = true
