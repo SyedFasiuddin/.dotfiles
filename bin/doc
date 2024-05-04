@@ -15,6 +15,8 @@ elif [[ $1 == "java-tut" ]]; then
     open $DOC/oracle-java-tut/index.html
 elif [[ $1 == "zig" ]]; then
     open $DEV/.zig/doc/langref.html
+elif [[ $1 == "python" ]]; then
+    open $DOC/python-3-11-docs/index.html
 else
     echo "ERROR: cannot find documentation for '$1'"
     exit 1

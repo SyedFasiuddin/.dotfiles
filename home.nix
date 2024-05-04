@@ -100,6 +100,33 @@ in
     ".config/zsh/prompt_common".source = ./zsh/prompt_common;
     ".config/zsh/prompt_starship".source = ./zsh/prompt_starship;
 
+    ".config/aerc/aerc.conf".source = ./config/aerc.conf;
+    ".config/aerc/binds.conf".source = ./config/aerc-binds.conf;
+    ".config/homebrew/brew.env".source = ./config/brew.env;
+    ".config/gh/config.yml".source = ./config/gh-config.yml;
+    ".config/git/config".source = ./config/git-config;
+    ".config/nano/nanorc".source = ./config/nanorc;
+    ".config/npm/npmrc".source = ./config/npmrc;
+    ".config/python/pythonrc".source = ./config/pythonrc;
+    ".config/screenrc".source = ./config/screenrc;
+    ".config/skhd/skhdrc".source = ./config/skhdrc;
+    ".config/skhd/yabai.skhd".source = ./config/yabai.skhd;
+    ".config/starship.toml".source = ./config/starship.toml;
+    ".config/yabai/yabairc".source = ./config/yabairc;
+
+    ".local/bin/" = {
+      source = ./bin;
+      recursive = true;
+    };
+    ".config/nvim/" = {
+      source = ./nvim;
+      recursive = true;
+    };
+    ".config/tmux/" = {
+      source = ./tmux;
+      recursive = true;
+    };
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
