@@ -72,6 +72,12 @@ in
     # '')
   ];
 
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      [ -f ~/.config/bash/custom.bashrc ] && . ~/.config/bash/custom.bashrc
+    '';
+  };
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
@@ -83,6 +89,8 @@ in
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/bash/custom.bashrc".source = ./bash/custom.bashrc;
+
     ".config/zsh/custom.zshrc".source = ./zsh/custom.zshrc;
     ".config/zsh/aliases".source = ./zsh/aliases;
     ".config/zsh/exports".source = ./zsh/exports;
