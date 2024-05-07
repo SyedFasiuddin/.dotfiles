@@ -33,10 +33,12 @@ in
     gnupg
     hyperfine
     irssi
+    isync
     jq
     ledger
     macchina
     mprocs
+    msmtp
     nano
     neovim
     onefetch
