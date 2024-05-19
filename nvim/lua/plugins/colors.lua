@@ -1,7 +1,7 @@
 return {
     {
         "luisiacc/gruvbox-baby",
-        lazy = true,
+        lazy = false,
         init = function()
             vim.g.gruvbox_baby_background_color = "dark"
             vim.g.gruvbox_baby_transparent_mode = true
@@ -22,50 +22,8 @@ return {
             vim.opt.cursorline = true
             vim.opt.termguicolors = true
         end,
-    },
-    {
-        "morhetz/gruvbox",
-        lazy = true,
-        init = function()
-            vim.g.gruvbox_contrast_dark = "hard"
-
-            vim.opt.cursorline = true
-            vim.opt.termguicolors = true
-        end
-    },
-    {
-        "navarasu/onedark.nvim",
-        lazy = true,
-        opts = {
-            style = "darker",
-            ending_tildes = true,
-            code_style = {
-                comments = "NONE",
-            },
-            highlights = {
-                WinSeparator = { fg = "#000000", bg = "NONE",    style = "NONE" },
-            },
-        },
-    },
-    {
-        "thimc/gruber-darker.nvim",
-        lazy = true,
-    },
-    {
-        "NLKNguyen/papercolor-theme",
-        lazy = true,
-    },
-    {
-        "miikanissi/modus-themes.nvim",
-        lazy = true,
-    },
-    {
-        "jeffkreeftmeijer/vim-dim",
-        lazy = false,
         config = function()
-            vim.opt.cursorline = false
-            vim.opt.termguicolors = false
-            vim.cmd.colorscheme("dim")
+            vim.cmd.colorscheme("gruvbox-baby")
         end,
         priority = 1000,
     },
