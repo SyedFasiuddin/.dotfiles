@@ -59,12 +59,15 @@ export PATH="$HOME/.local/bin:$PATH"
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export EDITOR="vi"
-export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 export INFOPATH="$XDG_DATA_HOME/info:$INFOPATH"
 export SCREENRC="$XDG_CONFIG_HOME/screenrc"
 export LEDGER_FILE="$HOME/Documents/Journal/main.dat"
 
 # Grep
 export GREP_OPTIONS="--color=auto"
+
+# Man
+export MANWIDTH=100
+export MANPATH="$XDG_DATA_HOME/man:$MANPATH"
 
 # vim: set ft=sh:

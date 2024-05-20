@@ -26,6 +26,7 @@ in
     eza
     fd
     gh
+    git
     gnupg
     hyperfine
     irssi
@@ -58,14 +59,14 @@ in
       enable = true;
       initExtra = ''
         [ -f ~/.config/bash/custom.bashrc ] && . ~/.config/bash/custom.bashrc
-        '';
+      '';
     };
     zsh = {
       enable = true;
       dotDir = ".config/zsh";
       initExtra = ''
         [ -f ~/.config/zsh/custom.zshrc ] && . ~/.config/zsh/custom.zshrc
-        '';
+      '';
     };
     fzf.enable = true;
     zoxide.enable = true;
