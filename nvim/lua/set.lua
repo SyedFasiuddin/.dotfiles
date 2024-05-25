@@ -25,7 +25,6 @@ local sets = {
 
     timeoutlen = 200,           -- wait only for these many milisec for mapped sequence to complete
 
-    completeopt = { "menu", "menuone", "noselect" },
     pumheight = 8,
     laststatus = 1,
 

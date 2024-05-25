@@ -1,5 +1,5 @@
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
 
@@ -55,3 +55,9 @@ keymap("n", "[q", ":cp<CR>", opts)
 keymap("n", "]q", ":cn<CR>", opts)
 
 keymap("n", "<F1>", "", opts)
+
+-- LSP Diagnostics
+keymap("n", "<space>e", vim.diagnostic.open_float, opts)
+keymap("n", "<space>q", vim.diagnostic.setloclist, opts)
+keymap("n", "[d", vim.diagnostic.goto_prev, opts)
+keymap("n", "]d", vim.diagnostic.goto_next, opts)
