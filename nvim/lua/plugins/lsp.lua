@@ -13,14 +13,7 @@ return {
         }
 
         for _, value in pairs(servers) do
-            lspconfig[value].setup({
-                on_attach = function (client, bufnr)
-                    if value == "clangd"  then
-                        client.server_capabilities.signatureHelpProvider = false
-                    end
-                end,
-                capabilities = vim.lsp.protocol.make_client_capabilities(),
-            })
+            lspconfig[value].setup({})
         end
     end
 }
