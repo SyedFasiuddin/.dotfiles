@@ -1,10 +1,3 @@
-vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-        vim.cmd [[ hi Normal      ctermbg=NONE guibg=NONE ]]
-        vim.cmd [[ hi NormalFloat ctermbg=NONE guibg=NONE ]]
-    end
-})
-
 vim.api.nvim_create_autocmd("BufWritePre", {
     command = [[ %s/\s\+$//e ]]
 })
