@@ -4,3 +4,5 @@
 
 [core]
     pager = less -+FX
+
+# vim: set ft=gitconfig:

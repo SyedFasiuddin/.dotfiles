@@ -81,3 +81,5 @@ bindkey '^Z' fg-bg
 
 # Per-function profiling:
 # zprof > /tmp/zsh_perf
+
+# vim: set ft=zsh:

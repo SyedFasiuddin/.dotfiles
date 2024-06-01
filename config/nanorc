@@ -2,3 +2,5 @@ set minibar
 set nohelp
 
 include ~/.local/share/nano/*.nanorc
+
+# vim: set ft=nanorc:

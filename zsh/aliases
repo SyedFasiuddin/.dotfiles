@@ -26,4 +26,4 @@ alias :q="echo noob"
 alias wget="wget --no-hsts \
     --ca-certificate=$HOMEBREW_PREFIX/share/ca-certificates/cacert.pem"
 
-# vim: set ft=sh:
+# vim: set ft=bash:

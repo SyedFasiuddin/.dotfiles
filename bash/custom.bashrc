@@ -1,7 +1,5 @@
 [ -f ~/.config/zsh/exports ] && . ~/.config/zsh/exports
 
-export PS1="\e[1;34m\W \e[0;00m"
-
 # History stuff
 export HISTFILE=$XDG_CACHE_HOME/bash_history
 export HISTFILESIZE=$HIST_SIZE
@@ -13,3 +11,7 @@ shopt -s cdspell
 complete -d cd
 
 [ -f ~/.config/zsh/aliases   ] && . ~/.config/zsh/aliases
+
+export PS1='$ '
+
+# vim: set ft=bash:
