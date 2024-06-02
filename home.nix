@@ -78,6 +78,7 @@ in
     ".config/bash/custom.bashrc".source = ./bash/custom.bashrc;
     ".config/gh/config.yml".source = ./config/gh-config.yml;
     ".config/git/config".source = ./config/git-config;
+    ".config/git/ignore".source = ./config/git-ignore;
     ".config/homebrew/brew.env".source = ./config/brew.env;
     ".config/nano/nanorc".source = ./config/nanorc;
     ".config/npm/npmrc".source = ./config/npmrc;

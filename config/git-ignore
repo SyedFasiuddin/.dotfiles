@@ -1,0 +1,4 @@
+# MacOS finder
+.DS_Store
+
+# vim: set ft=gitignore:
