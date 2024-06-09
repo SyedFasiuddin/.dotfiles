@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sed -e 's#^error: \(.*\):#error: src/\1:#' \
-    -e 's#^warning: \(.*\):#warning: src/\1:#'
