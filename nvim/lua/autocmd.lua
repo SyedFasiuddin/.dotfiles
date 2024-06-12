@@ -9,22 +9,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "plaintex", "latex", "tex", "gitcommit", "markdown", "text", "org" },
-    callback = function ()
-        local o = vim.opt_local
-        o.wrap = false
-        o.spell = true
-    end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "plaintex", "latex", "tex", "markdown", "text", "org" },
-    callback = function ()
-        vim.opt_local.textwidth = 80
-    end,
-})
-
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function (args)
         local bufopts = { noremap = true, silent = true, buffer = args.buf }
