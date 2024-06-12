@@ -1,18 +1,15 @@
 #!/bin/sh
 
-if [[ ! -d "$HOME/Developer/CompetitiveProgramming" ]] ; then
+COMP=$HOME/Developer/CompetitiveProgramming
+
+if [ ! -d "$COMP" ]; then
     echo "Competitive Programming folder not found"
     exit 1
 fi
 
-cd "$HOME/Developer/CompetitiveProgramming"
+cd "$COMP" || exit
 
-date=(`date "+%Y %m %d"`)
-year=${date[0]}
-month=${date[1]}
-day=${date[2]}
-
-mkdir -p "$year/$month/$day"
-touch "$year/$month/$day/question.txt" "$year/$month/$day/note.txt"\
-    "$year/$month/$day/solution.rs"
-$EDITOR
+DIR=$(date "+%Y/%m/%d")
+mkdir -p "$DIR"
+touch "$DIR/question.txt" "$DIR/note.txt" "$DIR/solution.rs"
+$EDITOR "$DIR"

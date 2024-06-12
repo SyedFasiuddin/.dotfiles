@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
 config=$(printf "%s\n" "${items[@]}" | fzf --prompt="Neovim Config: ")
@@ -10,4 +10,4 @@ elif [[ $config == "default" ]]; then
     config=""
 fi
 
-NVIM_APPNAME=$config nvim $@
+NVIM_APPNAME=$config nvim "$@"

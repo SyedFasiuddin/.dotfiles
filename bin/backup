@@ -3,23 +3,22 @@
 set -x
 
 # Only run on sunday
-[ $(date "+%a") != "Sun" ] && exit 1
+[ "$(date "+%a")" != "Sun" ] && exit 1
 week_num=$(date "+%U")
 
-function do_stuff () {
-    cd $1
+do_stuff () {
+    cd "$1" || return
     git add .
     git commit -m "Week $week_num"
     git push
     git archive --format=tar.gz HEAD \
         | gpg --recipient "Syed Fasiuddin" --encrypt \
-        > $HOME/Desktop/$(basename $1 | sed 's/^\(.\).*/\1/')$week_num.tar.gz.gpg
+        > "$HOME/Desktop/$(basename "$1" | sed 's/^\(..\).*/\1/')$week_num.tar.gz.gpg"
 }
 
-dirs=(
-    $HOME/Documents/Chess
-    $HOME/Documents/Journal
-    $HOME/Documents/Zettelkasten
-)
-
-for dir in ${dirs[@]}; do [ -d $dir ] && do_stuff $dir; done
+DOC=$HOME/Documents
+DEV=$HOME/Developer
+for dir in "$DOC/Chess" "$DOC/Journal" "$DOC/Zettelkasten" "$DEV/CompetitiveProgramming"
+do
+    [ -d "$dir" ] && do_stuff "$dir"
+done
