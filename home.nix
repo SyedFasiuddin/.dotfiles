@@ -42,6 +42,7 @@ in
     pandoc
     procs
     ripgrep
+    skhd
     speedtest-rs
     starship
     tealdeer
@@ -51,6 +52,7 @@ in
     tmux
     tokei
     wget
+    yabai
     zellij
   ];
 
