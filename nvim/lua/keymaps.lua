@@ -1,6 +1,4 @@
--- Shorten function name
 local keymap = vim.keymap.set
-
 local opts = { noremap = true, silent = true }
 
 -- A -- Alt/Option key
@@ -20,27 +18,20 @@ local opts = { noremap = true, silent = true }
 ---- Normal Mode Keymaps ----
 -----------------------------
 
--- Window Resize
--- keymap("n", "<A-h>", ":vertical resize +2<CR>", opts)
--- keymap("n", "<A-j>", ":resize +2<CR>", opts)
--- keymap("n", "<A-k>", ":resize -2<CR>", opts)
--- keymap("n", "<A-l>", ":vertical resize -2<CR>", opts)
--- on MacOS there is no Alt key, and I don't want to find a work around
--- keymap("n", "<C-h>", ":vertical resize +2<CR>", opts)
--- keymap("n", "<C-j>", ":resize -2<CR>", opts)
--- keymap("n", "<C-k>", ":resize +2<CR>", opts)
--- keymap("n", "<C-l>", ":vertical resize -2<CR>", opts)
-
 -- File explorer
 keymap("n", "<Leader>v", "<Cmd>Ex<CR>", opts)
 
------------------------------
----- Insert Mode Keymaps ----
------------------------------
+-- LSP Diagnostics
+keymap("n", "<space>e", vim.diagnostic.open_float, opts)
+keymap("n", "<space>q", vim.diagnostic.setloclist, opts)
+keymap("n", "[d", vim.diagnostic.goto_prev, opts)
+keymap("n", "]d", vim.diagnostic.goto_next, opts)
 
--- escaping to normal mode
-keymap("i", "jj", "<ESC>", opts)
--- NOTE: <C-c> can also be used
+-- Quickfix list
+keymap("n", "[q", ":cp<CR>", opts)
+keymap("n", "]q", ":cn<CR>", opts)
+
+keymap("n", "<F1>", "", opts)
 
 -----------------------------
 ---- Visual Mode Keymaps ----
@@ -49,15 +40,3 @@ keymap("i", "jj", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
--- Quickfix list
-keymap("n", "[q", ":cp<CR>", opts)
-keymap("n", "]q", ":cn<CR>", opts)
-
-keymap("n", "<F1>", "", opts)
-
--- LSP Diagnostics
-keymap("n", "<space>e", vim.diagnostic.open_float, opts)
-keymap("n", "<space>q", vim.diagnostic.setloclist, opts)
-keymap("n", "[d", vim.diagnostic.goto_prev, opts)
-keymap("n", "]d", vim.diagnostic.goto_next, opts)
