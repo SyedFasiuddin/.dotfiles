@@ -81,7 +81,6 @@ in
     ".config/python/pythonrc".source = ./config/pythonrc;
     ".config/screenrc".source = ./config/screenrc;
     ".config/skhd/skhdrc".source = ./config/skhdrc;
-    ".config/skhd/yabai.skhd".source = ./config/yabai.skhd;
     ".config/starship.toml".source = ./config/starship.toml;
     ".config/yabai/yabairc".source = ./config/yabairc;
 
