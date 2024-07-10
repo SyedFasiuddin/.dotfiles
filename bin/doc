@@ -1,25 +1,12 @@
 #!/bin/sh
 
 DOC=$HOME/Documents
-DEV=$HOME/Developer
 
-if [[ $1 == "rust" ]]; then
-    rustup doc --std
-elif [[ $1 == "c" ]]; then
-    open $DOC/cppreference/en/c.html
-elif [[ $1 == "cpp" ]]; then
-    open $DOC/cppreference/en/cpp.html
-elif [[ $1 == "java" || $1 == "java17" ]]; then
-    open $DOC/java-17-reference/index.html
-elif [[ $1 == "java-tut" ]]; then
-    open $DOC/oracle-java-tut/index.html
-elif [[ $1 == "zig" ]]; then
-    open $DEV/.zig/doc/langref.html
-elif [[ $1 == "python" ]]; then
-    open $DOC/python-3-11-docs/index.html
-else
-    echo "ERROR: cannot find documentation for '$1'"
-    exit 1
-fi
-
-exit 0
+case $1 in
+    c)          open "$DOC/cppreference/en/c.html"          ;;
+    cpp)        open "$DOC/cppreference/en/cpp.html"        ;;
+    java)       open "$DOC/java-17-reference/index.html"    ;;
+    java-tut)   open "$DOC/oracle-java-tut/index.html"      ;;
+    python)     open "$DOC/python-3-11-docs/index.html"     ;;
+    *)          echo "ERROR: no documentation for '$1'" ; exit 1
+esac
