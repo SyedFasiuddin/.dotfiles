@@ -1,16 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-dir=$HOME/Documents/Chess
-[ ! -d $dir ] && echo "Chess not found" && exit 1
-cd $dir
+DIR=$HOME/Documents/Chess
+[ ! -d "$DIR" ] && echo "Chess not found" && exit 1
+cd "$DIR" || exit
 
-read year month day <<< $(date "+%Y %m %d")
-mkdir -p "$year/$month/$day"
+dir=$(date "+%Y/%m/%d")
+mkdir -p "$dir"
 
 number=1
-printf -v file "%d/%02d/%02d/%02d.pgn" $year $month $day $number
+printf -v file "$dir/%02d.pgn" "$number"
 while [[ -f "$file" ]] ; do
-    number=$(( $number + 1 ))
-    printf -v file "%d/%02d/%02d/%02d.pgn" $year $month $day $number
+    number=$(( number + 1 ))
+    printf -v file "$dir/%02d.pgn" "$number"
 done
-$EDITOR $file
+$EDITOR "$file"
